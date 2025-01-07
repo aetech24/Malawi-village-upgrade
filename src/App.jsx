@@ -12,7 +12,7 @@ import Register from './pages/Register';
 import AllProducts from './pages/AllProducts';
 import Cart from './pages/Cart'
 import Wishlist from './pages/Wishlist';
-import ProductCard from './components/ProductCard';
+// import ProductCard from './components/ProductCard';
 
 const App = () => {
   // Props for the Billing component
@@ -40,7 +40,7 @@ const App = () => {
         <Route path='/cart' element={<Cart/>} />
         <Route path='/wishlist' element={<Wishlist/>} />
         <Route path='/allproducts' element={<AllProducts/>} />
-        <Route path='/productcard' element={<ProductCard/>} />
+        {/* <Route path='/productcard' element={<ProductCard/>} /> */}
       </Routes>
       <Footer />
     </div>
