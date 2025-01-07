@@ -5,6 +5,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import ProductCard from '../components/ProductCard';
 
 const SingleProduct = () => {
   const [activeTab, setActiveTab] = useState('description');
@@ -133,20 +134,10 @@ const SingleProduct = () => {
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
             {relatedProducts.map((product) => (
-              <div key={product.id} className="rounded-md">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="w-full h-[200px] object-cover"
-                />
-                <div className="w-full cursor-pointer bg-black text-white p-2 text-center">
-                  Add to cart
-                </div>
-                <div className="py-4">
-                  <p>{product.name}</p>
-                  <p>GH¢ {product.price}</p>
-                </div>
-              </div>
+              <ProductCard
+                key={product.id}
+                product={product}
+              />
             ))}
           </div>
         </div>

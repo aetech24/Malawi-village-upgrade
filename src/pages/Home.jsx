@@ -5,19 +5,21 @@ import Banner from '../components/Banner';
 import { useRef } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { products } from '../constants/products';
+import ProductCard from '../components/ProductCard';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const scrollContainerRef = useRef(null);
 
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollLeft -= 300; // Adjust scroll distance as needed
+            scrollContainerRef.current.scrollLeft -= 300;
         }
     };
 
     const scrollRight = () => {
         if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollLeft += 300; // Adjust scroll distance as needed
+            scrollContainerRef.current.scrollLeft += 300;
         }
     };
 
@@ -45,8 +47,6 @@ const Home = () => {
                 <div className='flex items-center justify-between'>
                     <h1 className="text-3xl font-medium mb-4">Flash Sales</h1>
                     <div className="relative">
-                        {/* Scroll buttons */}
-                        
                         <button
                             className="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-gray-300 text-white p-2 rounded-full z-10"
                             onClick={scrollRight}
@@ -66,22 +66,13 @@ const Home = () => {
                     className="flex gap-6 overflow-x-scroll scroll-smooth scrollbar-hide"
                 >
                     {products.map((item, id) => (
-                        <div
+                        <ProductCard
                             key={id}
-                            className="min-w-[300px] max-w-[300px] flex-shrink-0 rounded-md"
-                        >
-                            <img src={item.image} alt="" className="w-full h-[200px]" />
-                            <div className="w-full cursor-pointer bg-black text-white p-2 text-center">
-                                Add to cart
-                            </div>
-                            <div className="py-4">
-                                <p>{item.name}</p>
-                                <p>GH¢ 120</p>
-                            </div>
-                        </div>
+                            product={item}
+                            className="min-w-[300px] max-w-[300px] flex-shrink-0"
+                        />
                     ))}
                 </div>
-                {/* </div> */}
 
                 <div className='w-full flex justify-center mx-auto'>
                     <button className='bg-black text-white px-16 py-3 flex justify-center items-center w-fit'>View All Products</button>
@@ -93,26 +84,16 @@ const Home = () => {
         <div className='flex flex-col gap-6 px-4 md:px-10 py-12'>
             <div className='flex items-center justify-between'>
                 <h1 className='md:text-3xl text-2xl font-medium'>Explore Our Products</h1>
-                <p className=''>See All</p>
+                <Link to="/menu" className='hover:underline'>See All</Link>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full'>
-                {
-                    products.map((item, id) => (
-                        <div
-                            key={id}
-                            className="lg:min-w-[300px] lg:max-w-[300px] flex-shrink-0 rounded-md"
-                        >
-                            <img src={item.image} alt="" className="w-full h-[200px]" />   
-                            <div className="w-full bg-black text-white p-2 text-center">
-                                Add to cart
-                            </div>
-                            <div className="py-4">
-                                <p>{item.name}</p>
-                                <p>GH¢ 120</p>
-                            </div>
-                        </div>
-                    ))
-                }
+                {products.slice(0, 8).map((item, id) => (
+                    <ProductCard
+                        key={id}
+                        product={item}
+                        className="lg:min-w-[300px] lg:max-w-[300px] flex-shrink-0"
+                    />
+                ))}
             </div>
         </div>
     </div>
