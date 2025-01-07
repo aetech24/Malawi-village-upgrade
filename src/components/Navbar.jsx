@@ -24,7 +24,7 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:flex items-center space-x-6 text-lg font-medium">
             <Link to="/" className="text-black hover:text-white transition">Home</Link>
-            <Link to="#" className="text-black hover:text-white transition">Menu</Link>
+            <Link to="/menu" className="text-black hover:text-white transition">Menu</Link>
             <Link to="/about" className="text-black hover:text-white transition">About Us</Link>
             <Link to="/contact" className="text-black hover:text-white transition">Contact Us</Link>
           </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
         {mobileDrawerOpen && (
           <div className="fixed left-0 z-20 w-3/4 h-[95vh] p-12 flex flex-col items-center bg-yellow transition-all duration-300 ease-linear lg:hidden text-black gap-4 text-semibold">
             <Link to="/" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">Home</p></Link>
-            <Link to="#" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">Menu</p></Link>
+            <Link to="/menu" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">Menu</p></Link>
             <Link to="/about" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">About Us</p></Link>
             <Link to="/contact" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">Contact Us</p></Link>
             <hr className="text-black"/>
