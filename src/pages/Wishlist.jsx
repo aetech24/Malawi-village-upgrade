@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import ProductCard from "../components/ProductCard";
+
+<ProductCard />
 
 const Wishlist = () => {
   // Sample wishlist items state
@@ -28,6 +31,7 @@ const Wishlist = () => {
   };
 
   return (
+   
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6">Favorites ({wishlistItems.length})</h1>
       <div className="flex flex-wrap gap-6">
@@ -71,6 +75,7 @@ const Wishlist = () => {
         </button>
       )}
     </div>
+    
   );
 };
 
