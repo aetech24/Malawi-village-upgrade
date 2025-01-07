@@ -110,20 +110,20 @@ const Cart = () => {
           <h2 className="text-lg font-bold mb-4">Your Order Summary</h2>
           <div className="flex justify-between mb-2">
             <span>Sub Total</span>
-            <span>GH₵{subtotal.toFixed(2)}</span>
+            <span>${subtotal.toFixed(2)}</span>
           </div>
           <div className="flex justify-between mb-2">
             <span>Discount</span>
-            <span>GH₵{discount.toFixed(2)}</span>
+            <span>${discount.toFixed(2)}</span>
           </div>
           <div className="flex justify-between mb-2">
             <span>Delivery</span>
-            <span>GH₵{delivery.toFixed(2)}</span>
+            <span>${delivery.toFixed(2)}</span>
           </div>
           <hr className="my-4" />
           <div className="flex justify-between font-bold">
             <span>Total</span>
-            <span>GH₵{(subtotal - discount + delivery).toFixed(2)}</span>
+            <span>${(subtotal - discount + delivery).toFixed(2)}</span>
           </div>
           <button className="mt-4 w-full bg-black text-white py-2 rounded">
             Proceed to Checkout
