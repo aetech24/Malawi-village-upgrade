@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.png';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -27,29 +29,43 @@ const Navbar = () => {
             <Link to="/contact" className="text-black hover:text-white transition">Contact Us</Link>
           </div>
           <ul className="flex items-center gap-2 lg:gap-4">
-            <Link
-              to="/login"
-              className="bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium hover:bg-blue-50 transition"
-            >
-              Login
-            </Link>
-            <Link
-              to="/register"
-              className="bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium transition"
-            >
-              Sign Up
-            </Link>
+            {isAuthenticated ? (
+              <>
+                <Link
+                  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                  to="#"
+                  className="bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium transition"
+                >
+                  Logout
+                </Link>
+              </>
+            ) : (
+              <Link
+                onClick={() => loginWithRedirect()}
+                to="#"
+                className="bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium hover:bg-blue-50 transition"
+              >
+                Login
+              </Link>
+            )}
           </ul>
-        <div className="lg:hidden md:flex justify-end">
-              <button onClick={toggleNavbar} className="text-black">
-                {mobileDrawerOpen ? (
-                  <AiOutlineClose className="text-3xl font-bold" />
-                ) : (
-                  <CgMenu className="text-3xl font-bold" />
-                )}
-              </button>
+          <div className="lg:hidden md:flex justify-end">
+            <button onClick={toggleNavbar} className="text-black">
+              {mobileDrawerOpen ? (
+                <AiOutlineClose className="text-3xl font-bold" />
+              ) : (
+                <CgMenu className="text-3xl font-bold" />
+              )}
+            </button>
+          </div>
+          {isAuthenticated && (
+            <div className="user_profile hidden lg:flex flex-col items-end ml-4">
+              <h3 className="text-black font-medium">{user.name}</h3>
+              <p className="text-gray-600 text-sm">{user.email}</p>
             </div>
+          )}
         </div>
+
         {mobileDrawerOpen && (
           <div className="fixed left-0 z-20 w-3/4 h-[95vh] p-12 flex flex-col items-center bg-yellow transition-all duration-300 ease-linear lg:hidden text-black gap-4 text-semibold">
             <Link to="/" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">Home</p></Link>
