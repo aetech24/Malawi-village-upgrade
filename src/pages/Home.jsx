@@ -75,7 +75,9 @@ const Home = () => {
                 </div>
 
                 <div className='w-full flex justify-center mx-auto'>
-                    <button className='bg-black text-white px-16 py-3 flex justify-center items-center w-fit'>View All Products</button>
+                    <Link to="/products">
+                        <button className='bg-black text-white px-16 py-3 flex justify-center items-center w-fit'>View All Products</button>
+                    </Link>
                 </div>
             </div>
         </div>
