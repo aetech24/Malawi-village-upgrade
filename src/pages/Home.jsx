@@ -4,6 +4,7 @@ import {HomeProducts} from '../constants/index'
 import Banner from '../components/Banner';
 import { useRef } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { products } from '../constants/products';
 
 const Home = () => {
     const scrollContainerRef = useRef(null);
@@ -64,18 +65,18 @@ const Home = () => {
                     ref={scrollContainerRef}
                     className="flex gap-6 overflow-x-scroll scroll-smooth scrollbar-hide"
                 >
-                    {HomeProducts.map((item, id) => (
+                    {products.map((item, id) => (
                         <div
                             key={id}
                             className="min-w-[300px] max-w-[300px] flex-shrink-0 rounded-md"
                         >
-                            <img src={item.image} alt="" className="w-full h-auto" />
-                            <div className="w-full bg-black text-white p-2 text-center">
+                            <img src={item.image} alt="" className="w-full h-[200px]" />
+                            <div className="w-full cursor-pointer bg-black text-white p-2 text-center">
                                 Add to cart
                             </div>
                             <div className="py-4">
                                 <p>{item.name}</p>
-                                <p>GH¢{item.price}</p>
+                                <p>GH¢ 120</p>
                             </div>
                         </div>
                     ))}
@@ -96,18 +97,18 @@ const Home = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full'>
                 {
-                    HomeProducts.map((item, id) => (
+                    products.map((item, id) => (
                         <div
                             key={id}
                             className="lg:min-w-[300px] lg:max-w-[300px] flex-shrink-0 rounded-md"
                         >
-                            <img src={item.image} alt="" className="w-full h-auto" />   
+                            <img src={item.image} alt="" className="w-full h-[200px]" />   
                             <div className="w-full bg-black text-white p-2 text-center">
                                 Add to cart
                             </div>
                             <div className="py-4">
                                 <p>{item.name}</p>
-                                <p>GH¢{item.price}</p>
+                                <p>GH¢ 120</p>
                             </div>
                         </div>
                     ))

@@ -29,25 +29,17 @@ const Navbar = () => {
             <Link to="/contact" className="text-black hover:text-white transition">Contact Us</Link>
           </div>
           <ul className="flex items-center gap-2 lg:gap-4">
-            {isAuthenticated ? (
-              <>
-                <Link
-                  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-                  to="#"
-                  className="bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium transition"
-                >
-                  Logout
-                </Link>
-              </>
-            ) : (
-              <Link
-                onClick={() => loginWithRedirect()}
-                to="#"
+            <Link to="/login"
                 className="bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium hover:bg-blue-50 transition"
               >
                 Login
               </Link>
-            )}
+              <Link
+                to="/register"
+                className="bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium hover:bg-blue-50 transition"
+              >
+                Sign Up
+              </Link>
           </ul>
           <div className="lg:hidden md:flex justify-end">
             <button onClick={toggleNavbar} className="text-black">
@@ -58,12 +50,12 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          {isAuthenticated && (
+          {/* {isAuthenticated && (
             <div className="user_profile hidden lg:flex flex-col items-end ml-4">
               <h3 className="text-black font-medium">{user.name}</h3>
               <p className="text-gray-600 text-sm">{user.email}</p>
             </div>
-          )}
+          )} */}
         </div>
 
         {mobileDrawerOpen && (
