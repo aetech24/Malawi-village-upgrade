@@ -1,4 +1,13 @@
 import Image1 from '../assets/image-1.jpg'
+import Image2 from '../assets/image-2.jpg'
+import Image3 from '../assets/image-3.jpg'
+import Image4 from '../assets/image-4.jpg'
+import Image5 from '../assets/image-5.jpg'
+import Image6 from '../assets/image-6.jpg'
+import Image7 from '../assets/image-7.jpg'
+import Image8 from '../assets/image-8.jpg'
+import Image9 from '../assets/image-9.jpg'
+import Image10 from '../assets/image-10.jpg'
 
 export const products = [
     {
@@ -14,7 +23,7 @@ export const products = [
         name: "Orange Juice",
         price: { big: "16", small: "10" },
         description: "Fresh orange juice made from locally sourced oranges",
-        image: "/src/assets/image-2.jpg",
+        image: Image2,
         category: "Fruit Juice"
     },
     {
@@ -22,7 +31,7 @@ export const products = [
         name: "Mango Juice",
         price: { big: "16", small: "10" },
         description: "Fresh mango juice made from locally sourced mangoes",
-        image: "/src/assets/image-3.jpg",
+        image: Image3,
         category: "Fruit Juice"
     },
     {
@@ -30,7 +39,7 @@ export const products = [
         name: "Passion Juice",
         price: { big: "16", small: "10" },
         description: "Fresh passion juice made from locally sourced passion fruits",
-        image: "/src/assets/image-4.jpg",
+        image: Image4,
         category: "Fruit Juice"
     },
     {
@@ -38,7 +47,7 @@ export const products = [
         name: "Cocktail Juice",
         price: { big: "16", small: "10" },
         description: "A delightful mix of various tropical fruits",
-        image: "/src/assets/image-5.jpg",
+        image: Image5,
         category: "Mixed Drinks"
     },
     {
@@ -46,7 +55,7 @@ export const products = [
         name: "Strawberry Smoothie",
         price: { big: "18", small: "12" },
         description: "Creamy strawberry smoothie with fresh fruits",
-        image: "/src/assets/image-6.jpg",
+        image: Image6,
         category: "Smoothies"
     },
     {
@@ -54,7 +63,7 @@ export const products = [
         name: "Banana Smoothie",
         price: { big: "18", small: "12" },
         description: "Rich and creamy banana smoothie",
-        image: "/src/assets/image-7.jpg",
+        image: Image7,
         category: "Smoothies"
     },
     {
@@ -62,7 +71,7 @@ export const products = [
         name: "Berry Blast",
         price: { big: "18", small: "12" },
         description: "Mixed berry smoothie with a blend of seasonal berries",
-        image: "/src/assets/image-8.jpg",
+        image: Image8,
         category: "Smoothies"
     },
     {
@@ -70,7 +79,7 @@ export const products = [
         name: "Tropical Paradise",
         price: { big: "20", small: "14" },
         description: "A mix of tropical fruits with coconut water",
-        image: "/src/assets/image-9.jpg",
+        image: Image9,
         category: "Mixed Drinks"
     },
     {
@@ -78,7 +87,7 @@ export const products = [
         name: "Green Detox",
         price: { big: "20", small: "14" },
         description: "Healthy blend of green vegetables and fruits",
-        image: "/src/assets/image-10.jpg",
+        image: Image10,
         category: "Health Drinks"
     },
     {
@@ -86,7 +95,7 @@ export const products = [
         name: "Carrot Juice",
         price: { big: "16", small: "10" },
         description: "Fresh carrot juice with a hint of ginger",
-        image: "/src/assets/image-1.jpg",
+        image: Image1,
         category: "Vegetable Juice"
     },
     {
@@ -94,7 +103,7 @@ export const products = [
         name: "Beetroot Juice",
         price: { big: "16", small: "10" },
         description: "Fresh beetroot juice rich in nutrients",
-        image: "/src/assets/image-2.jpg",
+        image: Image2,
         category: "Vegetable Juice"
     },
     {
@@ -102,7 +111,7 @@ export const products = [
         name: "Watermelon Juice",
         price: { big: "16", small: "10" },
         description: "Refreshing watermelon juice",
-        image: "/src/assets/image-3.jpg",
+        image: Image3,
         category: "Fruit Juice"
     },
     {
@@ -110,7 +119,7 @@ export const products = [
         name: "Lemonade",
         price: { big: "14", small: "8" },
         description: "Classic fresh lemonade with mint",
-        image: "/src/assets/image-4.jpg",
+        image: Image4,
         category: "Mixed Drinks"
     },
     {
@@ -118,7 +127,7 @@ export const products = [
         name: "Energy Boost",
         price: { big: "20", small: "14" },
         description: "Natural energy drink with fruits and ginger",
-        image: "/src/assets/image-5.jpg",
+        image: Image5,
         category: "Health Drinks"
     },
     {
@@ -126,7 +135,7 @@ export const products = [
         name: "Immunity Booster",
         price: { big: "20", small: "14" },
         description: "Vitamin C rich drink with citrus fruits",
-        image: "/src/assets/image-6.jpg",
+        image: Image6,
         category: "Health Drinks"
     }
 ];

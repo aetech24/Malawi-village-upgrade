@@ -1,4 +1,8 @@
 import React from 'react'
+import Test from '../assets/test1.jpg'
+import Test1 from '../assets/test2.jpg'
+import Test2 from '../assets/test3.jpg'
+import Test3 from '../assets/test4.jpg'
 
 const TestimonialCard = ({ text, name, role, imageUrl }) => {
     return (
@@ -26,25 +30,25 @@ const TestimonialCard = ({ text, name, role, imageUrl }) => {
           text: "I have been using Malawi products for over a year now and I love it! I can't imagine life without it. It's so easy to use, and the customer service is great.",
           name: "Kristin Watson",
           role: "Satisfied Customer",
-          imageUrl: "./src/assets/test2.jpg",
+          imageUrl: Test,
         },
         {
           text: "Malawi products have changed the way I live my life. The quality is unmatched, and their support team is always there to help.",
           name: "Ronald Richards",
           role: "Happy Client",
-          imageUrl: "./src/assets/test2.jpg",
+          imageUrl: Test1,
         },
         {
           text: "Amazing experience! Highly recommend to everyone looking for quality and reliability.",
           name: "Jane Cooper",
           role: "Frequent Buyer",
-          imageUrl: "./src/assets/test2.jpg",
+          imageUrl: Test2,
         },
         {
           text: "I am so grateful for the amazing products and services offered by Malawi. They truly care about their customers.",
           name: "Cody Fisher",
           role: "Loyal Customer",
-          imageUrl: "./src/assets/test2.jpg",
+          imageUrl: Test3,
         },
       ]; 
       return(
