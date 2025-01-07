@@ -26,7 +26,7 @@ const About = () => {
         {/* Image Section */}
         <div className="flex justify-center hover:scale-105 transform transition-all">
           <img
-            src="./src/assets/tes-img1.jpg"
+            src="../assets/tes-img1.jpg" // updated image path
             alt="About Us"
             className="rounded-lg shadow-lg w-[70%]"
           />
@@ -44,6 +44,5 @@ const About = () => {
   );
  
 };
-
 
 export default About;

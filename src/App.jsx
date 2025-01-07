@@ -27,8 +27,6 @@ const App = () => {
           path="/billing"
           element={<Billing shippingCost={shippingCost} onPlaceOrder={handlePlaceOrder} />}
         />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/about" element={<About/>} />
       </Routes>
       <Footer />
     </div>
