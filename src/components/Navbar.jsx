@@ -21,20 +21,20 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden lg:flex items-center space-x-6 text-lg font-medium">
-            <p>Home</p>
-            <p>Shop</p>
-            <p>About Us</p>
-            <p>Contact Us</p>
+            <Link to="/" className="text-black hover:text-white transition">Home</Link>
+            <Link to="#" className="text-black hover:text-white transition">Menu</Link>
+            <Link to="/about" className="text-black hover:text-white transition">About Us</Link>
+            <Link to="/contact" className="text-black hover:text-white transition">Contact Us</Link>
           </div>
           <ul className="flex items-center gap-2 lg:gap-4">
             <Link
-              to="/host"
+              to="/login"
               className="bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium hover:bg-blue-50 transition"
             >
               Login
             </Link>
             <Link
-              to="/host"
+              to="/register"
               className="bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium transition"
             >
               Sign Up
@@ -52,14 +52,14 @@ const Navbar = () => {
         </div>
         {mobileDrawerOpen && (
           <div className="fixed left-0 z-20 w-3/4 h-[95vh] p-12 flex flex-col items-center bg-yellow transition-all duration-300 ease-linear lg:hidden text-black gap-4 text-semibold">
-            <p className="text-xl font-semibold cursor-pointer">Home</p>
-            <p className="text-xl font-semibold cursor-pointer">Shop</p>
-            <p className="text-xl font-semibold cursor-pointer">About Us</p>
-            <p className="text-xl font-semibold cursor-pointer">Contact Us</p>
+            <Link to="/" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">Home</p></Link>
+            <Link to="#" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">Menu</p></Link>
+            <Link to="/about" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">About Us</p></Link>
+            <Link to="/contact" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-xl font-semibold cursor-pointer">Contact Us</p></Link>
             <hr className="text-black"/>
             <div className="flex flex-col gap-2">
-              <p className="text-white bg-black py-2 rounded-md px-4 text-center">Log In</p>
-              <p className="text-white bg-black py-2 rounded-md px-4 text-center">Sign Up</p>
+              <Link to="/login" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-white bg-black py-2 rounded-md px-4 text-center">Log In</p></Link>
+              <Link to="/register" className="text-black hover:text-white transition" onClick={toggleNavbar}><p className="text-white bg-black py-2 rounded-md px-4 text-center">Sign Up</p></Link>
             </div>
           </div>
         )}
