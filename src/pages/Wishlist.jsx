@@ -32,7 +32,7 @@ const Wishlist = () => {
 
   return (
    
-    <div className="p-6">
+    <div className="lg:p-10 max-lg:mt-20 py-8 px-4">
       <h1 className="text-2xl font-bold mb-6">Favorites ({wishlistItems.length})</h1>
       <div className="flex flex-wrap gap-6">
         {wishlistItems.map((item) => (

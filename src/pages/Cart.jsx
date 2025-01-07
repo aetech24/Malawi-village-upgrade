@@ -30,7 +30,7 @@ const Cart = () => {
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className="p-6">
+    <div className="lg:p-10 px-4 max-lg:mt-16">
       <h1 className="text-2xl font-bold mb-6">Your Shopping Cart</h1>
       <div className="flex flex-col md:flex-row gap-8">
         {/* Cart Items */}

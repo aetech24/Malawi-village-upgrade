@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 import Download from '../assets/download.png'
+import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -45,11 +46,33 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
-            <h1 className="md:text-xl font-semibold">Download App</h1>
-                <img src={Download} alt="" className="w-56"/>
+            <h1 className="md:text-xl font-semibold">Follow Us On</h1>
             {/* icons */}
-            <div>
-              
+            <div className="flex gap-4">
+              <a 
+                href="https://facebook.com/malawifreshdrinks" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-yellow transition-colors"
+              >
+                <FaFacebook className="w-8 h-8" />
+              </a>
+              <a 
+                href="https://www.instagram.com/malawi_village?igsh=YzljYTk1ODg3Zg==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-yellow transition-colors"
+              >
+                <FaInstagram className="w-8 h-8" />
+              </a>
+              <a 
+                href="https://www.tiktok.com/@malawi_village?_t=ZT-8srz3UMpCFK&_r=1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-yellow transition-colors"
+              >
+                <FaTiktok className="w-8 h-8" />
+              </a>
             </div>
           </div>
         </div>
