@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 const ProductCard = ({ product, className = "" }) => {
   const navigate = useNavigate();
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleClick = () => {
     navigate(`/product/${product.id}`);
+  };
+
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation(); // Prevent navigation when clicking the favorite icon
+    setIsFavorite(!isFavorite);
   };
 
   // Format price based on whether it's a string or an object
@@ -20,9 +27,19 @@ const ProductCard = ({ product, className = "" }) => {
 
   return (
     <div 
-      className={`rounded-md ${className} cursor-pointer`}
+      className={`rounded-md ${className} cursor-pointer relative`}
       onClick={handleClick}
     >
+      <div 
+        className="absolute top-2 right-2 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer hover:scale-110 transition-transform"
+        onClick={handleFavoriteClick}
+      >
+        {isFavorite ? (
+          <AiFillHeart className="text-red-500 text-xl" />
+        ) : (
+          <AiOutlineHeart className="text-gray-600 text-xl" />
+        )}
+      </div>
       <img
         src={product.image} 
         alt={product.name}
