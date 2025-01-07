@@ -9,6 +9,7 @@ import Billing from './pages/Billing';
 import SingleProduct from './pages/SingleProduct';
 import Login from './pages/login';
 import Register from './pages/Register';
+import AllProducts from './pages/AllProducts';
 
 const App = () => {
   // Props for the Billing component
@@ -33,6 +34,7 @@ const App = () => {
         <Route path='/product' element={<SingleProduct />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/menu' element={<AllProducts />} />
       </Routes>
       <Footer />
     </div>
