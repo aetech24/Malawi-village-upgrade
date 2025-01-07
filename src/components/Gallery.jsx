@@ -1,4 +1,16 @@
 import React from "react";
+import Gallery2 from '../assets/tes-img2.jpg'
+import Gallery3 from '../assets/tes-img3.jpg'
+import Gallery4 from '../assets/tes-img4.jpg'
+import Gallery5 from '../assets/tes-img5.jpg'
+import Gallery6 from '../assets/tes-img6.jpg'
+import Gallery7 from '../assets/tes-img7.jpg'
+import Gallery8 from '../assets/tes-img8.jpg'
+import Gallery9 from '../assets/tes-img9.jpg'
+import Gallery10 from '../assets/test1.jpg'
+import Gallery11 from '../assets/test2.jpg'
+import Gallery12 from '../assets/test3.jpg'
+import Gallery13 from '../assets/test4.jpg'
 
 const GalleryItem = ({ imageUrl, altText }) => {
   return (
@@ -11,18 +23,18 @@ const GalleryItem = ({ imageUrl, altText }) => {
 const Gallery = () => {
   const galleryImages = [
     // { imageUrl: "./src/assets/tes-img1.jpg", altText: "Gallery Image 1" },
-    { imageUrl: "./src/assets/tes-img2.jpg", altText: "Gallery Image 2" },
-    { imageUrl: "./src/assets/tes-img3.jpg", altText: "Gallery Image 3" },
-    { imageUrl: "./src/assets/tes-img4.jpg", altText: "Gallery Image 4" },
-    { imageUrl: "./src/assets/tes-img5.jpg", altText: "Gallery Image 5" },
-    { imageUrl: "./src/assets/tes-img6.jpg", altText: "Gallery Image 6" },
-    { imageUrl: "./src/assets/tes-img7.jpg", altText: "Gallery Image 7" },
-    { imageUrl: "./src/assets/tes-img8.jpg", altText: "Gallery Image 8" },
-    { imageUrl: "./src/assets/tes-img9.jpg", altText: "Gallery Image 9" },
-    { imageUrl: "./src/assets/test1.jpg", altText: "Gallery Image 10" },
-    { imageUrl: "./src/assets/test2.jpg", altText: "Gallery Image 11" },
-    { imageUrl: "./src/assets/test3.jpg", altText: "Gallery Image 12" },
-    { imageUrl: "./src/assets/test4.jpg", altText: "Gallery Image 13" }
+    { imageUrl: Gallery2, altText: "Gallery Image 2" },
+    { imageUrl: Gallery3, altText: "Gallery Image 3" },
+    { imageUrl: Gallery4, altText: "Gallery Image 4" },
+    { imageUrl: Gallery5, altText: "Gallery Image 5" },
+    { imageUrl: Gallery6, altText: "Gallery Image 6" },
+    { imageUrl: Gallery7, altText: "Gallery Image 7" },
+    { imageUrl: Gallery8, altText: "Gallery Image 8" },
+    { imageUrl: Gallery9, altText: "Gallery Image 9" },
+    { imageUrl: Gallery10, altText: "Gallery Image 10" },
+    { imageUrl: Gallery11, altText: "Gallery Image 11" },
+    { imageUrl: Gallery12, altText: "Gallery Image 12" },
+    { imageUrl: Gallery13, altText: "Gallery Image 13" }
   ];
 
   return (
