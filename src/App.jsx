@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
@@ -21,17 +21,12 @@ const App = () => {
       {/* Add your routing here */}
       <Routes>
         <Route path="/" element={<Home />} />
-<<<<<<< HEAD
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/about" element={<About/>} />
-=======
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route
           path="/billing"
           element={<Billing shippingCost={shippingCost} onPlaceOrder={handlePlaceOrder} />}
         />
->>>>>>> e989363cc7d9f17f288bb95cc0b28d18335ae287
       </Routes>
       <Footer />
     </div>
