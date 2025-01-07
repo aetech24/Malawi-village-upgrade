@@ -9,6 +9,8 @@ import Billing from './pages/Billing';
 import SingleProduct from './pages/SingleProduct';
 import Login from './pages/login';
 import Register from './pages/Register';
+import Cart from './pages/Cart'
+import Wishlist from './pages/Wishlist';
 
 const App = () => {
   // Props for the Billing component
@@ -33,6 +35,8 @@ const App = () => {
         <Route path='/product' element={<SingleProduct />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path="/cart" element={<Cart/>} />
+        <Route path='/wishlist' element={<Wishlist/>}/>
       </Routes>
       <Footer />
     </div>
