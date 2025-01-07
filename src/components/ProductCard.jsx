@@ -1,7 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ product, className = "" }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+
   // Format price based on whether it's a string or an object
   const formatPrice = (price) => {
     if (typeof price === 'string') {
@@ -13,14 +19,15 @@ const ProductCard = ({ product, className = "" }) => {
   };
 
   return (
-    <div className={`rounded-md ${className}`}>
-      {/* <Link to={`/product/${product.id}`}> */}
-        <img
-          src={product.image} 
-          alt={product.name}
-          className="w-full h-[200px] object-cover"
-        />
-      {/* </Link> */}
+    <div 
+      className={`rounded-md ${className} cursor-pointer`}
+      onClick={handleClick}
+    >
+      <img
+        src={product.image} 
+        alt={product.name}
+        className="w-full h-[200px] object-cover"
+      />
       <div className="w-full cursor-pointer bg-black text-white p-2 text-center">
         Add to cart
       </div>

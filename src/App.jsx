@@ -34,7 +34,7 @@ const App = () => {
           path="/billing"
           element={<Billing shippingCost={shippingCost} onPlaceOrder={handlePlaceOrder} />}
         />
-        <Route path='/product' element={<SingleProduct />} />
+        <Route path='/product/:id' element={<SingleProduct />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/cart' element={<Cart/>} />
