@@ -19,60 +19,60 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+    <div className="min-h-screen max-md:mt-20 md:p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 max-w-7xl mx-auto">
         {/* Billing Details Section */}
-        <div className="bg-white shadow-md rounded-lg p-6">
-          <h2 className="text-xl font-semibold mb-4">Billing Details</h2>
+        <div className="bg-white p-6">
+          <h2 className="text-4xl font-semibold mb-4">Billing Details</h2>
           <form className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="First Name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                className="w-full px-4 py-2 border bg-gray-100 border-gray-300 rounded-md"
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                className="w-full px-4 py-2 border bg-gray-100 border-gray-300 rounded-md"
               />
             </div>
             <input
               type="text"
               placeholder="Company Name (optional)"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border bg-gray-100 border-gray-300 rounded-md"
             />
             <input
               type="text"
               placeholder="Street Address"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border bg-gray-100 border-gray-300 rounded-md"
             />
             <input
               type="text"
               placeholder="Apartment, Suite, etc. (optional)"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border bg-gray-100 border-gray-300 rounded-md"
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="Town/City"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                className="w-full px-4 py-2 border bg-gray-100 border-gray-300 rounded-md"
               />
               <input
                 type="text"
                 placeholder="State/Province"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                className="w-full px-4 py-2 border bg-gray-100 border-gray-300 rounded-md"
               />
             </div>
             <input
               type="text"
               placeholder="Phone Number"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border bg-gray-100 border-gray-300 rounded-md"
             />
             <input
               type="email"
               placeholder="Email Address"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md"
+              className="w-full px-4 py-2 border bg-gray-100 border-gray-300 rounded-md"
             />
             <div className="flex items-center">
               <input
@@ -88,7 +88,7 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
         </div>
 
         {/* Order Summary Section */}
-        <div className="bg-white shadow-md rounded-lg p-6">
+        <div className="bg-white p-6">
           <h2 className="text-xl font-semibold mb-4">Your Order</h2>
           <div className="space-y-4">
             {products.map((product) => (

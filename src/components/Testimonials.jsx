@@ -50,7 +50,7 @@ const TestimonialCard = ({ text, name, role, imageUrl }) => {
       return(
          
         
-      <section className="mt-16">
+      <section className="mt-16 bg-gray-100 py-10">
       <h2 className="text-3xl font-bold text-center md:mb-4 mb-2">Testimonial</h2>
       <p className="text-center text-gray-600 mb-8">
         Hear what our customers say
