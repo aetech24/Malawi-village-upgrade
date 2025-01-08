@@ -12,6 +12,7 @@ import Register from './pages/Register';
 import AllProducts from './pages/AllProducts';
 import Cart from './pages/Cart'
 import Wishlist from './pages/Wishlist';
+// import { AuthProvider } from "./context/AuthContext";
 // import ProductCard from './components/ProductCard';
 
 const App = () => {
