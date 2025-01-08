@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Hero from '../assets/login-hero.png'
 import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png'
@@ -7,6 +7,19 @@ import { useAuth } from "../components/AuthContext";
 
 const Login = () => {
   const { login } = useAuth();
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
 const handleLogin = (event) => {
     event.preventDefault();
@@ -71,6 +84,14 @@ const handleLogin = (event) => {
           Do not have an account? <span className="cursor-pointer hover:underline">Sign Up</span>
         </Link>
         </div>
+        {showScroll && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full"
+        >
+          ↑
+        </button>
+      )}
       </div>
   )
 }

@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <main className="md:p-8 max-md:mt-16 min-h-screen">
       <div className="max-w-6xl mx-auto rounded-lg p-8">
         <h1 className="text-3xl font-bold text-center mb-4">Get in Touch</h1>
         <p className="text-center text-gray-600 mb-8">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta adipisci
-          perferendis odit expedita nulla corrupti, excepturi quisquam id ratione.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta adipisci perferendis odit expedita nulla corrupti, excepturi quisquam id ratione sint quod beatae rerum alias rem doloremque. Animi nerum hic temporibus, cupiditate atque perferendis rem eligendi, pariatur veniam nesciunt magni saepe tempora explicabo quas iste qui libero eveniet sit? Est, voluptas. At expedita exercitationem temporibus saepe earum!
         </p>
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -105,6 +118,14 @@ const Contact = () => {
           </div>
         </section>
       </div>
+      {showScroll && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full"
+        >
+          ↑
+        </button>
+      )}
     </main>
   );
 };
