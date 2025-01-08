@@ -25,7 +25,7 @@ const About = () => {
         </div>
 
         {/* Image Section */}
-        <div className="flex justify-center hover:scale-105 transform transition-all">
+        <div className="flex justify-center hover:scale-105 transform transition-all duration-500 ease-in-out">
           <img
             src={Test} // updated image path
             alt="About Us"

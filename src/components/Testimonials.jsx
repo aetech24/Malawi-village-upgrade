@@ -6,7 +6,7 @@ import Test3 from '../assets/test4.jpg'
 
 const TestimonialCard = ({ text, name, role, imageUrl }) => {
     return (
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-black hover:scale-105 transform transition-all">
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-black hover:scale-105 transform transition-all duration-500 ease-in-out cursor-default">
         <div className="p-4">
           <p className="text-gray-700 mb-4">{text}</p>
           <div className="flex items-center">
