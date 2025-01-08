@@ -6,7 +6,6 @@ import Logo from '../assets/logo.png';
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const toggleNavbar = () => {
