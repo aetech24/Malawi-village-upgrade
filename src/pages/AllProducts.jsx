@@ -7,6 +7,7 @@ const AllProducts = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [showScroll, setShowScroll] = useState(false);
   const productsPerPage = 12;
 
   // Get unique categories from products
@@ -57,6 +58,18 @@ const AllProducts = () => {
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className='px-4 md:px-10 py-8 max-lg:mt-16 w-full'>
@@ -147,6 +160,15 @@ const AllProducts = () => {
             <FaArrowRight size={16} />
           </button>
         </div>
+      )}
+
+      {showScroll && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full"
+        >
+          ↑
+        </button>
       )}
     </div>
   );
