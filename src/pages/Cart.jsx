@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Cart = () => {
   // Sample cart items state
@@ -11,6 +11,20 @@ const Cart = () => {
 
   const discount = 150;
   const delivery = 150;
+
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Update the quantity of a product
   const handleQuantityChange = (id, newQuantity) => {
@@ -130,6 +144,14 @@ const Cart = () => {
           </button>
         </div>
       </div>
+      {showScroll && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full"
+        >
+          ↑
+        </button>
+      )}
     </div>
   );
 };

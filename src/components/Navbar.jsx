@@ -35,45 +35,45 @@ const Navbar = () => {
             </div>
           </div>
           <div className='hidden lg:flex items-center space-x-6 text-lg font-medium'>
-            <Link to='/' className='text-black hover:text-white transition'>
+            <Link to='/' className='text-black hover:text-white transition duration-200 ease-in'>
               Home
             </Link>
             <Link
               to='/products'
-              className='text-black hover:text-white transition'
+              className='text-black hover:text-white transition duration-200 ease-in'
             >
               Menu
             </Link>
             <Link
               to='/about'
-              className='text-black hover:text-white transition'
+              className='text-black hover:text-white transition duration-200 ease-in'
             >
               About Us
             </Link>
             <Link
               to='/contact'
-              className='text-black hover:text-white transition'
+              className='text-black hover:text-white transition duration-200 ease-in'
             >
               Contact Us
             </Link>
           </div>
           {isAuthenticated ? (
             <div className='hidden lg:flex items-center gap-4'>
-              <button onClick={() => navigate('/wishlist')} className='hover:text-white'>
+              <button onClick={() => navigate('/wishlist')} className='hover:text-white duration-200 ease-in'>
                 <AiOutlineHeart />
               </button>
-              <button onClick={() => navigate('/cart')} className='hover:text-white'>
+              <button onClick={() => navigate('/cart')} className='hover:text-white duration-200 ease-in'>
                 <AiOutlineShoppingCart />
               </button>
               <div className='relative'>
-                <button onClick={() => setDropdownOpen(!dropdownOpen)} className='hover:text-white'>
+                <button onClick={() => setDropdownOpen(!dropdownOpen)} className='hover:text-white duration-200 ease-in'>
                   <AiOutlineUser />
                 </button>
                 {dropdownOpen && (
                   <div className='absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg'>
                     <button
                       onClick={handleLogout}
-                      className='block w-full text-left px-4 py-2 text-black hover:bg-blue-50 transition'
+                      className='block w-full text-left px-4 py-2 text-black hover:bg-blue-50 transition duration-200 ease-in'
                     >
                       Logout
                     </button>
@@ -83,7 +83,7 @@ const Navbar = () => {
             </div>
           ) : (
             <>
-              <ul className='flex items-center gap-2 lg:gap-4'>
+              <ul className='flex items-center gap-2 lg:gap-4 duration-200 ease-in'>
                 <Link
                   to='/login'
                   className='bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium hover:bg-blue-50 transition'

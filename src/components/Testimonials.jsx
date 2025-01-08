@@ -6,23 +6,27 @@ import Test3 from '../assets/test4.jpg'
 
 const TestimonialCard = ({ text, name, role, imageUrl }) => {
     return (
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-black hover:scale-105 transform transition-all duration-500 ease-in-out cursor-default">
-        <div className="p-4">
+
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-black hover:scale-105 transform transition-all duration-500 ease-in-out cursor-default flex flex-col h-full">
+        {/* Testimony Text Section */}
+        <div className="p-4 flex-grow overflow-auto">
           <p className="text-gray-700 mb-4">{text}</p>
-          <div className="flex items-center">
-            <img
-              src={imageUrl}
-              alt="Customer"
-              className="rounded-full w-10 h-10 mr-4"
-            />
-            <div>
-              <h4 className="font-bold">{name}</h4>
-              <p className="text-sm text-gray-500">{role}</p>
-            </div>
+        </div>
+      
+        {/* Person's Details Section (Fixed at Bottom) */}
+        <div className="flex items-center h-16 border-t border-gray-300 p-4 bg-black">
+          <img
+            src={imageUrl}
+            alt="Customer"
+            className="rounded-full w-10 h-10 mr-4"
+          />
+          <div>
+            <h4 className="font-bold text-sm font-semibold text-white">{name}</h4>
+            <p className="text-sm text-gray-300">{role}</p>
           </div>
         </div>
       </div>
-    );
+          );
   };
   const Testimonials =()=>{
     const testimonials = [
