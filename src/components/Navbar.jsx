@@ -42,7 +42,7 @@ const Navbar = () => {
               to='/products'
               className='text-black hover:text-white transition duration-200 ease-in'
             >
-              Menu
+          Shop
             </Link>
             <Link
               to='/about'
@@ -124,7 +124,7 @@ const Navbar = () => {
               className='text-black hover:text-white transition'
               onClick={toggleNavbar}
             >
-              <p className='text-xl font-semibold cursor-pointer'>Menu</p>
+              <p className='text-xl font-semibold cursor-pointer'>Shop</p>
             </Link>
             <Link
               to='/about'
