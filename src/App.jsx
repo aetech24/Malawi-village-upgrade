@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
@@ -10,7 +10,7 @@ import SingleProduct from './pages/SingleProduct';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AllProducts from './pages/AllProducts';
-import Cart from './pages/Cart'
+import Cart from './pages/Cart';
 import Wishlist from './pages/Wishlist';
 // import { AuthProvider } from "./context/AuthContext";
 // import ProductCard from './components/ProductCard';
@@ -21,6 +21,23 @@ const App = () => {
 
   const handlePlaceOrder = () => {
     alert('Order placed successfully!');
+  };
+
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (product) => {
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find((item) => item.id === product.id);
+      if (existingProduct) {
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
+    console.log("Added to cart:", product);
   };
 
   return (
@@ -38,10 +55,9 @@ const App = () => {
         <Route path='/product/:id' element={<SingleProduct />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/cart' element={<Cart/>} />
-        <Route path='/wishlist' element={<Wishlist/>} />
-        <Route path='/products' element={<AllProducts/>} />
-        {/* <Route path='/productcard' element={<ProductCard/>} /> */}
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/wishlist' element={<Wishlist />} />
+        <Route path='/products' element={<AllProducts onAddToCart={handleAddToCart} />} />
       </Routes>
       <Footer />
     </div>

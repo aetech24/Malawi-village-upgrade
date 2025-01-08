@@ -18,11 +18,11 @@ export const products = [
         image: Image1,
         category: "Fruit Juice",
         ingredients: [
-            "Fresh pressed apples",
-            "Natural apple pectin",
-            "Vitamin C",
-            "Filtered water",
-            "Natural apple enzymes"
+            { text: "Fresh pressed apples", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural apple pectin", image: "assets/12-Malawi-763.jpg" },
+            { text: "Vitamin C", image: "assets/12-Malawi-763.jpg" },
+            { text: "Filtered water", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural apple enzymes", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -33,11 +33,11 @@ export const products = [
         image: Image2,
         category: "Fruit Juice",
         ingredients: [
-            "Fresh squeezed oranges",
-            "Natural pulp",
-            "Vitamin C",
-            "Citrus bioflavonoids",
-            "Natural orange oils"
+            { text: "Fresh squeezed oranges", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural pulp", image: "assets/12-Malawi-763.jpg" },
+            { text: "Vitamin C", image: "assets/12-Malawi-763.jpg" },
+            { text: "Citrus bioflavonoids", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural orange oils", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -48,11 +48,11 @@ export const products = [
         image: Image3,
         category: "Fruit Juice",
         ingredients: [
-            "Fresh mango pulp",
-            "Natural mango fiber",
-            "Vitamin A & C",
-            "Filtered water",
-            "Natural fruit sugars"
+            { text: "Fresh mango pulp", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural mango fiber", image: "assets/12-Malawi-763.jpg" },
+            { text: "Vitamin A & C", image: "assets/12-Malawi-763.jpg" },
+            { text: "Filtered water", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural fruit sugars", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -63,11 +63,11 @@ export const products = [
         image: Image4,
         category: "Fruit Juice",
         ingredients: [
-            "Fresh passion fruit pulp",
-            "Natural passion fruit seeds",
-            "Vitamin C",
-            "Filtered water",
-            "Natural fruit acids"
+            { text: "Fresh passion fruit pulp", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural passion fruit seeds", image: "assets/12-Malawi-763.jpg" },
+            { text: "Vitamin C", image: "assets/12-Malawi-763.jpg" },
+            { text: "Filtered water", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural fruit acids", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -78,11 +78,11 @@ export const products = [
         image: Image5,
         category: "Mixed Drinks",
         ingredients: [
-            "Mixed tropical fruits",
-            "Natural fruit fibers",
-            "Mixed vitamins",
-            "Filtered water",
-            "Natural fruit extracts"
+            { text: "Mixed tropical fruits", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural fruit fibers", image: "assets/12-Malawi-763.jpg" },
+            { text: "Mixed vitamins", image: "assets/12-Malawi-763.jpg" },
+            { text: "Filtered water", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural fruit extracts", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -93,11 +93,11 @@ export const products = [
         image: Image6,
         category: "Smoothies",
         ingredients: [
-            "Fresh strawberries",
-            "Natural yogurt",
-            "Honey",
-            "Probiotic cultures",
-            "Almond milk"
+            { text: "Fresh strawberries", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural yogurt", image: "assets/12-Malawi-763.jpg" },
+            { text: "Honey", image: "assets/12-Malawi-763.jpg" },
+            { text: "Probiotic cultures", image: "assets/12-Malawi-763.jpg" },
+            { text: "Almond milk", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -108,11 +108,11 @@ export const products = [
         image: Image7,
         category: "Smoothies",
         ingredients: [
-            "Fresh ripe bananas",
-            "Greek yogurt",
-            "Honey",
-            "Cinnamon",
-            "Almond milk"
+            { text: "Fresh ripe bananas", image: "assets/12-Malawi-763.jpg" },
+            { text: "Greek yogurt", image: "assets/12-Malawi-763.jpg" },
+            { text: "Honey", image: "assets/12-Malawi-763.jpg" },
+            { text: "Cinnamon", image: "assets/12-Malawi-763.jpg" },
+            { text: "Almond milk", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -123,11 +123,11 @@ export const products = [
         image: Image8,
         category: "Smoothies",
         ingredients: [
-            "Mixed berries",
-            "Greek yogurt",
-            "Natural honey",
-            "Chia seeds",
-            "Coconut water"
+            { text: "Mixed berries", image: "assets/12-Malawi-763.jpg" },
+            { text: "Greek yogurt", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural honey", image: "assets/12-Malawi-763.jpg" },
+            { text: "Chia seeds", image: "assets/12-Malawi-763.jpg" },
+            { text: "Coconut water", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -138,11 +138,11 @@ export const products = [
         image: Image9,
         category: "Mixed Drinks",
         ingredients: [
-            "Coconut water",
-            "Pineapple",
-            "Mango",
-            "Passion fruit",
-            "Natural mint"
+            { text: "Coconut water", image: "assets/12-Malawi-763.jpg" },
+            { text: "Pineapple", image: "assets/12-Malawi-763.jpg" },
+            { text: "Mango", image: "assets/12-Malawi-763.jpg" },
+            { text: "Passion fruit", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural mint", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -153,12 +153,12 @@ export const products = [
         image: Image10,
         category: "Health Drinks",
         ingredients: [
-            "Spinach",
-            "Kale",
-            "Green apple",
-            "Cucumber",
-            "Ginger",
-            "Lemon"
+            { text: "Spinach", image: "assets/12-Malawi-763.jpg" },
+            { text: "Kale", image: "assets/12-Malawi-763.jpg" },
+            { text: "Green apple", image: "assets/12-Malawi-763.jpg" },
+            { text: "Cucumber", image: "assets/12-Malawi-763.jpg" },
+            { text: "Ginger", image: "assets/12-Malawi-763.jpg" },
+            { text: "Lemon", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -169,11 +169,11 @@ export const products = [
         image: Image1,
         category: "Vegetable Juice",
         ingredients: [
-            "Fresh carrots",
-            "Green apple",
-            "Ginger",
-            "Lemon",
-            "Turmeric"
+            { text: "Fresh carrots", image: "assets/12-Malawi-763.jpg" },
+            { text: "Green apple", image: "assets/12-Malawi-763.jpg" },
+            { text: "Ginger", image: "assets/12-Malawi-763.jpg" },
+            { text: "Lemon", image: "assets/12-Malawi-763.jpg" },
+            { text: "Turmeric", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -184,11 +184,11 @@ export const products = [
         image: Image2,
         category: "Vegetable Juice",
         ingredients: [
-            "Fresh beetroot",
-            "Apple",
-            "Carrot",
-            "Ginger",
-            "Lemon"
+            { text: "Fresh beetroot", image: "assets/12-Malawi-763.jpg" },
+            { text: "Apple", image: "assets/12-Malawi-763.jpg" },
+            { text: "Carrot", image: "assets/12-Malawi-763.jpg" },
+            { text: "Ginger", image: "assets/12-Malawi-763.jpg" },
+            { text: "Lemon", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -199,11 +199,11 @@ export const products = [
         image: Image3,
         category: "Fruit Juice",
         ingredients: [
-            "Fresh watermelon",
-            "Mint leaves",
-            "Lime juice",
-            "Natural electrolytes",
-            "Filtered water"
+            { text: "Fresh watermelon", image: "assets/12-Malawi-763.jpg" },
+            { text: "Mint leaves", image: "assets/12-Malawi-763.jpg" },
+            { text: "Lime juice", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural electrolytes", image: "assets/12-Malawi-763.jpg" },
+            { text: "Filtered water", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -214,11 +214,11 @@ export const products = [
         image: Image4,
         category: "Mixed Drinks",
         ingredients: [
-            "Fresh lemons",
-            "Natural honey",
-            "Mint leaves",
-            "Filtered water",
-            "Natural cane sugar"
+            { text: "Fresh lemons", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural honey", image: "assets/12-Malawi-763.jpg" },
+            { text: "Mint leaves", image: "assets/12-Malawi-763.jpg" },
+            { text: "Filtered water", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural cane sugar", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -229,12 +229,12 @@ export const products = [
         image: Image5,
         category: "Health Drinks",
         ingredients: [
-            "Green tea",
-            "Guarana",
-            "Ginger",
-            "Green apple",
-            "Natural caffeine",
-            "B-vitamins"
+            { text: "Green tea", image: "assets/12-Malawi-763.jpg" },
+            { text: "Guarana", image: "assets/12-Malawi-763.jpg" },
+            { text: "Ginger", image: "assets/12-Malawi-763.jpg" },
+            { text: "Green apple", image: "assets/12-Malawi-763.jpg" },
+            { text: "Natural caffeine", image: "assets/12-Malawi-763.jpg" },
+            { text: "B-vitamins", image: "assets/12-Malawi-763.jpg" }
         ]
     },
     {
@@ -245,12 +245,12 @@ export const products = [
         image: Image6,
         category: "Health Drinks",
         ingredients: [
-            "Orange",
-            "Lemon",
-            "Ginger",
-            "Turmeric",
-            "Echinacea",
-            "Honey"
+            { text: "Orange", image: "assets/12-Malawi-763.jpg" },
+            { text: "Lemon", image: "assets/12-Malawi-763.jpg" },
+            { text: "Ginger", image: "assets/12-Malawi-763.jpg" },
+            { text: "Turmeric", image: "assets/12-Malawi-763.jpg" },
+            { text: "Echinacea", image: "assets/12-Malawi-763.jpg" },
+            { text: "Honey", image: "assets/12-Malawi-763.jpg" }
         ]
     }
 ];
