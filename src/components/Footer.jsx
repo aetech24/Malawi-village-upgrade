@@ -53,11 +53,11 @@ const Footer = () => {
           <div className="flex flex-col gap-2 md:gap-6">
             <h1 className="md:text-xl font-semibold">Account</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2 cursor-pointer">
-              <li className="hover:text-yellow transition-colors">My Account</li>
-              <li className="hover:text-yellow transition-colors">Login / Sign Up</li>
-              <li className="hover:text-yellow transition-colors">Cart</li>
-              <li className="hover:text-yellow transition-colors">Wishlist</li>
-              <li className="hover:text-yellow transition-colors">Shop</li>
+             <Link><li className="hover:text-yellow transition-colors" >My Account</li></Link>
+             <Link to='/login'><li className="hover:text-yellow transition-colors" >Login / Sign Up</li></Link>
+              <li className="hover:text-yellow transition-colors" >Cart</li>
+              <li className="hover:text-yellow transition-colors" >Wishlist</li>
+              <Link to='/shop'><li className="hover:text-yellow transition-colors" >Shop</li></Link>
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
@@ -66,7 +66,7 @@ const Footer = () => {
               <li className="hover:text-yellow transition-colors">Privacy Policy</li>
               <li className="hover:text-yellow transition-colors">Terms of Use</li>
               <li className="hover:text-yellow transition-colors">FAQ</li>
-              <li className="hover:text-yellow transition-colors">Contact</li>
+              <Link to='/contact'><li className="hover:text-yellow transition-colors" >Contact</li></Link>
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
