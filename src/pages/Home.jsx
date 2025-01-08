@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Hero from '../assets/home-hero.png'
 import {HomeProducts} from '../constants/index'
 import Banner from '../components/Banner';
@@ -10,6 +10,15 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     const scrollContainerRef = useRef(null);
+    const [showScroll, setShowScroll] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowScroll(window.scrollY > 300);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
@@ -21,6 +30,10 @@ const Home = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollLeft += 300;
         }
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
   return (
@@ -98,6 +111,14 @@ const Home = () => {
                 ))}
             </div>
         </div>
+        {showScroll && (
+            <button
+                onClick={scrollToTop}
+                className="fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full"
+            >
+                ↑
+            </button>
+        )}
     </div>
   );
 };

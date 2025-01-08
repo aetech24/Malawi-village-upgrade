@@ -1,12 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Hero from '../assets/login-hero.png'
 import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png'
+import { useAuth } from "../components/AuthContext";
 
 
 const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const { login } = useAuth();
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+const handleLogin = (event) => {
+    event.preventDefault();
+    const userDetails = { name: "User Name" }; // Simulated user details.
+    login(userDetails); // Call login to update the state.
+  };
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
 
   return (
     <div className="flex lg:grid lg:grid-cols-2 items-center gap-4">
@@ -15,6 +36,7 @@ const Login = () => {
         </div>
         <div className="flex items-center max-lg:border max-lg:rounded-2xl  max-[340px]:mx-2 max-sm:m-8 max-lg:m-36 max-lg:py-16 max-sm:py-4 max-lg:shadow-lg max-sm:mt-24 w-full justify-center flex-col gap-2 md:gap-10">
           <form
+            onSubmit={handleLogin}
             action=""
             className="flex flex-col md:gap-10 gap-4 px-4 w-full md:px-20 "
           >
@@ -24,10 +46,10 @@ const Login = () => {
             <input
               type="email"
               name="userEmail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              // value={email}
+              // onChange={(e) => setEmail(e.target.value)}
               required
-              placeholder=""
+              placeholder="Email"
               className="text-lg md:text-xl outline-none border-b w-full bg-gray-100 p-3"
             />
             </label>
@@ -37,10 +59,10 @@ const Login = () => {
               <input
                 type='password'
                 name="userPassword"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                // value={password}
+                // onChange={(e) => setPassword(e.target.value)}
                 required
-                placeholder=""
+                placeholder="Password"
                 className="text-lg md:text-xl outline-none border-b w-full bg-gray-100 p-3"
               />
               </label>
@@ -48,6 +70,7 @@ const Login = () => {
             <div className=" text-white max-sm:mt-2 max-sm:text-sm flex flex-col   w-full gap-2">
               <button
                 //   onClick={}
+                type='submit'
                   className="bg-black w-full px-2 py-1 md:px-4 md:py-2 text-lg rounded-md font-semibold text-white transition duration-300 ease-in"
                 >
                   Log In
@@ -58,9 +81,17 @@ const Login = () => {
             </div>
           </form>
           <Link to="/register" className="text-black text-sm font-medium text-center">
-          Don't have an account? <span className="cursor-pointer hover:underline">Sign Up</span>
+          Do not have an account? <span className="cursor-pointer hover:underline">Sign Up</span>
         </Link>
         </div>
+        {showScroll && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full"
+        >
+          ↑
+        </button>
+      )}
       </div>
   )
 }

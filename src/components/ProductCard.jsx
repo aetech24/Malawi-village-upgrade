@@ -18,9 +18,9 @@ const ProductCard = ({ product, className = "" }) => {
   // Format price based on whether it's a string or an object
   const formatPrice = (price) => {
     if (typeof price === 'string') {
-      return `GH¢ ${price}`;
+      return `$ ${price}`;
     } else if (typeof price === 'object' && price !== null) {
-      return `GH¢ ${price.small} - ${price.big}`;
+      return `$ ${price.small} - ${price.big}`;
     }
     return 'Price not available';
   };

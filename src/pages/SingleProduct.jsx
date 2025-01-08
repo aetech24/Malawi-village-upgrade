@@ -31,9 +31,9 @@ const SingleProduct = () => {
 
   const formatPrice = (price) => {
     if (typeof price === 'string') {
-      return `GH¢ ${price}`;
+      return `$ ${price}`;
     } else if (typeof price === 'object' && price !== null) {
-      return `GH¢ ${price.small} - ${price.big}`;
+      return `$ ${price.small} - ${price.big}`;
     }
     return 'Price not available';
   };
@@ -104,6 +104,7 @@ const SingleProduct = () => {
             <div className='flex flex-col gap-4'>
               <h3 className='text-xl font-semibold mb-4'>Product Description</h3>
               <p>{product.description}</p>
+              <img src={product.image} alt=""></img>
             </div>
           ) : (
             <div className='flex flex-col gap-4'>
@@ -111,7 +112,10 @@ const SingleProduct = () => {
               <ul className='list-disc pl-6'>
                 {product.ingredients ? (
                   product.ingredients.map((ingredient, index) => (
-                    <li key={index}>{ingredient}</li>
+                    <li key={index} className='mb-4'>
+                      <p>{ingredient.text}</p>
+                      <img src={ingredient.image} alt={ingredient.text} className='w-full h-auto mt-2' />
+                    </li>
                   ))
                 ) : (
                   <>
