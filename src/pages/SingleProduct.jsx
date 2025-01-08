@@ -1,26 +1,28 @@
-import React, { useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
-import { products } from '../constants/products';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import ProductCard from '../components/ProductCard';
+import React, { useState, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { products } from "../constants/products";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import ProductCard from "../components/ProductCard";
+import { CartContext } from "../context/CartContext"; // Assuming you have a CartContext
 
 const SingleProduct = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('description');
-  
-  // Find the current product based on the ID
-  const product = products.find(p => p.id === parseInt(id));
-  
-  // Get related products (same category, excluding current product)
-  const relatedProducts = products.filter(p => 
-    p.category === product?.category && p.id !== product?.id
-  ).slice(0, 4);
+  const { addToCart } = useContext(CartContext); // Access addToCart from context
+  const [activeTab, setActiveTab] = useState("description");
 
+  // Find the product by ID
+  const product = products.find((p) => p.id === parseInt(id));
+
+  // Related products: same category, excluding the current product
+  const relatedProducts = products
+    .filter((p) => p.category === product?.category && p.id !== product?.id)
+    .slice(0, 4);
+
+  // Fallback for invalid product
   if (!product) {
     return (
       <div className="flex justify-center items-center min-h-screen">
@@ -29,53 +31,78 @@ const SingleProduct = () => {
     );
   }
 
+  // Format price based on type
   const formatPrice = (price) => {
-    if (typeof price === 'string') {
-      return `$ ${price}`;
-    } else if (typeof price === 'object' && price !== null) {
-      return `$ ${price.small} - ${price.big}`;
+    if (typeof price === "string") {
+      return `$${price}`;
+    } else if (typeof price === "object" && price !== null) {
+      return `$${price.small} - $${price.big}`;
     }
-    return 'Price not available';
+    return "Price not available";
   };
 
-  // Sample images for the swiper (you can modify this based on your needs)
-  const images = [product.image];
+  const handleAddToCart = () => {
+    const productToAdd = {
+      ...product,
+      quantity: 1, // Default quantity when adding to cart
+    };
+    addToCart(productToAdd);
+  };
+
+  // Swiper images: Ensure valid array
+  const images = Array.isArray(product.images) && product.images.length > 0 ? product.images : [product.image];
 
   return (
-    <div className='px-4 md:px-10 py-5 max-md:mt-16'>
-      <h1 className='text-4xl py-5'>Single Product</h1>
-      <div className='flex flex-col lg:flex-row items-center justify-between md:gap-16 gap-6 py-6'>
-        <img src={product.image} alt={product.name} className="w-full lg:w-1/2 h-[400px] object-cover rounded-lg" />
-        <div className='flex flex-col gap-6 lg:w-1/2'>
-          <p className='text-2xl font-semibold'>{product.name}</p>
+    <div className="px-4 md:px-10 py-5 max-md:mt-16">
+      <h1 className="text-4xl py-5">{product.name}</h1>
+      <div className="flex flex-col lg:flex-row items-center justify-between md:gap-16 gap-6 py-6">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full lg:w-1/2 h-[400px] object-cover rounded-lg"
+        />
+        <div className="flex flex-col gap-6 lg:w-1/2">
+          <p className="text-2xl font-semibold">{product.name}</p>
           <p>{product.description}</p>
-          <p className='font-semibold text-2xl'>{formatPrice(product.price)}</p>
-          {typeof product.price === 'object' && (
-            <select className='border px-4 py-3 border-black outline-none'>
-              <option value="small">Small - GH¢ {product.price.small}</option>
-              <option value="big">Large - GH¢ {product.price.big}</option>
+          <p className="font-semibold text-2xl">{formatPrice(product.price)}</p>
+          {typeof product.price === "object" && (
+            <select className="border px-4 py-3 border-black outline-none">
+              <option value="small">Small - ${product.price.small}</option>
+              <option value="big">Large - ${product.price.big}</option>
             </select>
           )}
-          <div className='flex flex-col gap-3'>
-            <button className='bg-yellow px-6 py-2 text-center'>Add to cart</button>
-            <button className='bg-black text-white px-6 py-2 text-center'>Add to wishlist</button>
+          <div className="flex flex-col gap-3">
+            <button
+              className="bg-yellow px-6 py-2 text-center"
+              onClick={handleAddToCart}
+            >
+              Add to Cart
+            </button>
+            <button className="bg-black text-white px-6 py-2 text-center">
+              Add to Wishlist
+            </button>
           </div>
         </div>
       </div>
 
       {/* Swiper Section */}
       {images.length > 1 && (
-        <div className='my-10 w-full lg:w-[48%]'>
+        <div className="my-10 w-full lg:w-[48%]">
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={15}
             slidesPerView={3}
             navigation
+            pagination={{ clickable: true }}
             className="mySwiper"
           >
             {images.map((image, index) => (
               <SwiperSlide key={index}>
-                <img src={image} alt={`Product ${index + 1}`} className="w-full h-[170px] object-cover" />
+                <img
+                  src={image}
+                  alt={`Product Slide ${index + 1}`}
+                  className="w-full h-[170px] object-cover rounded"
+                />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -83,38 +110,43 @@ const SingleProduct = () => {
       )}
 
       {/* Tabs Section */}
-      <div className='my-10 flex flex-col md:flex-row w-full items-start md:gap-16 gap-6'>
-        <div className='flex md:flex-col flex-row gap-4 border-gray-200'>
+      <div className="my-10 flex flex-col md:flex-row w-full items-start md:gap-16 gap-6">
+        <div className="flex md:flex-col flex-row gap-4 border-gray-200">
           <button
-            className={`px-6 md:w-60 py-2 ${activeTab === 'description' ? 'border-b-2 border-black bg-gray-100 p-2' : ''}`}
-            onClick={() => setActiveTab('description')}
+            className={`px-6 md:w-60 py-2 ${
+              activeTab === "description" ? "border-b-2 border-black bg-gray-100 p-2" : ""
+            }`}
+            onClick={() => setActiveTab("description")}
           >
             Description
           </button>
           <button
-            className={`px-6 md:w-60 py-2 ${activeTab === 'ingredients' ? 'border-b-2 border-black bg-gray-100 p-2' : ''}`}
-            onClick={() => setActiveTab('ingredients')}
+            className={`px-6 md:w-60 py-2 ${
+              activeTab === "ingredients" ? "border-b-2 border-black bg-gray-100 p-2" : ""
+            }`}
+            onClick={() => setActiveTab("ingredients")}
           >
             Ingredients
           </button>
         </div>
-        
-        <div className='md:py-6'>
-          {activeTab === 'description' ? (
-            <div className='flex flex-col gap-4'>
-              <h3 className='text-xl font-semibold mb-4'>Product Description</h3>
+
+        <div className="md:py-6">
+          {activeTab === "description" ? (
+            <div className="flex flex-col gap-4">
+              <h3 className="text-xl font-semibold mb-4">Product Description</h3>
               <p>{product.description}</p>
-              <img src={product.image} alt=""></img>
             </div>
           ) : (
-            <div className='flex flex-col gap-4'>
-              <h3 className='text-xl font-semibold mb-4'>Ingredients</h3>
-              <ul className='list-disc pl-6'>
-                {product.ingredients ? (
+            <div className="flex flex-col gap-4">
+              <h3 className="text-xl font-semibold mb-4">Ingredients</h3>
+              <ul className="list-disc pl-6">
+                {product.ingredients && product.ingredients.length > 0 ? (
                   product.ingredients.map((ingredient, index) => (
-                    <li key={index} className='mb-4'>
+                    <li key={index} className="mb-4">
                       <p>{ingredient.text}</p>
-                      <img src={ingredient.image} alt={ingredient.text} className='w-full h-auto mt-2' />
+                      {ingredient.image && (
+                        <img src={ingredient.image} alt={ingredient.text} className="w-full h-auto mt-2" />
+                      )}
                     </li>
                   ))
                 ) : (
@@ -134,17 +166,14 @@ const SingleProduct = () => {
 
       {/* Related Products Section */}
       {relatedProducts.length > 0 && (
-        <div className='mt-16 mb-10'>
-          <div className='flex items-center gap-2 mb-8'>
-            <div className='h-10 w-4 rounded-md bg-black'></div>
-            <h2 className='text-2xl font-semibold'>Related Products</h2>
+        <div className="mt-16 mb-10">
+          <div className="flex items-center gap-2 mb-8">
+            <div className="h-10 w-4 rounded-md bg-black"></div>
+            <h2 className="text-2xl font-semibold">Related Products</h2>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {relatedProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
