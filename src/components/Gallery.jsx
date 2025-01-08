@@ -14,7 +14,7 @@ import Gallery13 from '../assets/test4.jpg'
 
 const GalleryItem = ({ imageUrl, altText }) => {
   return (
-    <div className="rounded-lg overflow-hidden shadow-lg hover:scale-105 transform transition-all ">
+    <div className="rounded-lg overflow-hidden shadow-lg hover:scale-105 transform transition-all duration-500 ease-in-out">
       <img src={imageUrl} alt={altText} className="w-full h-60 object-cover" />
     </div>
   );
@@ -50,7 +50,7 @@ const Gallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 te">
           {galleryImages.map((item, index) => (
             <GalleryItem
               key={index}

@@ -1,0 +1,6 @@
+@media (max-width: 720px) {
+    .bg-yellow py-2 fixed lg:sticky top-0 z-50 w-full
+    {
+       display: none;
+    }
+}
