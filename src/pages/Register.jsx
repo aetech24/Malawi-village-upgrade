@@ -21,7 +21,7 @@ const Register = () => {
             action=""
             className="flex flex-col md:gap-10 gap-4 px-4 w-full md:px-20 "
           >
-            <img src={Logo} alt="" className='w-[120px] flex justify-center mx-auto' />
+            <img src={Logo} alt="" className='w-[120px] flex justify-center mx-auto md:hidden' />
             <div className='flex flex-col gap-3'>
                 <label htmlFor="" className='flex flex-col gap-3'> Name*
             <input
