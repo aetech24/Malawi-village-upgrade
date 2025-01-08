@@ -223,34 +223,34 @@ export const products = [
     },
   ];
 
-const Tea_ingredient = [
-  {
-    nettle: {
-      pain_relief:
-        "Nettle leaves can be applied topically to sore muscles or joints, and some people find relief from joint pain by taking an oral extract.",
+// const Tea_ingredient = [
+//   {
+//     nettle: {
+//       pain_relief:
+//         "Nettle leaves can be applied topically to sore muscles or joints, and some people find relief from joint pain by taking an oral extract.",
 
-      hay_fever:
-        "Nettle may help reduce sneezing and itching by reducing the amount of histamine the body produces in response to allergens.",
+//       hay_fever:
+//         "Nettle may help reduce sneezing and itching by reducing the amount of histamine the body produces in response to allergens.",
 
-      bone_health:
-        "Nettle tea is high in calcium and magnesium, which can help delay bone weakening.",
+//       bone_health:
+//         "Nettle tea is high in calcium and magnesium, which can help delay bone weakening.",
 
-      urinary_issues:
-        "Nettle root can help treat mictional difficulties associated with benign prostatic hyperplasia (BPH).",
+//       urinary_issues:
+//         "Nettle root can help treat mictional difficulties associated with benign prostatic hyperplasia (BPH).",
 
-      bleeding:
-        "Products containing stinging nettle can reduce bleeding during surgery and after dental surgery.",
+//       bleeding:
+//         "Products containing stinging nettle can reduce bleeding during surgery and after dental surgery.",
 
-      eczema: "Nettel helps with eczema, a dry, itchy rash",
+//       eczema: "Nettel helps with eczema, a dry, itchy rash",
 
-      respiratory_support:
-        "Nettle tincture can help with asthma, mucus conditions of the lungs, chronic coughs, flu, colds, bronchitis, and pneumonia.",
+//       respiratory_support:
+//         "Nettle tincture can help with asthma, mucus conditions of the lungs, chronic coughs, flu, colds, bronchitis, and pneumonia.",
 
-      immune_system:
-        "Nettle leaves are rich in vitamin C, which can help support the immune system.",
-    },
-  },
-];
+//       immune_system:
+//         "Nettle leaves are rich in vitamin C, which can help support the immune system.",
+//     },
+//   },
+// ];
     // {
     //     id: 1,
     //     name: "Apple Juice",
@@ -494,4 +494,3 @@ const Tea_ingredient = [
     //         { text: "Honey", image: "assets/12-Malawi-763.jpg" }
     //     ]
     // }
-];
