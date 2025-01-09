@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 const Billing = ({ shippingCost, onPlaceOrder }) => {
+  const { cartItems, clearCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -11,11 +13,16 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
   }, []);
 
   const calculateSubtotal = () => {
-    return products.reduce((total, product) => total + product.price.small, 0); // Default to small size price for now
+    return cartItems.reduce((total, item) => total + item.price.small * item.quantity, 0); // Default to small size price for now
   };
 
   const calculateTotal = () => {
     return calculateSubtotal() + shippingCost;
+  };
+
+  const handlePlaceOrder = () => {
+    onPlaceOrder();
+    clearCart();
   };
 
   return (
@@ -91,17 +98,17 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
         <div className="bg-white p-6">
           <h2 className="text-xl font-semibold mb-4">Your Order</h2>
           <div className="space-y-4">
-            {products.map((product) => (
-              <div key={product.id} className="flex items-center justify-between">
+            {cartItems.map((item) => (
+              <div key={item.id} className="flex items-center justify-between">
                 <div className="flex items-center gap-4 font-bold ">
                   <img
-                    src={product.image}
-                    alt={product.name}
+                    src={item.image}
+                    alt={item.name}
                     className="w-16 h-16 rounded-md object-cover"
                   />
-                  <span>{product.name}</span>
+                  <span>{item.name}</span>
                 </div>
-                <span className="font-bold">${product.price.small.toFixed(2)}</span>
+                <span className="font-bold">${item.price.small.toFixed(2)}</span>
               </div>
             ))}
             <div className="border-t border-gray-300 my-4"></div>
@@ -149,7 +156,7 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
 
             <button
               className="w-full mt-6 bg-black text-white py-2 rounded-md text-center hover:bg-gray-800"
-              onClick={onPlaceOrder}
+              onClick={handlePlaceOrder}
             >
               Place Order
             </button>
