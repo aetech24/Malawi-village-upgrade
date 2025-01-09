@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Hero from "../assets/home-hero.png";
-import { HomeProducts } from "../constants/index";
+// import { HomeProducts } from "../constants/index";
 import Banner from "../components/Banner";
 import { useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -68,7 +68,7 @@ const Home = () => {
       <div className="py-12 flex flex-col gap-6">
         <div className="flex items-center gap-2 px-4 md:px-10">
           <div className="h-10 w-4 rounded-md bg-black"></div>
-          <p className="text-xl font-semibold">Today</p>
+          <p className="text-xl font-semibold">Today&apos;s</p>
         </div>
         <div className="flex flex-col gap-5 px-4 md:px-10">
           <div className="flex items-center justify-between">
