@@ -8,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
 
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
     const [showScroll, setShowScroll] = useState(false);
 
@@ -28,11 +28,19 @@ const Register = () => {
 
     const handleSignUp = (event) => {
       event.preventDefault();
-      // Simulate successful sign-up and redirect to login page.
+      if (!isStrongPassword(password)) {
+        alert("Password must be at least 8 characters long and include a mix of letters, numbers, and special characters.");
+        return;
+      }
+      const userDetails = { name, email, password, phone };
+      localStorage.setItem("userDetails", JSON.stringify(userDetails));
       navigate("/login");
     };
-  
 
+    const isStrongPassword = (password) => {
+      const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      return regex.test(password);
+    };
 
   return (
     <div className="flex lg:grid lg:grid-cols-2 items-center gap-4 max-md:mt-5">
@@ -51,8 +59,8 @@ const Register = () => {
             <input
               type="name"
               name="userName"
-              // value={name}
-              // onChange={(e) => setName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
               placeholder="Name"
               className="text-lg md:text-xl outline-none border-b w-full bg-gray-100 p-3"
@@ -64,8 +72,8 @@ const Register = () => {
             <input
               type="email"
               name="userEmail"
-              // value={email}
-              // onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Email"
               className="text-lg md:text-xl outline-none border-b w-full bg-gray-100 p-3"
@@ -90,8 +98,8 @@ const Register = () => {
               <input
                 type='password'
                 name="userPassword"
-                // value={password}
-                // onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
                 placeholder="Password"
                 className="text-lg md:text-xl outline-none border-b w-full bg-gray-100 p-3"

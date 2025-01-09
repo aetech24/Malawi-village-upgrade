@@ -1,19 +1,12 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
+import PropTypes from 'prop-types';
 import { CartContext } from "../context/CartContext";
 
 const Billing = ({ shippingCost, onPlaceOrder }) => {
   const { cartItems, clearCart } = useContext(CartContext);
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    // Dynamically import the products
-    import("../constants/products").then((module) => {
-      setProducts(module.products);
-    });
-  }, []);
 
   const calculateSubtotal = () => {
-    return cartItems.reduce((total, item) => total + item.price.small * item.quantity, 0); // Default to small size price for now
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   const calculateTotal = () => {
@@ -99,31 +92,31 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
           <h2 className="text-xl font-semibold mb-4">Your Order</h2>
           <div className="space-y-4">
             {cartItems.map((item) => (
-              <div key={item.id} className="flex items-center justify-between">
+              <div key={item.id + item.size} className="flex items-center justify-between">
                 <div className="flex items-center gap-4 font-bold ">
                   <img
                     src={item.image}
                     alt={item.name}
                     className="w-16 h-16 rounded-md object-cover"
                   />
-                  <span>{item.name}</span>
+                  <span>{item.name} ({item.size})</span>
                 </div>
-                <span className="font-bold">${item.price.small.toFixed(2)}</span>
+                <span className="font-bold">GH¢ {item.price.toFixed(2)}</span>
               </div>
             ))}
             <div className="border-t border-gray-300 my-4"></div>
             <div className="flex justify-between items-center font-semibold">
               <span>Subtotal</span>
-              <span>${calculateSubtotal().toFixed(2)}</span>
+              <span>GH¢ {calculateSubtotal().toFixed(2)}</span>
             </div>
             <div className="flex justify-between items-center font-semibold">
               <span>Shipping</span>
-              <span>${shippingCost > 0 ? shippingCost.toFixed(2) : "Free"}</span>
+              <span>GH¢ {shippingCost > 0 ? shippingCost.toFixed(2) : "Free"}</span>
             </div>
             <div className="border-t border-gray-300 my-4"></div>
             <div className="flex justify-between items-center text-xl font-bold">
               <span>Total</span>
-              <span>${calculateTotal().toFixed(2)}</span>
+              <span>GH¢ {calculateTotal().toFixed(2)}</span>
             </div>
           </div>
 
@@ -165,6 +158,11 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
       </div>
     </div>
   );
+};
+
+Billing.propTypes = {
+  shippingCost: PropTypes.number.isRequired,
+  onPlaceOrder: PropTypes.func.isRequired,
 };
 
 export default Billing;
