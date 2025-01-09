@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-yellow py-2 fixed top-0 z-50 w-full">
+    <nav className="sticky bg-yellow py-2 fixed top-0 z-50 w-full">
       <div className="md:mx-10 mx-5 relative flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -74,10 +74,10 @@ const Navbar = () => {
             </div>
           ) : (
             <>
-              <Link to="/login" className=" bg-black text-white py-1 px-4 rounded-md hover:bg-black transition duration-200">
+              <Link to="/login" className=" bg-black text-white py-1 px-4 rounded-md hover:bg-opacity-30 transition duration-200">
                 Login
               </Link>
-              <Link to="/register" className=" bg-black text-white py-1 px-4 rounded-md hover:bg-black transition duration-200">
+              <Link to="/register" className=" bg-black text-white py-1 px-4 rounded-md hover:bg-opacity-30 transition duration-200">
                 Sign Up
               </Link>
             </>
@@ -118,7 +118,7 @@ const Navbar = () => {
                 handleLogout();
                 toggleNavbar();
               }}
-              className="bg-black text-white py-2 px-4 rounded-md"
+              className="bg-black text-white hover:bg-opacity-30 py-2 px-4 rounded-md"
             >
               Logout
             </button>
@@ -126,14 +126,14 @@ const Navbar = () => {
             <>
               <Link
                 to="/login"
-                className="bg-black text-white py-2 px-4 rounded-md"
+                className="bg-black text-white hover:bg-opacity-30 py-2 px-4 rounded-md"
                 onClick={toggleNavbar}
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="bg-black text-white py-2 px-4 rounded-md"
+                className="bg-black text-white hover:bg-opacity-30 py-2 px-4 rounded-md"
                 onClick={toggleNavbar}
               >
                 Sign Up
