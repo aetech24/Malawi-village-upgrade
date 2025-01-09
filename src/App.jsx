@@ -60,12 +60,12 @@ const App = () => {
               path="/billing"
               element={<Billing shippingCost={shippingCost} onPlaceOrder={handlePlaceOrder} />}
             />
-            <Route path='/product/:id' element={<SingleProduct />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/wishlist' element={<Wishlist />} />
-            <Route path='/products' element={<AllProducts />} />
+gleProduct />} />
+            <Route path="/login" ele'ent={<'ogin />} />
+            <Route path="/register" 'lement={<'egister />} />
+            <Route path="/cart" elem'nt={<'art />} />
+            <Route path="/wishlist" 'lement={<'ishlist />} />
+            <Route path="/products" 'lement={<'llProducts />} />
           </Routes>
           <Footer />
         </div>
