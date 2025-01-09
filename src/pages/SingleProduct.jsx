@@ -62,8 +62,8 @@ const SingleProduct = () => {
             </select>
           )}
           <div className='flex flex-col gap-3'>
-            <button className='bg-yellow px-6 py-2 text-center'>Add to cart</button>
-            <button className='bg-black text-white px-6 py-2 text-center'>Add to wishlist</button>
+            <button className='bg-yellow hover:bg-opacity-30 px-6 py-2 text-center'>Add to cart</button>
+            <button className='bg-black hover:bg-opacity-30 text-white px-6 py-2 text-center'>Add to wishlist</button>
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@ const SingleProduct = () => {
                         <div className='flex flex-col gap-2'>
                             <p className="font-semibold text-xl">{item.text}</p>
                             <p>{item.description}</p>
-                            <button className="text-white bg-black py-2 px-4 rounded-full w-fit">Read More</button>
+                            <button className="text-white bg-black hover:bg-opacity-30 py-2 px-4 rounded-full w-fit">Read More</button>
                             <hr />
                         </div>
                     </div>
