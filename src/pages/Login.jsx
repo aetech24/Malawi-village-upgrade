@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Hero from '../assets/login-hero.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import Logo from '../assets/logo.png'
 import { useAuth } from "../components/AuthContext";
 
@@ -8,6 +8,7 @@ import { useAuth } from "../components/AuthContext";
 const Login = () => {
   const { login } = useAuth();
   const [showScroll, setShowScroll] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,7 @@ const handleLogin = (event) => {
     event.preventDefault();
     const userDetails = { name: "User Name" }; // Simulated user details.
     login(userDetails); // Call login to update the state.
+    navigate('/'); // Redirect after logout
   };
     // const [email, setEmail] = useState("");
     // const [password, setPassword] = useState("");
