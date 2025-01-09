@@ -47,17 +47,17 @@ const Navbar = () => {
 
         {/* Desktop Icons */}
         <div className="hidden lg:flex items-center gap-4">
-          <button onClick={() => navigate('/wishlist')} className="hover:text-white transition duration-200">
+          <button onClick={() => navigate('/wishlist')} className="hover:text-white transition duration-200 text-[23.5px]">
             <AiOutlineHeart />
           </button>
-          <button onClick={() => navigate('/cart')} className="hover:text-white transition duration-200">
+          <button onClick={() => navigate('/cart')} className="hover:text-white transition duration-200 text-[23.5px]">
             <AiOutlineShoppingCart />
           </button>
           {isAuthenticated ? (
             <div className="relative">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="hover:text-white transition duration-200"
+                className="hover:text-white transition duration-200 text-[23.5px]"
               >
                 <AiOutlineUser />
               </button>
