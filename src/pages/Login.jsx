@@ -9,6 +9,8 @@ const Login = () => {
   const { login } = useAuth();
   const [showScroll, setShowScroll] = useState(false);
   const navigate = useNavigate(); // Initialize navigate
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +26,15 @@ const Login = () => {
 
 const handleLogin = (event) => {
     event.preventDefault();
-    const userDetails = { name: "User Name" }; // Simulated user details.
-    login(userDetails); // Call login to update the state.
-    navigate('/'); // Redirect after logout
+    const storedUserDetails = JSON.parse(localStorage.getItem("userDetails"));
+    if (storedUserDetails && storedUserDetails.email === email && storedUserDetails.password === password) {
+      const userDetails = { name: storedUserDetails.name };
+      login(userDetails);
+      navigate('/');
+    } else {
+      alert("Invalid email or password.");
+    }
   };
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
 
   return (
     <div className="flex lg:grid lg:grid-cols-2 items-center gap-4">
@@ -48,8 +53,8 @@ const handleLogin = (event) => {
             <input
               type="email"
               name="userEmail"
-              // value={email}
-              // onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Email"
               className="text-lg md:text-xl outline-none border-b w-full bg-gray-100 p-3"
@@ -61,8 +66,8 @@ const handleLogin = (event) => {
               <input
                 type='password'
                 name="userPassword"
-                // value={password}
-                // onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
                 placeholder="Password"
                 className="text-lg md:text-xl outline-none border-b w-full bg-gray-100 p-3"
