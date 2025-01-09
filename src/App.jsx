@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
@@ -12,8 +12,8 @@ import Register from './pages/Register';
 import AllProducts from './pages/AllProducts';
 import Cart from './pages/Cart';
 import Wishlist from './pages/Wishlist';
-import { CartContext, CartProvider } from './context/CartContext';
-import { WishlistContext } from './context/WishlistContext';
+import { CartProvider } from './context/CartContext';
+import { WishlistProvider } from './context/WishlistContext';
 
 const App = () => {
   const shippingCost = 5.0;
@@ -21,35 +21,9 @@ const App = () => {
     alert('Order placed successfully!');
   };
 
-  const [cart, setCart] = useState([]);
-  const [wishlist, setWishlist] = useState([]);
-
-  const addToCart = (product) => {
-    setCart((prevCart) => {
-      const existingProduct = prevCart.find((item) => item.id === product.id);
-      if (existingProduct) {
-        return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      }
-      return [...prevCart, { ...product, quantity: 1 }];
-    });
-    alert('Product added to cart!');
-  };
-
-  const addToWishlist = (product) => {
-    setWishlist((prevWishlist) => {
-      if (!prevWishlist.find((item) => item.id === product.id)) {
-        return [...prevWishlist, product];
-      }
-      return prevWishlist;
-    });
-    alert('Product added to wishlist!');
-  };
-
   return (
     <CartProvider>
-      <WishlistContext.Provider value={{ wishlist, addToWishlist, setWishlist }}>
+      <WishlistProvider>
         <div>
           <Navbar />
           <Routes>
@@ -60,16 +34,16 @@ const App = () => {
               path="/billing"
               element={<Billing shippingCost={shippingCost} onPlaceOrder={handlePlaceOrder} />}
             />
-gleProduct />} />
-            <Route path="/login" ele'ent={<'ogin />} />
-            <Route path="/register" 'lement={<'egister />} />
-            <Route path="/cart" elem'nt={<'art />} />
-            <Route path="/wishlist" 'lement={<'ishlist />} />
-            <Route path="/products" 'lement={<'llProducts />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/products" element={<AllProducts />} />
           </Routes>
           <Footer />
         </div>
-      </WishlistContext.Provider>
+      </WishlistProvider>
     </CartProvider>
   );
 };
