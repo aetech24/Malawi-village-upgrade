@@ -139,7 +139,7 @@ const Cart = () => {
             <span>Total</span>
             <span>${(subtotal - discount + delivery).toFixed(2)}</span>
           </div>
-          <button className="mt-4 w-full bg-black text-white py-2 rounded">
+          <button className="mt-4 w-full bg-black hover:bg-opacity-30 duration-200 text-white py-2 rounded">
             Proceed to Checkout
           </button>
         </div>
