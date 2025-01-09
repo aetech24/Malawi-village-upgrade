@@ -11,36 +11,38 @@ export const CartProvider = ({ children }) => {
   });
 
   // Add item to cart
-  const addToCart = (product, size = "small") => {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.id === product.id && item.size === size);
-      if (existingItem) {
-        // Update quantity if item exists
-        return prevItems.map((item) =>
-          item.id === product.id && item.size === size
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
+  const addToCart = (product) => {
+    setCartItems((prevCart) => {
+      const existingProduct = prevCart.find((item) => item.id === product.id && item.size === product.size);
+      if (existingProduct) {
+        return prevCart.map((item) =>
+          item.id === product.id && item.size === product.size ? { ...item, quantity: item.quantity + 1 } : item
         );
       }
-      // Add new item to cart
-      return [...prevItems, { ...product, size, quantity: 1 }];
+      return [...prevCart, { ...product, quantity: 1 }];
     });
+    alert('Product added to cart!');
   };
 
   // Remove item from cart
-  const removeFromCart = (id, size) => {
-    setCartItems((prevItems) => prevItems.filter((item) => !(item.id === id && item.size === size)));
+  const removeFromCart = (productId, size) => {
+    setCartItems((prevCart) =>
+      prevCart.filter((item) => !(item.id === productId && item.size === size))
+    );
   };
 
   // Update quantity of a product
-  const updateQuantity = (id, size, quantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id && item.size === size
-          ? { ...item, quantity: quantity > 0 ? quantity : 1 }
-          : item
+  const updateQuantity = (productId, size, quantity) => {
+    setCartItems((prevCart) =>
+      prevCart.map((item) =>
+        item.id === productId && item.size === size ? { ...item, quantity } : item
       )
     );
+  };
+
+  // Clear the cart
+  const clearCart = () => {
+    setCartItems([]);
   };
 
   // Calculate total cart value
@@ -61,6 +63,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
+        clearCart,
         totalValue,
         totalItems,
       }}

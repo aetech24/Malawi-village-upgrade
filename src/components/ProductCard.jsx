@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { CartContext } from '../context/CartContext';
+import { WishlistContext } from '../context/WishlistContext';
 
 const ProductCard = ({ product, className = "" }) => {
   const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false);
+  const { addToCart } = useContext(CartContext);
+  const { addToWishlist } = useContext(WishlistContext);
 
   const handleClick = () => {
     navigate(`/product/${product.id}`);
@@ -13,6 +18,12 @@ const ProductCard = ({ product, className = "" }) => {
   const handleFavoriteClick = (e) => {
     e.stopPropagation(); // Prevent navigation when clicking the favorite icon
     setIsFavorite(!isFavorite);
+    addToWishlist(product);
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation(); // Prevent navigation when clicking the add to cart button
+    addToCart(product);
   };
 
   // Format price based on whether it's a string or an object
@@ -45,7 +56,10 @@ const ProductCard = ({ product, className = "" }) => {
         alt={product.name}
         className="w-full h-[200px] object-cover"
       />
-      <div className="w-full cursor-pointer bg-black hover:bg-opacity-30 duration-200 text-white p-2 text-center">
+      <div 
+        className="w-full cursor-pointer bg-black hover:bg-opacity-30 duration-200 text-white p-2 text-center"
+        onClick={handleAddToCart}
+      >
         Add to cart
       </div>
       <div className="py-4">
@@ -54,6 +68,21 @@ const ProductCard = ({ product, className = "" }) => {
       </div>
     </div>
   );
+};
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        small: PropTypes.number,
+        big: PropTypes.number,
+      }),
+    ]).isRequired,
+  }).isRequired,
+  className: PropTypes.string,
 };
 
 export default ProductCard;
