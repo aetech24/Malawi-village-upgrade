@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import { CgMenu } from 'react-icons/cg';
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineHeart, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 import { useAuth } from '../components/AuthContext';
-import {
-  AiOutlineHeart,
-  AiOutlineShoppingCart,
-  AiOutlineUser,
-} from 'react-icons/ai';
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
@@ -23,174 +18,130 @@ const Navbar = () => {
   const handleLogout = () => {
     logout();
     setDropdownOpen(false);
+    navigate('/'); // Redirect after logout
   };
 
   return (
-    <nav className='bg-yellow py-2 fixed lg:sticky top-0 z-50 w-full'>
-      <div className='md:mx-10 mx-5 relative'>
-        <div className='flex justify-between items-center'>
-          <div className='flex items-center flex-shrink-0 gap-2'>
-            <div>
-              <img src={Logo} alt='' className='w-16 h-16' />
-            </div>
-          </div>
-          <div className='hidden lg:flex items-center space-x-6 text-lg font-medium'>
-            <Link to='/' className='text-black hover:text-white transition duration-200 ease-in'>
-              Home
-            </Link>
-            <Link
-              to='/products'
-              className='text-black hover:text-white transition duration-200 ease-in'
-            >
-          Shop
-            </Link>
-            <Link
-              to='/about'
-              className='text-black hover:text-white transition duration-200 ease-in'
-            >
-              About Us
-            </Link>
-            <Link
-              to='/contact'
-              className='text-black hover:text-white transition duration-200 ease-in'
-            >
-              Contact Us
-            </Link>
-          </div>
-          <div className='hidden lg:flex items-center gap-4'>
-              <button onClick={() => navigate('/wishlist')} className='hover:text-white duration-200 ease-in'>
-                <AiOutlineHeart />
-              </button>
-              <button onClick={() => navigate('/cart')} className='hover:text-white duration-200 ease-in'>
-                <AiOutlineShoppingCart />
-              </button>
-              <button onClick={() => setDropdownOpen(!dropdownOpen)} className='hover:text-white duration-200 ease-in'>
+    <nav className="bg-yellow py-2 fixed top-0 z-50 w-full">
+      <div className="md:mx-10 mx-5 relative flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <img src={Logo} alt="Logo" className="w-16 h-16" />
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center space-x-6 text-lg font-medium">
+          <Link to="/" className="text-black hover:text-white transition duration-200">
+            Home
+          </Link>
+          <Link to="/products" className="text-black hover:text-white transition duration-200">
+            Shop
+          </Link>
+          <Link to="/about" className="text-black hover:text-white transition duration-200">
+            About Us
+          </Link>
+          <Link to="/contact" className="text-black hover:text-white transition duration-200">
+            Contact Us
+          </Link>
+        </div>
+
+        {/* Desktop Icons */}
+        <div className="hidden lg:flex items-center gap-4">
+          <button onClick={() => navigate('/wishlist')} className="hover:text-white transition duration-200">
+            <AiOutlineHeart />
+          </button>
+          <button onClick={() => navigate('/cart')} className="hover:text-white transition duration-200">
+            <AiOutlineShoppingCart />
+          </button>
+          {isAuthenticated ? (
+            <div className="relative">
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="hover:text-white transition duration-200"
+              >
                 <AiOutlineUser />
               </button>
               {dropdownOpen && (
-                <div className='absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg'>
+                <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg">
                   <button
                     onClick={handleLogout}
-                    className='block w-full text-left px-4 py-2 text-black hover:bg-blue-50 transition duration-200 ease-in'
+                    className="block w-full text-left px-4 py-2 text-black hover:bg-blue-50 transition duration-200"
                   >
                     Logout
                   </button>
                 </div>
               )}
             </div>
-            </div>
           ) : (
             <>
-              <ul className='flex items-center gap-2 lg:gap-4 duration-200 ease-in'>
-                <Link
-                  to='/login'
-                  className='bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium hover:bg-blue-50 transition'
-                >
-                  Login
-                </Link>
-                <Link
-                  to='/register'
-                  className='bg-white hidden lg:block text-black py-1 px-2 md:px-4 md:py-2 rounded-md font-medium hover:bg-blue-50 transition'
-                >
-                  Sign Up
-                </Link>
-              </ul>
+              <Link to="/login" className=" bg-black text-white py-1 px-4 rounded-md hover:bg-black transition duration-200">
+                Login
+              </Link>
+              <Link to="/register" className=" bg-black text-white py-1 px-4 rounded-md hover:bg-black transition duration-200">
+                Sign Up
+              </Link>
             </>
           )}
-          <div className='lg:hidden md:flex justify-end'>
-            <button onClick={toggleNavbar} className='text-black'>
-              {mobileDrawerOpen ? (
-                <AiOutlineClose className='text-3xl font-bold' />
-              ) : (
-                <CgMenu className='text-3xl font-bold' />
-              )}
-            </button>
-          </div>
         </div>
 
-        {mobileDrawerOpen && (
-          <div className='fixed left-0 z-20 w-3/4 h-[95vh] p-12 flex flex-col items-center bg-yellow transition-all duration-300 ease-linear lg:hidden text-black gap-4 text-semibold'>
-            <Link
-              to='/'
-              className='text-black hover:text-white transition'
-              onClick={toggleNavbar}
-            >
-              <p className='text-xl font-semibold cursor-pointer'>Home</p>
-            </Link>
-            <Link
-              to='/products'
-              className='text-black hover:text-white transition'
-              onClick={toggleNavbar}
-            >
-              <p className='text-xl font-semibold cursor-pointer'>Shop</p>
-            </Link>
-            <Link
-              to='/about'
-              className='text-black hover:text-white transition'
-              onClick={toggleNavbar}
-            >
-              <p className='text-xl font-semibold cursor-pointer'>About Us</p>
-            </Link>
-            <Link
-              to='/contact'
-              className='text-black hover:text-white transition'
-              onClick={toggleNavbar}
-            >
-              <p className='text-xl font-semibold cursor-pointer'>Contact Us</p>
-            </Link>
-            <hr className='text-black' />
-            <div className='flex flex-col gap-2'>
-                  <div className='fixed left-0 z-20 w-3/4 h-[90vh] p-0 flex flex-col items-center bg-yellow transition-all duration-300 ease-linear lg:hidden text-black gap-4 text-semibold'>
-                  <Link
-                    to='/wishlist'
-                    className='text-black hover:text-white transition'
-                    onClick={toggleNavbar}
-                  >
-                    <p className='text-xl font-semibold cursor-pointer'>
-                      Wishlist
-                    </p>
-                  </Link>
-                  <Link
-                    to='/cart'
-                    className='text-black hover:text-white transition'
-                    onClick={toggleNavbar}
-                  >
-                    <p className='text-xl font-semibold cursor-pointer'>Cart</p>
-                  </Link>
-                  <button
-                    onClick={handleLogout}
-                    className='text-white bg-black py-2 rounded-md px-4 text-center'
-                  >
-                    Log Out
-                  </button>
-                </div>
-                </>
-              ) : (
-                <>
-                  <Link
-                    to='/login'
-                    className='text-black hover:text-white transition'
-                    onClick={toggleNavbar}
-                  >
-                    <p className='text-white bg-black py-2 rounded-md px-4 text-center'>
-                      Log In
-                    </p>
-                  </Link>
-                  <Link
-                    to='/register'
-                    className='text-black hover:text-white transition'
-                    onClick={toggleNavbar}
-                  >
-                    <p className='text-white bg-black py-2 rounded-md px-4 text-center'>
-                      Sign Up
-                    </p>
-                  </Link>
-                </>
-              )}
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          <button onClick={toggleNavbar} className="text-black">
+            {mobileDrawerOpen ? (
+              <AiOutlineClose className="text-3xl" />
+            ) : (
+              <CgMenu className="text-3xl" />
+            )}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Drawer */}
+      {mobileDrawerOpen && (
+        <div className="fixed left-0 top-0 z-40 w-3/4 h-full bg-yellow p-12 flex flex-col items-center gap-4">
+          <Link to="/" className="text-xl font-semibold" onClick={toggleNavbar}>
+            Home
+          </Link>
+          <Link to="/products" className="text-xl font-semibold" onClick={toggleNavbar}>
+            Shop
+          </Link>
+          <Link to="/about" className="text-xl font-semibold" onClick={toggleNavbar}>
+            About Us
+          </Link>
+          <Link to="/contact" className="text-xl font-semibold" onClick={toggleNavbar}>
+            Contact Us
+          </Link>
+          <hr className="w-full border-t-2 border-black my-4" />
+          {isAuthenticated ? (
+            <button
+              onClick={() => {
+                handleLogout();
+                toggleNavbar();
+              }}
+              className="bg-black text-white py-2 px-4 rounded-md"
+            >
+              Logout
+            </button>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className="bg-black text-white py-2 px-4 rounded-md"
+                onClick={toggleNavbar}
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="bg-black text-white py-2 px-4 rounded-md"
+                onClick={toggleNavbar}
+              >
+                Sign Up
+              </Link>
+            </>
+          )}
+        </div>
+      )}
     </nav>
   );
 };
