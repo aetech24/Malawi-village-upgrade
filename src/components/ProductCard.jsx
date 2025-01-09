@@ -45,7 +45,7 @@ const ProductCard = ({ product, className = "" }) => {
         alt={product.name}
         className="w-full h-[200px] object-cover"
       />
-      <div className="w-full cursor-pointer bg-black text-white p-2 text-center">
+      <div className="w-full cursor-pointer bg-black hover:bg-opacity-30 duration-200 text-white p-2 text-center">
         Add to cart
       </div>
       <div className="py-4">

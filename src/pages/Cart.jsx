@@ -84,6 +84,7 @@ const Cart = () => {
             <p>Your cart is empty</p> 
           )}
         </div>
+<<<<<<< HEAD
       </div>
 
       <div className="w-full md:w-1/3 border p-4 rounded-lg shadow mt-8">
@@ -91,6 +92,31 @@ const Cart = () => {
         <div className="flex justify-between mb-2">
           <span>Sub Total</span>
           <span>${subtotal.toFixed(2)}</span>
+=======
+        {/* Order Summary */}
+        <div className="w-full md:w-1/3 border p-4 rounded-lg shadow">
+          <h2 className="text-lg font-bold mb-4">Your Order Summary</h2>
+          <div className="flex justify-between mb-2">
+            <span>Sub Total</span>
+            <span>${subtotal.toFixed(2)}</span>
+          </div>
+          <div className="flex justify-between mb-2">
+            <span>Discount</span>
+            <span>${discount.toFixed(2)}</span>
+          </div>
+          <div className="flex justify-between mb-2">
+            <span>Delivery</span>
+            <span>${delivery.toFixed(2)}</span>
+          </div>
+          <hr className="my-4" />
+          <div className="flex justify-between font-bold">
+            <span>Total</span>
+            <span>${(subtotal - discount + delivery).toFixed(2)}</span>
+          </div>
+          <button className="mt-4 w-full bg-black hover:bg-opacity-30 duration-200 text-white py-2 rounded">
+            Proceed to Checkout
+          </button>
+>>>>>>> 45744e1595504437537acc5135864ffd29ea5beb
         </div>
         <div className="flex justify-between mb-2">
           <span>Discount</span>
