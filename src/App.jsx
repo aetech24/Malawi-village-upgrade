@@ -22,7 +22,6 @@ const App = () => {
   const handlePlaceOrder = () => {
     alert('Order placed successfully!');
   };
-
   const [cart, setCart] = useState([]);
 
   const handleAddToCart = (product) => {

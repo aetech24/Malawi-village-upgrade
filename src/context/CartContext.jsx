@@ -43,8 +43,6 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // Clear all items from the cart
-  
   // Calculate total cart value
   const totalValue = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
