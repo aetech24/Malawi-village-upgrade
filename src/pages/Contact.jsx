@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+// import { FaClock } from 'react-icons/fa';
+
 
 const Contact = () => {
   const [showScroll, setShowScroll] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +24,20 @@ const Contact = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:info@malawivillage.com?subject=Contact Form Submission&body=Name: ${formData.name}%0D%0APhone: ${formData.phone}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <main className="md:p-8 max-md:mt-16 min-h-screen">
       <div className="max-w-6xl mx-auto rounded-lg p-8">
@@ -27,7 +49,7 @@ const Contact = () => {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form Section */}
           <div>
-            <form action="" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">Username*</label>
                 <input
@@ -36,6 +58,8 @@ const Contact = () => {
                   name="name"
                   placeholder="Your Full Name*"
                   required
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full p-3 border bg-gray-50 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -47,6 +71,8 @@ const Contact = () => {
                   name="phone"
                   placeholder="Your Phone Number*"
                   required
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full p-3 border bg-gray-50 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -58,6 +84,8 @@ const Contact = () => {
                   name="email"
                   placeholder="Your Email Address*"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full p-3 border bg-gray-50 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -69,6 +97,8 @@ const Contact = () => {
                   rows="6"
                   placeholder="Your Message*"
                   required
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full p-3 border bg-gray-50 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 ></textarea>
               </div>
@@ -91,7 +121,11 @@ const Contact = () => {
                 <FaPhoneAlt className="text-black text-2xl" />
                 <div>
                   <h4 className="font-semibold text-gray-700">Phone Number</h4>
-                  <p className="text-gray-600">+233 248 9999</p>
+                  <p className="text-gray-600">
+                    <a href="tel:+14694322272" className="hover:underline">
+                      +1(469)432-2272
+                    </a>
+                  </p>
                 </div>
               </div>
 
@@ -100,20 +134,20 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-gray-700">Email</h4>
                   <p>
-                    <a href="mailto:malawivillage@gmail.com" className="text-black hover:underline">
-                      malawivillage@gmail.com
+                    <a href="mailto:info@malawivillage.com" className="text-black hover:underline">
+                      info@malawivillage.com
                     </a>
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
+              {/* <div className="flex items-center space-x-4">
                 <FaClock className="text-black text-2xl" />
                 <div>
                   <h4 className="font-semibold text-gray-700">Working Hours</h4>
                   <p className="text-gray-600">Monday - Thursday</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

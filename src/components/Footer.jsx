@@ -26,6 +26,7 @@ const Footer = () => {
             <p>Get 10% off your first order</p>
             <div className="flex flex-col max-[329.8px]:flex-col">
               <input
+                formAction="info@malawivillage.com"
                 type="text"
                 placeholder="Enter your email"
                 className="bg-transparent border border-white py-2 px-4 rounded-md"
@@ -34,9 +35,9 @@ const Footer = () => {
               />
               <button
                 onClick={handleSubscribe}
-                className="bg-yellow text-black py-2 px-4 rounded-md ml-2 max-[329.8px]:ml-0 max-[329.8px]:mt-2"
+                className="bg-yellow text-black hover:bg-white duration-200 py-2 px-4 rounded-md ml-0 float-right mt-2 max-[720px]:ml-0 max-[720px]:mt-2"
               >
-                Subscribe
+                Subscribe Now
               </button>
             </div>
           </div>
@@ -45,28 +46,38 @@ const Footer = () => {
           <div className="flex flex-col gap-2 md:gap-6">
             <h1 className="md:text-xl font-semibold">Support</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2">
-              <li>111 Accra DH 1515, Ghana</li>
-              <li>exclusive@gmail.com</li>
-              <li>+233 123 456 789</li>
+              <li>
+                <address>Texas Dallas</address>
+              </li>
+              <li>
+                <a href="mailto:info@malawivillage.com" className="hover:text-yellow duration-200 transition-colors">
+                  info@malawivillage.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+14694322272" className="hover:text-yellow duration-200 transition-colors">
+                  +1(469)432-2272
+                </a>
+              </li>
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
             <h1 className="md:text-xl font-semibold">Account</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2 cursor-pointer">
-             <Link><li className="hover:text-yellow transition-colors" >My Account</li></Link>
-             <Link to='/login'><li className="hover:text-yellow transition-colors" >Login / Sign Up</li></Link>
-              <li className="hover:text-yellow transition-colors" >Cart</li>
-              <li className="hover:text-yellow transition-colors" >Wishlist</li>
-              <Link to='/shop'><li className="hover:text-yellow transition-colors" >Shop</li></Link>
+             <Link><li className="hover:text-yellow duration-200 transition-colors" >My Account</li></Link>
+             <Link to='/login'><li className="hover:text-yellow duration-200 transition-colors" >Login / Sign Up</li></Link>
+              <li className="hover:text-yellow duration-200 transition-colors" >Cart</li>
+              <li className="hover:text-yellow duration-200 transition-colors" >Wishlist</li>
+              <Link to='/shop'><li className="hover:text-yellow duration-200 transition-colors" >Shop</li></Link>
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
             <h1 className="md:text-xl font-semibold">Quick Links</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2 cursor-pointer">
-              <li className="hover:text-yellow transition-colors">Privacy Policy</li>
-              <li className="hover:text-yellow transition-colors">Terms of Use</li>
-              <li className="hover:text-yellow transition-colors">FAQ</li>
-              <Link to='/contact'><li className="hover:text-yellow transition-colors" >Contact</li></Link>
+              <li className="hover:text-yellow duration-200 transition-colors">Privacy Policy</li>
+              <li className="hover:text-yellow duration-200 transition-colors">Terms of Use</li>
+              <li className="hover:text-yellow duration-200 transition-colors">FAQ</li>
+              <Link to='/contact'><li className="hover:text-yellow duration-200 transition-colors" >Contact</li></Link>
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
@@ -77,7 +88,7 @@ const Footer = () => {
                 href="https://facebook.com/malawifreshdrinks" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-yellow transition-colors"
+                className="hover:text-yellow duration-200 transition-colors"
               >
                 <FaFacebook className="w-8 h-8" />
               </a>
@@ -85,7 +96,7 @@ const Footer = () => {
                 href="https://www.instagram.com/malawi_village?igsh=YzljYTk1ODg3Zg==" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-yellow transition-colors"
+                className="hover:text-yellow duration-200 transition-colors"
               >
                 <FaInstagram className="w-8 h-8" />
               </a>
@@ -93,7 +104,7 @@ const Footer = () => {
                 href="https://www.tiktok.com/@malawi_village?_t=ZT-8srz3UMpCFK&_r=1" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-yellow transition-colors"
+                className="hover:text-yellow duration-200 transition-colors"
               >
                 <FaTiktok className="w-8 h-8" />
               </a>
