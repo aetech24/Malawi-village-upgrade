@@ -1,87 +1,64 @@
-import React, { createContext, useState, useEffect, useCallback } from "react";
-import PropTypes from 'prop-types';
+import React, { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
+// Create Wishlist Context
 export const WishlistContext = createContext();
 
-const STORAGE_KEY = 'malawi_village_wishlist';
-
 export const WishlistProvider = ({ children }) => {
-  // Initialize wishlist from localStorage with enhanced error handling
   const [wishlist, setWishlist] = useState(() => {
-    try {
-      const storedWishlist = localStorage.getItem(STORAGE_KEY);
-      if (!storedWishlist) return [];
-      
-      const parsedWishlist = JSON.parse(storedWishlist);
-      return Array.isArray(parsedWishlist) ? parsedWishlist : [];
-    } catch (error) {
-      console.error("Error loading wishlist from localStorage:", error);
-      return [];
-    }
+    // Initialize wishlist from local storage if available
+    const savedWishlist = localStorage.getItem("wishlistItems");
+    return savedWishlist ? JSON.parse(savedWishlist) : [];
   });
 
-  // Memoized function to save to localStorage
-  const saveToLocalStorage = useCallback((items) => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-    } catch (error) {
-      console.error("Error saving wishlist to localStorage:", error);
-    }
-  }, []);
-
-  // Update localStorage whenever wishlist changes
-  useEffect(() => {
-    saveToLocalStorage(wishlist);
-  }, [wishlist, saveToLocalStorage]);
-
-  // Add item to wishlist with validation
-  const addToWishlist = useCallback((item) => {
-    if (!item || !item.id) {
-      console.error("Invalid item format");
-      return;
-    }
-
-    setWishlist((prevItems) => {
-      if (!prevItems.some((existingItem) => existingItem.id === item.id)) {
-        const newWishlist = [...prevItems, item];
-        return newWishlist;
+  // Add item to wishlist
+  const addToWishlist = (product) => {
+    setWishlist((prevWishlist) => {
+      const existingProduct = prevWishlist.find(
+        (item) => item.id === product.id
+      );
+      if (existingProduct) {
+        return prevWishlist;
       }
-      return prevItems;
+      return [...prevWishlist, { ...product }];
     });
-  }, []);
+    alert("Product added to wishlist!");
+  };
 
   // Remove item from wishlist
-  const removeFromWishlist = useCallback((itemId) => {
-    if (!itemId) {
-      console.error("Invalid item ID");
-      return;
-    }
+  const removeFromWishlist = (productId) => {
+    setWishlist((prevWishlist) =>
+      prevWishlist.filter((item) => item.id !== productId)
+    );
+  };
 
-    setWishlist((prevItems) => {
-      const newWishlist = prevItems.filter((item) => item.id !== itemId);
-      return newWishlist;
-    });
-  }, []);
-
-  // Clear entire wishlist
-  const clearWishlist = useCallback(() => {
+  // Clear the wishlist
+  const clearWishlist = () => {
     setWishlist([]);
-    localStorage.removeItem(STORAGE_KEY);
-  }, []);
+  };
 
   // Check if item is in wishlist
-  const isInWishlist = useCallback((itemId) => {
-    return wishlist.some((item) => item.id === itemId);
+  const isInWishlist = (productId) => {
+    return wishlist.some((item) => item.id === productId);
+  };
+
+  // Calculate total number of items in wishlist
+  const totalItems = wishlist.length;
+
+  // Save wishlist items to local storage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("wishlistItems", JSON.stringify(wishlist));
   }, [wishlist]);
 
   return (
-    <WishlistContext.Provider 
-      value={{ 
-        wishlist, 
+    <WishlistContext.Provider
+      value={{
+        wishlist,
         addToWishlist,
         removeFromWishlist,
         clearWishlist,
-        isInWishlist
+        isInWishlist,
+        totalItems,
       }}
     >
       {children}
