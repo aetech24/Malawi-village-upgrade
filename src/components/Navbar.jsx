@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { CgMenu } from 'react-icons/cg';
 import { AiOutlineClose, AiOutlineHeart, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 import { useAuth } from '../components/AuthContext';
+import { CartContext } from '../context/CartContext';
+import { WishlistContext } from '../context/WishlistContext';
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { isAuthenticated, logout } = useAuth();
+  const { cartItems } = useContext(CartContext);
+  const { wishlist } = useContext(WishlistContext);
   const navigate = useNavigate();
 
   const toggleNavbar = () => {
@@ -20,6 +24,10 @@ const Navbar = () => {
     setDropdownOpen(false);
     navigate('/'); // Redirect after logout
   };
+
+  // Ensure cartItems is defined before calling reduce
+  const totalCartItems = cartItems?.reduce((total, item) => total + item.quantity, 0) || 0;
+  const totalWishlistItems = wishlist.length;
 
   return (
     <nav className="sticky bg-yellow py-2 fixed top-0 z-50 w-full">
@@ -47,11 +55,21 @@ const Navbar = () => {
 
         {/* Desktop Icons */}
         <div className="hidden lg:flex items-center gap-4">
-          <button onClick={() => navigate('/wishlist')} className="hover:text-white transition duration-200 text-[23.5px]">
+          <button onClick={() => navigate('/wishlist')} className="hover:text-white transition duration-200 text-[23.5px] relative">
             <AiOutlineHeart />
+            {totalWishlistItems > 0 && (
+              <span className="absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                {totalWishlistItems}
+              </span>
+            )}
           </button>
-          <button onClick={() => navigate('/cart')} className="hover:text-white transition duration-200 text-[23.5px]">
+          <button onClick={() => navigate('/cart')} className="hover:text-white transition duration-200 text-[23.5px] relative">
             <AiOutlineShoppingCart />
+            {totalCartItems > 0 && (
+              <span className="absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                {totalCartItems}
+              </span>
+            )}
           </button>
           {isAuthenticated ? (
             <div className="relative">
@@ -99,17 +117,39 @@ const Navbar = () => {
       {/* Mobile Drawer */}
       {mobileDrawerOpen && (
         <div className="fixed left-0 top-0 z-40 w-3/4 h-full bg-yellow p-12 flex flex-col items-center gap-4">
-          <Link to="/" className="text-xl font-semibold" onClick={toggleNavbar}>
+          <Link to="/" className="text-xl font-semibold hover:text-white" onClick={toggleNavbar}>
             Home
           </Link>
-          <Link to="/products" className="text-xl font-semibold" onClick={toggleNavbar}>
+          <Link to="/products" className="text-xl font-semibold hover:text-white" onClick={toggleNavbar}>
             Shop
           </Link>
-          <Link to="/about" className="text-xl font-semibold" onClick={toggleNavbar}>
+          <Link to="/about" className="text-xl font-semibold hover:text-white" onClick={toggleNavbar}>
             About Us
           </Link>
-          <Link to="/contact" className="text-xl font-semibold" onClick={toggleNavbar}>
+          <Link to="/contact" className="text-xl font-semibold hover:text-white" onClick={toggleNavbar}>
             Contact Us
+          </Link>
+          <Link to="/wishlist" className="text-xl font-semibold hover:text-white" onClick={toggleNavbar}>
+            Wishlist
+            <button onClick={() => navigate('/wishlist')} className="hover:text-white transition duration-200 text-[23.5px] relative">
+            <AiOutlineHeart />
+            {totalWishlistItems > 0 && (
+              <span className="absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                {totalWishlistItems}
+              </span>
+            )}
+          </button>
+          </Link>
+          <Link to="/cart" className="text-xl font-semibold hover:text-white" onClick={toggleNavbar}>
+            Cart
+            <button onClick={() => navigate('/cart')} className="hover:text-white transition duration-200 text-[23.5px] relative">
+            <AiOutlineShoppingCart />
+            {totalCartItems > 0 && (
+              <span className="absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                {totalCartItems}
+              </span>
+            )}
+          </button>
           </Link>
           <hr className="w-full border-t-2 border-black my-4" />
           {isAuthenticated ? (

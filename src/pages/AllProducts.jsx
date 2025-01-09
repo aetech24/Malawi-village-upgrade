@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { products } from '../constants/products';
 import ProductCard from '../components/ProductCard';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { CartContext } from '../context/CartContext';
 
 const AllProducts = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -9,6 +10,7 @@ const AllProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [showScroll, setShowScroll] = useState(false);
   const productsPerPage = 12;
+  const { addToCart, addToWishlist } = useContext(CartContext);
 
   // Get unique categories from products
   const categories = ['All Categories', ...new Set(products.map(product => product.category))];
@@ -54,10 +56,7 @@ const AllProducts = () => {
   };
 
   // Generate page numbers
-  const pageNumbers = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,6 +109,8 @@ const AllProducts = () => {
               key={product.id}
               product={product}
               className="lg:min-w-[300px] lg:max-w-[300px] flex-shrink-0"
+              onAddToCart={() => addToCart(product)}
+              onAddToWishlist={() => addToWishlist(product)}
             />
           ))
         ) : (
