@@ -79,7 +79,7 @@ const Cart = () => {
           )}
         </div>
         {/* Order Summary */}
-        <div className="w-full md:w-1/3 border p-4 rounded-lg shadow">
+        <div className="w-full md:w-1/2 lg:w-1/3 border p-4 rounded-lg shadow">
           <h2 className="text-lg font-bold mb-4">Your Order Summary</h2>
           <div className="flex justify-between mb-2">
             <span>Sub Total</span>
