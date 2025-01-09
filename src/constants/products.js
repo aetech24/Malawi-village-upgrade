@@ -44,7 +44,7 @@ export const products = [
       image: Water,
       description:
         "Watermelon is one of the most alkaline forming fruits on planet earth. powerful fruit that is Packs with Potassium and Magnesium. Watermelon has 92% H302 hydrogen bond water inside of them. Watermelon is Known for heling cardiovascular system, keeping the body hydrated and providing Electrolytes and Ascorbic Acid. The best result comes from a daily intake or frequent watermelon fast. This is an all-healing fruit for the body!",
-      category: "Refreshment",
+      category: "Refreshments",
       ingredient: [
         { text: "Watermelon", image: Watermelon, description: "Hydrates and provides electrolytes." },
         { text: "Lime", image: Lime, description: "Rich in Vitamin C and antioxidants." },
@@ -61,7 +61,7 @@ export const products = [
       image: Orange,
       description:
         "Freshly squeezed juice is made with 100% organic oranges, and nothing else. Rich in Vitamin C & folate, and potassium. helps the body to metabolize carbohydrates, vitamin C supports your immune system and may be effective in fighting against the common cold. Mayimproved heart health, decreased inflammation, and a reduced risk of kidney stones.",
-      category: "Refreshment",
+      category: "Refreshments",
       ingredient: [
         { text: "Organic orange juice", image: Orange1, description: "Rich in Vitamin C and antioxidants." },
       ],
@@ -74,7 +74,7 @@ export const products = [
       image: Zobo,
       description:
         "Hibiscus flower may lower blood pressure, Improves Digestive Health, Fights inflammation, lowers cholesterol, and Supports Liver Health. Contain strong antioxidants such as Vitamin C, quercetin and gallic acid that fight against cancer.",
-      category: "Refreshment",
+      category: "Refreshments",
       ingredient: [
         { text: "Hibiscus", image: Hibiscus, description: "Lowers blood pressure and supports liver health." },
         { text: "Raspberry", image: Raspberry, description: "Rich in fiber and antioxidants." },
@@ -94,7 +94,7 @@ export const products = [
       image: Ginger,
       description:
         "Ginger root is a great way to aid your digestion, detoxify your system, and increase your body’s production of white blood cells, which help protect your internal system from disease and infection. Ginger root is more potent (and delicious) than any dried tea bag, coffee, milk or soda bought at the supermarket. it is known to benefit both the brain and body by fighting germs, keeping your mouth healthy, calming nausea and soothing sore muscles.",
-      category: "Refreshment",
+      category: "Refreshments",
       ingredient: [
         { text: "Ginger Roots", image: Ginger1, description: "Aids digestion and reduces inflammation." },
         { text: "Lime", image: Lime, description: "Rich in Vitamin C and antioxidants." },
@@ -111,7 +111,7 @@ export const products = [
       image: Pina,
       description:
         "Mangos contain nutrients and antioxidants. Rich in fiber Packed with nutrients, rich in vitamin C, which is important for forming blood vessels and healthy collagen, as well as helping you heal. Low in calories, may help prevent diabetes, high in healthy plant compounds, contains immune-boosting nutrients,supports heart health, may improve digestive health and support eye health",
-      category: "Refreshment",
+      category: "Refreshments",
       ingredient: [
         { text: "Mango", image: Mango, description: "Rich in vitamins and antioxidants." },
         { text: "Pineapple", image: Pineapple, description: "Aids digestion and reduces inflammation." },
