@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2">
             <p>Subscribe</p>
             <p>Get 10% off your first order</p>
-            <div className="flex">
+            <div className="flex flex-col max-[329.8px]:flex-col">
               <input
                 type="text"
                 placeholder="Enter your email"
@@ -34,7 +34,7 @@ const Footer = () => {
               />
               <button
                 onClick={handleSubscribe}
-                className="bg-yellow text-black py-2 px-4 rounded-md ml-2"
+                className="bg-yellow text-black py-2 px-4 rounded-md ml-2 max-[329.8px]:ml-0 max-[329.8px]:mt-2"
               >
                 Subscribe
               </button>
