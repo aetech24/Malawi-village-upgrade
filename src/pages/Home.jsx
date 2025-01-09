@@ -3,7 +3,7 @@ import Hero from "../assets/home-hero.png";
 // import { HomeProducts } from "../constants/index";
 import Banner from "../components/Banner";
 import { useRef } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaSearch } from "react-icons/fa";
 import { products } from "../constants/products";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
@@ -50,12 +50,15 @@ const Home = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <div className="absolute max-md:mt-10 w-full flex flex-col gap-6 justify-center items-center">
-          <div className="w-full px-4 md:px-52">
+          <div className="relative w-full px-4 md:px-52">
             <input
               type="text"
               className="w-full p-3 bg-opacity-60 rounded-full bg-white placeholder:text-gray-800 px-6"
               placeholder="Search your favorite juice"
             />
+            <button className="absolute right-10 top-1/2 transform -translate-y-1/2 text-gray hover:text-yellow">
+              <FaSearch />
+            </button>
           </div>
           <div className="flex flex-col gap-0 items-center justify-center">
             <h1 className="text-6xl md:text-[80px] text-white text-center">
