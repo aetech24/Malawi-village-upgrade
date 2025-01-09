@@ -41,6 +41,11 @@ const SingleProduct = () => {
   // Sample images for the swiper (you can modify this based on your needs)
   const images = [product.image];
 
+  // Truncate description to first 200 characters
+  const truncatedDescription = product.description.length > 200 
+    ? product.description.substring(0, 200) + '...'
+    : product.description;
+
   return (
     <div className='px-4 md:px-10 py-5 max-md:mt-16'>
       <h1 className='text-4xl py-5'>Single Product</h1>
@@ -48,7 +53,7 @@ const SingleProduct = () => {
         <img src={product.image} alt={product.name} className="w-full lg:w-1/2 h-[400px] object-cover rounded-lg" />
         <div className='flex flex-col gap-6 lg:w-1/2'>
           <p className='text-2xl font-semibold'>{product.name}</p>
-          <p>{product.description}</p>
+          <p>{truncatedDescription}</p>
           <p className='font-semibold text-2xl'>{formatPrice(product.price)}</p>
           {typeof product.price === 'object' && (
             <select className='border px-4 py-3 border-black outline-none'>
@@ -104,29 +109,30 @@ const SingleProduct = () => {
             <div className='flex flex-col gap-4'>
               <h3 className='text-xl font-semibold mb-4'>Product Description</h3>
               <p>{product.description}</p>
-              <img src={product.image} alt=""></img>
+              {/* <img src={product.image} alt=""></img> */}
             </div>
           ) : (
-            <div className='flex flex-col gap-4'>
-              <h3 className='text-xl font-semibold mb-4'>Ingredients</h3>
-              <ul className='list-disc pl-6'>
-                {product.ingredients ? (
-                  product.ingredients.map((ingredient, index) => (
-                    <li key={index} className='mb-4'>
-                      <p>{ingredient.text}</p>
-                      <img src={ingredient.image} alt={ingredient.text} className='w-full h-auto mt-2' />
-                    </li>
+            <div className='flex flex-col gap-4 w-full'>
+              <h3 className='text-xl font-medium mb-4 flex justify-center w-full'>DID YOU KNOW?</h3>
+              <div className=' pl-6 flex flex-col gap-8'>
+                {product.ingredient ? (
+                  product.ingredient.map((item, index) => (
+                    <div key={index} className="flex items-center gap-4">
+                        <img src={item.image} alt={item.text} className="w-24 h-24 bg-cover" />
+                        <div className='flex flex-col gap-2'>
+                            <p className="font-semibold text-xl">{item.text}</p>
+                            <p>{item.description}</p>
+                            <button className="text-white bg-black py-2 px-4 rounded-full w-fit">Read More</button>
+                            <hr />
+                        </div>
+                    </div>
                   ))
                 ) : (
                   <>
-                    <li>Natural fruit extract</li>
-                    <li>Purified water</li>
-                    <li>Natural sweeteners</li>
-                    <li>Vitamin C</li>
-                    <li>Natural preservatives</li>
+                    <p>No Ingredient</p>
                   </>
                 )}
-              </ul>
+              </div>
             </div>
           )}
         </div>
