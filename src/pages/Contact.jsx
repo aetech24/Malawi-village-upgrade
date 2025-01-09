@@ -21,7 +21,7 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto rounded-lg p-8">
         <h1 className="text-3xl font-bold text-center mb-4">Get in Touch</h1>
         <p className="text-center text-gray-600 mb-8">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta adipisci perferendis odit expedita nulla corrupti, excepturi quisquam id ratione sint quod beatae rerum alias rem doloremque. Animi nerum hic temporibus, cupiditate atque perferendis rem eligendi, pariatur veniam nesciunt magni saepe tempora explicabo quas iste qui libero eveniet sit? Est, voluptas. At expedita exercitationem temporibus saepe earum!
+          If you have any questions or need further information, please feel free to get in touch with us. We are here to help!
         </p>
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -85,7 +85,7 @@ const Contact = () => {
 
           {/* Contact Information Section */}
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">Have some question for us</h2>
+            <h2 className="text-2xl font-semibold mb-4">For further inquiries</h2>
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <FaPhoneAlt className="text-black text-2xl" />
