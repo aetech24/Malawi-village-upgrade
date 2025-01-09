@@ -53,7 +53,7 @@ const Cart = () => {
                       <div>{item.name}</div>
                     </td>
                     <td className="p-4">{item.size}</td>
-                    <td className="p-4">GH¢ {item.price.toFixed(2)}</td>
+                    <td className="p-4">GH¢ {Number(item.price).toFixed(2)}</td>
                     <td className="p-4">
                       <input
                         type="number"
@@ -63,7 +63,7 @@ const Cart = () => {
                         className="w-12 text-center border rounded"
                       />
                     </td>
-                    <td className="p-4">GH¢ {(item.price * item.quantity).toFixed(2)}</td>
+                    <td className="p-4">GH¢ {(Number(item.price) * item.quantity).toFixed(2)}</td>
                     <td
                       className="p-4 text-red-500 cursor-pointer"
                       onClick={() => removeFromCart(item.id, item.size)}
