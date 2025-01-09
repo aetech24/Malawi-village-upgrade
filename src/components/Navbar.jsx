@@ -57,29 +57,27 @@ const Navbar = () => {
               Contact Us
             </Link>
           </div>
-          {isAuthenticated ? (
-            <div className='hidden lg:flex items-center gap-4'>
+          <div className='hidden lg:flex items-center gap-4'>
               <button onClick={() => navigate('/wishlist')} className='hover:text-white duration-200 ease-in'>
                 <AiOutlineHeart />
               </button>
               <button onClick={() => navigate('/cart')} className='hover:text-white duration-200 ease-in'>
                 <AiOutlineShoppingCart />
               </button>
-              <div className='relative'>
-                <button onClick={() => setDropdownOpen(!dropdownOpen)} className='hover:text-white duration-200 ease-in'>
-                  <AiOutlineUser />
-                </button>
-                {dropdownOpen && (
-                  <div className='absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg'>
-                    <button
-                      onClick={handleLogout}
-                      className='block w-full text-left px-4 py-2 text-black hover:bg-blue-50 transition duration-200 ease-in'
-                    >
-                      Logout
-                    </button>
-                  </div>
-                )}
-              </div>
+              <button onClick={() => setDropdownOpen(!dropdownOpen)} className='hover:text-white duration-200 ease-in'>
+                <AiOutlineUser />
+              </button>
+              {dropdownOpen && (
+                <div className='absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg'>
+                  <button
+                    onClick={handleLogout}
+                    className='block w-full text-left px-4 py-2 text-black hover:bg-blue-50 transition duration-200 ease-in'
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
             </div>
           ) : (
             <>
@@ -142,8 +140,6 @@ const Navbar = () => {
             </Link>
             <hr className='text-black' />
             <div className='flex flex-col gap-2'>
-              {isAuthenticated ? (
-                <>
                   <div className='fixed left-0 z-20 w-3/4 h-[90vh] p-0 flex flex-col items-center bg-yellow transition-all duration-300 ease-linear lg:hidden text-black gap-4 text-semibold'>
                   <Link
                     to='/wishlist'
