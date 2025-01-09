@@ -92,7 +92,7 @@ const AllProducts = () => {
           <div className='w-full md:w-[350px]'>
             <input 
               type="search" 
-              placeholder='browse your favorite juice...' 
+              placeholder='Browse your favorite juice...' 
               className='bg-gray-100 p-3 rounded-full w-full outline-none text-sm'
               value={searchTerm}
               onChange={handleSearch}

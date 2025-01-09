@@ -30,7 +30,7 @@ const Cart = () => {
     <div className="lg:p-10 px-4 max-lg:mt-16">
       <h1 className="text-2xl font-bold mb-6">Your Shopping Cart</h1>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col flex-wrap">
         <div className="flex-1">
           <h2 className="text-xl font-bold mb-4"></h2>
           {cartItems.length > 0 ? (
@@ -57,9 +57,9 @@ const Cart = () => {
                     <td className="p-4">
                       <input
                         type="number"
-                        value={item.quantity}
+                        value={isNaN(item.quantity) ? "1" : item.quantity.toString()}
                         min="1"
-                        onChange={(e) => updateQuantity(item.id, item.size, parseInt(e.target.value))}
+                        onChange={(e) => updateQuantity(item.id, item.size, parseInt(e.target.value) || 1)}
                         className="w-12 text-center border rounded"
                       />
                     </td>
