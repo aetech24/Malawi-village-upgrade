@@ -18,6 +18,13 @@ const Navbar = () => {
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
+// log in and log out
+const handleLogin = () => {
+  navigate('/login');
+}
+const handleSignUp = () => {
+  navigate('/register');
+}
 
   const handleLogout = () => {
     logout();
@@ -92,12 +99,30 @@ const Navbar = () => {
             </div>
           ) : (
             <>
-              <Link to="/login" className=" bg-black text-white py-1 px-4 rounded-md hover:bg-opacity-30 transition duration-200">
-                Login
-              </Link>
-              <Link to="/register" className=" bg-black text-white py-1 px-4 rounded-md hover:bg-opacity-30 transition duration-200">
-                Sign Up
-              </Link>
+                        <div className="relative">
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="hover:text-white transition duration-200 text-[23.5px]"
+              >
+                <AiOutlineUser />
+              </button>
+              {dropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg">
+                  <button
+                    onClick={handleLogin}
+                    className="block w-full text-left px-4 py-2 text-black hover:bg-blue-50 transition duration-200"
+                  >
+                    Login
+                  </button>
+                  <button
+                    onClick={handleSignUp}
+                    className="block w-full text-left px-4 py-2 text-black hover:bg-blue-50 transition duration-200"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              )}
+            </div>
             </>
           )}
         </div>
