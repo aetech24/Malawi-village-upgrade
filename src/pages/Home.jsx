@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import Hero from "../assets/Zobo-hero-img.jpg";
 import Banner from "../components/Banner";
-import { FaArrowLeft, FaArrowRight, FaSearch } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+// import { FaSearch } from "react-icons/fa";
 import { products } from "../constants/products";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
 
 
 const Home = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState('');
+  // const [selectedCategory] = useState('');
+  // const [filteredProducts, setFilteredProducts] = useState([]);
   const scrollContainerRef = useRef(null);
   const [showScroll, setShowScroll] = useState(false);
 
@@ -22,20 +23,20 @@ const Home = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const results = products.filter(product => {
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           product.description?.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = selectedCategory === '' || selectedCategory === 'All Categories' || 
-                             product.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-    setFilteredProducts(results);
-  }, [searchTerm, selectedCategory]);
+  // useEffect(() => {
+  //   const results = products.filter(product => {
+  //     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //                          product.description?.toLowerCase().includes(searchTerm.toLowerCase());
+  //     const matchesCategory = selectedCategory === '' || selectedCategory === 'All Categories' || 
+  //                            product.category === selectedCategory;
+  //     return matchesSearch && matchesCategory;
+  //   });
+  //   setFilteredProducts(results);
+  // }, [searchTerm, selectedCategory]);
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
+  // const handleSearch = (e) => {
+  //   setSearchTerm(e.target.value);
+  // };
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -67,7 +68,7 @@ const Home = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <div className="absolute max-md:mt-10 w-full flex flex-col gap-6 justify-center items-center">
-          <div className="relative group sm:block w-[60%] ">
+          {/* <div className="relative group sm:block w-[60%] ">
             <input
               type="text"
               className="w-full p-3 bg-opacity-60 rounded-full bg-white placeholder:text-gray-800 px-6"
@@ -89,7 +90,7 @@ const Home = () => {
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
           <div className="flex flex-col gap-0 items-center justify-center">
             <h1 className="text-6xl md:text-[80px] text-white text-center">
               Malawi Village
