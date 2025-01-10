@@ -2,13 +2,12 @@ import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import { CartContext } from '../context/CartContext';
+// import { CartContext } from '../context/CartContext';
 import { WishlistContext } from '../context/WishlistContext';
 
 const ProductCard = ({ product, className = "" }) => {
   const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false);
-  const { addToCart } = useContext(CartContext);
   const { addToWishlist } = useContext(WishlistContext);
 
   const handleClick = () => {
@@ -21,9 +20,9 @@ const ProductCard = ({ product, className = "" }) => {
     addToWishlist(product);
   };
 
-  const handleAddToCart = (e) => {
-    e.stopPropagation(); // Prevent navigation when clicking the add to cart button
-    addToCart(product);
+  const handleViewProduct = (e) => {
+    e.stopPropagation(); // Prevent navigation when clicking the view product button
+    navigate(`/product/${product.id}`);
   };
 
   // Format price based on whether it's a string or an object
@@ -58,9 +57,9 @@ const ProductCard = ({ product, className = "" }) => {
       />
       <div 
         className="w-full cursor-pointer bg-black hover:bg-opacity-30 duration-200 text-white p-2 text-center"
-        onClick={handleAddToCart}
+        onClick={handleViewProduct}
       >
-        Add to cart
+        View Product
       </div>
       <div className="py-4">
         <p>{product.name}</p>
@@ -69,6 +68,7 @@ const ProductCard = ({ product, className = "" }) => {
     </div>
   );
 };
+
 ProductCard.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
