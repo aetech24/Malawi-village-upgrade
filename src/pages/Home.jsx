@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import Hero from "../assets/home-hero.png";
+import Hero from "../assets/Zobo-hero-img.jpg";
 import Banner from "../components/Banner";
 import { FaArrowLeft, FaArrowRight, FaSearch } from "react-icons/fa";
 import { products } from "../constants/products";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
+
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
