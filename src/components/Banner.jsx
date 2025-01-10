@@ -9,7 +9,7 @@ const Banner = () => {
         <div className="absolute flex flex-col gap-4 md:gap-10 justify-center py-16 px-4 md:px-10">
             <p className='font-semibold text-yellow'>Categories</p>
             <p className='md:text-5xl text-4xl font-medium text-white w-[60%]'>Enjoy Your Favorite Juice at low prices</p>
-            <button className='bg-yellow py-2 px-4 text-center w-fit max-sm:text-sm'>BUY NOW</button>
+            <button className='bg-yellow hover:bg-opacity-40 py-2 px-4 text-center w-fit max-sm:text-sm'>BUY NOW</button>
         </div>
     </div>
   )
