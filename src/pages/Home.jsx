@@ -94,7 +94,7 @@ const Home = () => {
             <h1 className="text-6xl md:text-[80px] text-white text-center">
               Malawi Village
             </h1>
-            <p className="text-yellow text-2xl">Every Sip Feels Like Spring</p>
+            <p className="text-yellow text-2xl">Fresh Daily Juice</p>
           </div>
         </div>
       </div>
