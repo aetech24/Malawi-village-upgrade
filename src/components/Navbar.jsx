@@ -30,6 +30,7 @@ const handleSignUp = () => {
     logout();
     setDropdownOpen(false);
     navigate('/'); // Redirect after logout
+    alert("You are logged out")
   };
 
   // Ensure cartItems is defined before calling reduce
