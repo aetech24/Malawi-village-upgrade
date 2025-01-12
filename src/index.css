@@ -5,3 +5,18 @@
 body{
   @apply bg-white;
 }
+@keyframes slide-in-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-down {
+  animation: slide-in-down 1s ease-in-out;
+}
+
