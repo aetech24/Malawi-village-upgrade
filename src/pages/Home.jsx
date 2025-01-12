@@ -92,7 +92,7 @@ const Home = () => {
           </div> */}
           <div className='flex flex-col gap-0 items-center justify-center'>
             <h1 className='text-6xl md:text-[80px] text-white text-center'>
-              Malawi Village
+             
             </h1>
             <p className='text-yellow text-2xl'>Fresh Daily Juice</p>
           </div>
