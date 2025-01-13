@@ -209,7 +209,7 @@ const Navbar = () => {
         {filteredProducts.map((product) => (
           <li
             key={product.id}
-            className="px-4 py-2 hover:bg-gray-200 cursor-pointer transition-all duration-200"
+            className="px-4 py-2 bg-white hover:bg-gray-200 cursor-pointer transition-all duration-200"
             onClick={() => handleProductSelect(product.id)}
           >
             {product.name}
