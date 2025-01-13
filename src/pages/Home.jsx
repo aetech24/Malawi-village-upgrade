@@ -131,13 +131,13 @@ const Home = () => {
             ref={scrollContainerRef}
             className='flex gap-6 overflow-x-scroll scroll-smooth scrollbar-hide'
           >
-            {/* {products.map((item, id) => (
+            {products.map((item, id) => (
               <ProductCard
                 key={id}
                 product={item}
                 className='min-w-[300px] max-w-[300px] flex-shrink-0'
               />
-            ))} */}
+            ))}
           </div>
 
           <div className='w-full flex justify-center mx-auto'>
