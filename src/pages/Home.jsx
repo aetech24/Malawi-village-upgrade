@@ -95,6 +95,12 @@ const Home = () => {
              
             </h1>
             <p className='text-yellow text-2xl'>Fresh Daily Juice</p>
+            <Link to='/products'>
+              <button className='bg-black text-white hover:bg-opacity-40 px-16 py-3 flex justify-center items-center w-fit'>
+                View All Products
+              </button>
+            </Link>
+
           </div>
         </div>
       </div>
