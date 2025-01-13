@@ -158,7 +158,7 @@ const SingleProduct = () => {
                         <div className='flex flex-col gap-2'>
                             <p className="font-semibold text-xl">{item.text}</p>
                             <p>{item.description}</p>
-                            <button className="text-white bg-black hover:bg-opacity-30 py-2 px-4 rounded-full w-fit">Read More</button>
+                            {/* <button className="text-white bg-black hover:bg-opacity-30 py-2 px-4 rounded-full w-fit">Read More</button> */}
                             <hr />
                         </div>
                     </div>

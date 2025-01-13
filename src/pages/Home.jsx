@@ -90,17 +90,14 @@ const Home = () => {
               </div>
             )}
           </div> */}
+          <h1 className='text-[10px] gap-0 md:text-[80px] text-white text-center w-[35%] tracking-0 '></h1>
           <div className='flex flex-col gap-0 items-center justify-center'>
-            <h1 className='text-[10px] gap-0 md:text-[80px] text-white text-center w-[35%] tracking-0 '>
-             
-            </h1>
             <p className='text-yellow text-2xl'>Fresh Daily Juice</p>
             <Link to='/products'>
-              <button className='bg-yellow text-black hover:bg-opacity-40 px-1 py-3 flex justify-center items-center w-[250px] rounded-[5px]'>
+              <button className='bg-yellow text-black hover:bg-opacity-40 px-1 mb-[-500px] py-3 flex justify-center items-center w-[250px] rounded-[5px]'>
                 View All Products
               </button>
             </Link>
-
           </div>
         </div>
       </div>
