@@ -78,6 +78,7 @@ const Footer = () => {
               <li className="hover:text-yellow duration-200 transition-colors">Terms of Use</li>
               <li className="hover:text-yellow duration-200 transition-colors">FAQ</li>
               <Link to='/contact'><li className="hover:text-yellow duration-200 transition-colors" >Contact</li></Link>
+              <Link to='/about'><li className="hover:text-yellow duration-200 transition-colors" >About Us</li></Link>
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
@@ -118,5 +119,4 @@ const Footer = () => {
     </div>
   );
 };
-
 export default Footer;
