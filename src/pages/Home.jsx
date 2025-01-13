@@ -91,12 +91,12 @@ const Home = () => {
             )}
           </div> */}
           <div className='flex flex-col gap-0 items-center justify-center'>
-            <h1 className='text-6xl md:text-[80px] text-white text-center'>
+            <h1 className='text-[10px] gap-0 md:text-[80px] text-white text-center w-[35%] tracking-0 '>
              
             </h1>
             <p className='text-yellow text-2xl'>Fresh Daily Juice</p>
             <Link to='/products'>
-              <button className='bg-black text-white hover:bg-opacity-40 px-16 py-3 flex justify-center items-center w-fit'>
+              <button className='bg-yellow text-black hover:bg-opacity-40 px-1 py-3 flex justify-center items-center w-[250px] rounded-[5px]'>
                 View All Products
               </button>
             </Link>
@@ -105,13 +105,13 @@ const Home = () => {
         </div>
       </div>
       <div className='py-12 flex flex-col gap-6'>
-        <div className='flex items-center gap-2 px-4 md:px-10'>
+        {/* <div className='flex items-center gap-2 px-4 md:px-10'>
           <div className='h-10 w-4 rounded-md bg-black'></div>
           <p className='text-xl font-semibold'>Today&apos;s</p>
-        </div>
+        </div> */}
         <div className='flex flex-col gap-5 px-4 md:px-10'>
-          <div className='flex items-center justify-between'>
-            <h1 className='text-3xl font-medium mb-4'>Flash Sales</h1>
+          <div className='flex items-center justify-between text-center'>
+            <h1 className='text-3xl font-medium mb-4 '>Categories</h1>
             <div className='relative'>
               <button
                 className='absolute -left-10 top-1/2 transform -translate-y-1/2 bg-gray-300 text-white p-2 rounded-full z-10'
@@ -131,13 +131,13 @@ const Home = () => {
             ref={scrollContainerRef}
             className='flex gap-6 overflow-x-scroll scroll-smooth scrollbar-hide'
           >
-            {products.map((item, id) => (
+            {/* {products.map((item, id) => (
               <ProductCard
                 key={id}
                 product={item}
                 className='min-w-[300px] max-w-[300px] flex-shrink-0'
               />
-            ))}
+            ))} */}
           </div>
 
           <div className='w-full flex justify-center mx-auto'>
