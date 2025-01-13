@@ -91,7 +91,7 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <nav
-        className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        className={`fixed top-0 z-50 w-[100%] transition-all duration-300 ${
           isHomepage
             ? scrollProgress > 0.1
               ? 'bg-yellow text-black shadow-md'
@@ -115,8 +115,8 @@ const Navbar = () => {
             <div
               className={`absolute transition-transform duration-[1500ms] ease-in-out ${
                 isHomepage
-                  ? 'left-1/2 transform -translate-x-1/2 w-[50%]'
-                  : 'left-1/2 transform -translate-x-1/2 w-0 flex justify-center'
+                  ? 'left-1/2 transform -translate-x-1/2'
+                  : 'left-1/2 transform -translate-x-1/2 w-full flex justify-center tracking-normal'
               }`}
               style={{
                 transform: `translateX(-50%) translateY(${
@@ -127,7 +127,7 @@ const Navbar = () => {
             >
               <Link
                 to='/'
-                className='font-serif tracking-0 align-center'
+                className='font-serif tracking-0 align-center tracking-normal'
                 style={{
                   whiteSpace: 'nowrap',
                   fontSize:
@@ -156,7 +156,7 @@ const Navbar = () => {
                     <li>
                       <Link
                         to='products'
-                        className='block px-4 py-2 hover:bg-gray-200'
+                        className='block px-4 py-2 hover:bg-gray-200 ml-100'
                         onClick={() => setIsMenuOpen(false)}
                       >
                         All Categories
