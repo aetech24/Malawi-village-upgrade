@@ -1,7 +1,7 @@
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Hero from '../assets/Zobo-hero-img.jpg';
 // import Banner from '../components/Banner';
-// import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 // import { FaSearch } from "react-icons/fa";
 import { products } from '../constants/products';
 import ProductCard from '../components/ProductCard';
@@ -14,7 +14,7 @@ const Home = () => {
   // const [searchTerm, setSearchTerm] = useState('');
   // const [selectedCategory] = useState('');
   // const [filteredProducts, setFilteredProducts] = useState([]);
-  // const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef(null);
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
@@ -40,17 +40,17 @@ const Home = () => {
   //   setSearchTerm(e.target.value);
   // };
 
-  // const scrollLeft = () => {
-  //   if (scrollContainerRef.current) {
-  //     scrollContainerRef.current.scrollLeft -= 300;
-  //   }
-  // };
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft -= 300;
+    }
+  };
 
-  // const scrollRight = () => {
-  //   if (scrollContainerRef.current) {
-  //     scrollContainerRef.current.scrollLeft += 300;
-  //   }
-  // };
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft += 300;
+    }
+  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -68,53 +68,27 @@ const Home = () => {
             backgroundRepeat: 'no-repeat',
           }}
         />
+          {/* Overlay for dimming */}
+  <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className='absolute inset-0 bg-black bg-opacity-20'></div>
         <div className='absolute max-md:mt-10 w-full flex flex-col gap-6 justify-center items-center'>
-        {/* <h1 className='text-[10px] gap-0 md:text-[80px] text-white text-center w-[35%] tracking-0 '>MALAWI VILLAGE</h1> */}
-          {/* <div className="relative group sm:block w-[60%] ">
-            <input
-              type="text"
-              className="w-full p-3 bg-opacity-60 rounded-full bg-white placeholder:text-gray-800 px-6"
-              placeholder="Search your favorite juice"
-              value={searchTerm}
-              onChange={handleSearch}
-            />
-            <button className="">
-              <FaSearch
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray group-hover:text-yellow"
-               />
-            </button>
-            {searchTerm && (
-              <div className="absolute bg-white w-full mt-2 rounded-lg shadow-lg z-10">
-                {filteredProducts.map(product => (
-                  <Link to={`/product/${product.id}`} key={product.id} className="block p-2 hover:bg-gray-200">
-                    {product.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div> */}
           <h1 className='text-[10px] gap-0 md:text-[80px] text-white text-center w-[35%] tracking-0 '></h1>
           <div className='flex flex-col gap-0 items-center justify-center mt-20'>
             <p className='text-yellow text-2xl'>Fresh Daily Juice</p>
             <div className='mt-10'>
-            <Link to='/products'>
-              <button className='bg-yellow text-black hover:bg-opacity-40 px-1 py-3 flex justify-center items-center w-[250px] rounded-[5px]'>
-                Explore Our Juices
-              </button>
-            </Link>
+              <Link to='/products'>
+                <button className='bg-yellow text-black hover:bg-opacity-40 px-1  py-3 flex justify-center items-center w-[250px] rounded-[5px]'>
+                  Explore Our Juices
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <div className='py-12 flex flex-col gap-6'>
-        {/* <div className='flex items-center gap-2 px-4 md:px-10'>
-          <div className='h-10 w-4 rounded-md bg-black'></div>
-          <p className='text-xl font-semibold'>Today&apos;s</p>
-        </div> */}
         <div className='flex flex-col gap-5 px-4 md:px-10'>
-        <h1 className='text-3xl font-medium mb-4 text-center'>Categories</h1>
-          {/* <div className='flex items-center justify-between'>
+          <h1 className='text-3xl font-medium mb-4 text-center'>Categories</h1>
+          <div className='flex items-center justify-between'>
             <div className='relative'>
               <button
                 className='absolute -left-10 top-1/2 transform -translate-y-1/2 bg-gray-300 text-white p-2 rounded-full z-10'
@@ -129,7 +103,7 @@ const Home = () => {
                 <FaArrowLeft />
               </button>
             </div>
-          </div> */}
+          </div>
           <div
             // ref={scrollContainerRef}
             className='flex gap-6 overflow-x-scroll scroll-smooth scrollbar-hide justify-center '
@@ -174,7 +148,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <Banner /> */}
       <hr className='mx-10' />
       <div className='flex flex-col gap-6 px-4 md:px-10 py-12'>
         <div className='flex items-center justify-between'>

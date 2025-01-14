@@ -11,6 +11,7 @@ import { useAuth } from '../components/AuthContext';
 import { CartContext } from '../context/CartContext';
 import { WishlistContext } from '../context/WishlistContext';
 import { products } from '../constants/products';
+import Logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -106,12 +107,9 @@ const Navbar = () => {
         <div className='flex justify-between items-center px-4 py-2'>
           {/* Left Section */}
           <div>
-           
             <Link
               to='/contact'
-              className={`hover:text-white transition duration-200 ${
-                scrollProgress === 0 ? 'hidden' : ''
-              } ${isMobile && scrollProgress === 0.1 ? 'hidden' : ''}`}
+              className='hover:text-white transition duration-200 text-[12px]'
             >
               + Contact Us
             </Link>
@@ -121,15 +119,17 @@ const Navbar = () => {
           <>
             {scrollProgress > 0 && (
               <div
-                className={`absolute transform  ease-in-out {relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}} ${
+                className={`absolute ${
+                  isMobile ? 'text-[10px]' : 'text-[20px]'
+                } ${
                   isHomepage
                     ? 'left-1/2 transform -translate-x-1/2'
                     : 'left-1/2 transform -translate-x-1/2 w-full flex justify-center tracking-normal'
                 }`}
                 style={{
                   transform: `translateX(-50%) translateY(${
-                    scrollProgress * 5
-                  }px) scale(${1 - scrollProgress * 0.3})`,
+                    scrollProgress * 1
+                  }px) scale(${1 - scrollProgress * 0.25})`,
                   color:
                     scrollProgress > 0.1 || !isHomepage ? 'black' : 'white',
                 }}
@@ -140,11 +140,14 @@ const Navbar = () => {
                   style={{
                     whiteSpace: 'nowrap',
                     fontSize:
-                      isHomepage && scrollProgress > 0.8 ? '24px' : '30px',
-                    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                      isHomepage && scrollProgress > 0.8 ? '18px' : '20px',
+                    transitionTimingFunction: 'cubic-bezier(0.2, 0, 0.1, 0)',
                   }}
                 >
-                  MALAWI
+                  <div className='flex item-center space-x-0.5'>
+                    <h4 className='sm:text-[11px] text-[13.5px]'>MALAWI VILLAGE</h4>
+                    <img src={Logo} alt='logo' className='size-2.5 w-6 h-6'></img>
+                  </div>
                 </Link>
               </div>
             )}
@@ -152,7 +155,7 @@ const Navbar = () => {
           {/* Right Section */}
           <div className='flex items-center gap-2'>
             {/* Main Menu */}
-            <div className={`relative ${isMobile ? 'text-sm': 'text-lg'}`}>
+            <div className={`relative ${isMobile ? 'text-sm' : 'text-lg'}`}>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className='transition duration-200'
@@ -253,7 +256,9 @@ const Navbar = () => {
             {/* Wishlist */}
             <button
               onClick={() => navigate('/wishlist')}
-              className={`relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}`}
+              className={`relative transition duration-200 ${
+                isMobile ? 'text-sm' : 'text-lg'
+              }`}
             >
               <AiOutlineHeart />
               {totalWishlistItems > 0 && (
@@ -266,7 +271,9 @@ const Navbar = () => {
             {/* Cart */}
             <button
               onClick={() => navigate('/cart')}
-              className={`relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}`}
+              className={`relative transition duration-200 ${
+                isMobile ? 'text-sm' : 'text-lg'
+              }`}
             >
               <AiOutlineShoppingCart />
               {totalCartItems > 0 && (
@@ -277,7 +284,11 @@ const Navbar = () => {
             </button>
 
             {/* User Profile */}
-            <div className= {`relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}`}>
+            <div
+              className={`relative transition duration-200 ${
+                isMobile ? 'text-sm' : 'text-lg'
+              }`}
+            >
               <button
                 onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
                 className='relative '
@@ -333,10 +344,16 @@ const Navbar = () => {
 
       {/* Hero Section */}
       {isHomepage && scrollProgress === 0 && (
-        <div className={`absolute top-1/3 w-full text-center z-40 ${isMobile ? 'text-sm' : 'text-lg'}`}>
-          <h1 className='text-white text-6xl font-serif tracking-[0.5em] mb-10'>
-            MALAWI
-          </h1>
+        <div
+          className={`absolute bottom-2/3 left-1/2 transform -translate-x-1/2 z-40 flex justify-center items-center flex-wrap ${
+            isMobile ? 'text-sm' : 'text-lg'
+          }`}
+        >
+          {' '}
+          <h2 className='text-white text-4xl font-serif tracking-[0.5em] mb-10 text-center flex items-center'>
+            <span className='whitespace-normal'>MALAWI VILLAGE</span>
+            <img src={Logo} alt='logo' className='ml-2 w-10 h-10' />
+          </h2>
         </div>
       )}
     </>
@@ -344,3 +361,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+<div className='flex item-center space-x-1'>
+  <h4 className='text-[11px]'>MALAWI VILLAGE</h4>
+</div>;
