@@ -91,13 +91,15 @@ const Home = () => {
             )}
           </div> */}
           <h1 className='text-[10px] gap-0 md:text-[80px] text-white text-center w-[35%] tracking-0 '></h1>
-          <div className='flex flex-col gap-0 items-center justify-center'>
+          <div className='flex flex-col gap-0 items-center justify-center mt-20'>
             <p className='text-yellow text-2xl'>Fresh Daily Juice</p>
+            <div className='mt-10'>
             <Link to='/products'>
-              <button className='bg-yellow text-black hover:bg-opacity-40 px-1 mb-[-500px] py-3 flex justify-center items-center w-[250px] rounded-[5px]'>
-                View All Products
+              <button className='bg-yellow text-black hover:bg-opacity-40 px-1 mb-[-500px] py-3 flex justify-center text-xl font-medium items-center w-[250px] rounded-[5px]'>
+                Pressed juices
               </button>
             </Link>
+            </div>
           </div>
         </div>
       </div>
