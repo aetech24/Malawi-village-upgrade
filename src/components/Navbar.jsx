@@ -352,7 +352,7 @@ const Navbar = () => {
           {' '}
           <h2 className='text-white text-4xl font-serif tracking-[0.5em] mb-10 text-center flex items-center'>
             <span className='whitespace-normal'>MALAWI VILLAGE</span>
-            <img src={Logo} alt='logo' className='ml-2 w-10 h-10 bg-yellow p-1chang'/>
+            <img src={Logo} alt='logo' className='ml-2 w-10 h-10 bg-yellow p-1'/>
           </h2>
         </div>
       )}
