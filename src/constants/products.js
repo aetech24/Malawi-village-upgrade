@@ -32,8 +32,9 @@ import BeetRoots from '../assets/beetroot.jpeg'
 import Chamomile from '../assets/chamomile.jpeg'
 import Nettle from '../assets/nettle.jpeg'
 import Pomegranate from '../assets/pomegranate.jpeg'
-
-
+import RaspberryStrawberryPomegranateTea from '../assets/RaspberryStrawberryPomegranateTea.jpg'
+import OrangeAndRosemaryTea from '../assets/OrangeAndRosemaryTea.jpg'
+import MangoJuice from '../assets/MangoJuice.jpg'
 
 export const products = [
   {
@@ -187,7 +188,7 @@ export const products = [
     name: "Mango & Coconut tea",
       price: { big: 16, small: 10 },
   size: ["L", "S"],
-    image: Strong,
+    image: MangoJuice,
       description:
   "A refreshing tropical twist, presents an exotic escape, transporting the mango tea lover to distant realms with its aromatic fusion of coconut. Coconut is a great energy-revitalizing drink. Coconut provides a large portion of sodium, potassium, phosphorus, calcium, and magnesium, which help revive and enhance your energy. Mango often considered a superfood rich in fiber, good source of vitamins, minerals, and antioxidants. Boost the Immune System and Ease Constipation.",
     category: "Sweet and unsweet tea",
@@ -203,7 +204,7 @@ export const products = [
     name: "Orange and Rosemary Tea",
       price: { big: 16, small: 10 },
   size: ["L", "S"],
-    image: Rouge,
+    image: OrangeAndRosemaryTea,
       description:
   "Fuel your senses with the pleasant aroma and taste of orange and rosemary. From the first sip, the blend is bright and delicate, mimicking the sweet summer flavor of freshly sliced oranges, followed by a pleasant surprise of rosemary.",
     category: "Sweet and unsweet tea",
@@ -221,7 +222,7 @@ export const products = [
     name: "Raspberry, strawberry & pomegranate tea",
       price: { big: 16, small: 10 },
   size: ["L", "S"],
-    image: Pina,
+    image: RaspberryStrawberryPomegranateTea,
       description:
   "There is something seriously magical when introducing three favorites and finding out they pair harmoniously, right? That’s how we felt when we took our iconic, thirst-quenching berries featuring a hit of pomegranate. lovely fruit fragrance, adding a refreshing allure to your lazy summer afternoon. And it’s just as pleasant during other seasonal months. You asked for it, and here it is one of our favorite herbal brews.",
     category: "Sweet and unsweet tea",
