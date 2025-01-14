@@ -29,7 +29,7 @@ const Navbar = () => {
   const totalCartItems =
     cartItems?.reduce((total, item) => total + item.quantity, 0) || 0;
   const totalWishlistItems = wishlist.length;
-
+  const isMobile = window.innerWidth <= 768;
   // scroll effect
 
   useEffect(() => {
@@ -106,9 +106,12 @@ const Navbar = () => {
         <div className='flex justify-between items-center px-4 py-2'>
           {/* Left Section */}
           <div>
+           
             <Link
               to='/contact'
-              className='hover:text-white transition duration-200'
+              className={`hover:text-white transition duration-200 ${
+                scrollProgress === 0 ? 'hidden' : ''
+              } ${isMobile && scrollProgress === 0.1 ? 'hidden' : ''}`}
             >
               + Contact Us
             </Link>
@@ -118,7 +121,7 @@ const Navbar = () => {
           <>
             {scrollProgress > 0 && (
               <div
-                className={`absolute transition-transform duration-[1500ms] ease-in-out ${
+                className={`absolute transition-transform duration-[1500ms] ease-in-out {relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}} ${
                   isHomepage
                     ? 'left-1/2 transform -translate-x-1/2'
                     : 'left-1/2 transform -translate-x-1/2 w-full flex justify-center tracking-normal'
@@ -137,7 +140,7 @@ const Navbar = () => {
                   style={{
                     whiteSpace: 'nowrap',
                     fontSize:
-                      isHomepage && scrollProgress > 0.8 ? '24px' : '50px',
+                      isHomepage && scrollProgress > 0.8 ? '24px' : '30px',
                     transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
                   }}
                 >
@@ -147,9 +150,9 @@ const Navbar = () => {
             )}
           </>
           {/* Right Section */}
-          <div className='flex items-center gap-4'>
+          <div className='flex items-center gap-2'>
             {/* Main Menu */}
-            <div className='relative'>
+            <div className={`relative ${isMobile ? 'text-sm': 'text-lg'}`}>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className='transition duration-200'
@@ -201,7 +204,7 @@ const Navbar = () => {
             </div>
             {/*Search */}
             {isSearchVisible ? (
-              <div className='relative'>
+              <div className={`relative ${isMobile ? 'text-sm' : 'text-lg'}`}>
                 <input
                   type='text'
                   value={searchTerm}
@@ -250,7 +253,7 @@ const Navbar = () => {
             {/* Wishlist */}
             <button
               onClick={() => navigate('/wishlist')}
-              className='relative transition duration-200'
+              className={`relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}`}
             >
               <AiOutlineHeart />
               {totalWishlistItems > 0 && (
@@ -263,7 +266,7 @@ const Navbar = () => {
             {/* Cart */}
             <button
               onClick={() => navigate('/cart')}
-              className='relative transition duration-200'
+              className={`relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}`}
             >
               <AiOutlineShoppingCart />
               {totalCartItems > 0 && (
@@ -274,10 +277,10 @@ const Navbar = () => {
             </button>
 
             {/* User Profile */}
-            <div className='relative'>
+            <div className= {`relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}`}>
               <button
                 onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
-                className='transition duration-200'
+                className='relative '
               >
                 <AiOutlineUser />
               </button>
@@ -330,9 +333,9 @@ const Navbar = () => {
 
       {/* Hero Section */}
       {isHomepage && scrollProgress === 0 && (
-        <div className='absolute top-1/3 w-full text-center z-40'>
-          <h1 className='text-white text-6xl font-serif tracking-[0.5em]'>
-            M A L A W I
+        <div className={`absolute top-1/3 w-full text-center z-40 ${isMobile ? 'text-sm' : 'text-lg'}`}>
+          <h1 className='text-white text-6xl font-serif tracking-[0.5em] mb-10'>
+            MALAWI
           </h1>
         </div>
       )}
