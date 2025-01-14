@@ -94,13 +94,25 @@ const Home = () => {
               </div>
             )}
           </div> */}
+<<<<<<< HEAD
           <div className='flex flex-col items-center justify-center gap-6 -bottom-full translate-y-3/4 '>
+=======
+          <h1 className='text-[10px] gap-0 md:text-[80px] text-white text-center w-[35%] tracking-0 '></h1>
+          <div className='flex flex-col gap-0 items-center justify-center mt-20'>
+>>>>>>> 9be57983b3471c86e6ec7e020857fe95bc399bac
             <p className='text-yellow text-2xl'>Fresh Daily Juice</p>
+            <div className='mt-10'>
             <Link to='/products'>
+<<<<<<< HEAD
               <button className='bg-yellow text-black hover:bg-opacity-40 px-1 py-3 flex justify-center items-center w-[250px] rounded-[5px]'>
                 Explore Our Juices
+=======
+              <button className='bg-yellow text-black hover:bg-opacity-40 px-1 mb-[-500px] py-3 flex justify-center text-xl font-medium items-center w-[250px] rounded-[5px]'>
+                Pressed juices
+>>>>>>> 9be57983b3471c86e6ec7e020857fe95bc399bac
               </button>
             </Link>
+            </div>
           </div>
         </div>
       </div>
