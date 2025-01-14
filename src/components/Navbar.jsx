@@ -121,7 +121,7 @@ const Navbar = () => {
           <>
             {scrollProgress > 0 && (
               <div
-                className={`absolute transition-transform duration-[1500ms] ease-in-out {relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}} ${
+                className={`absolute transform  ease-in-out {relative transition duration-200 ${isMobile ? 'text-sm' : 'text-lg'}} ${
                   isHomepage
                     ? 'left-1/2 transform -translate-x-1/2'
                     : 'left-1/2 transform -translate-x-1/2 w-full flex justify-center tracking-normal'
