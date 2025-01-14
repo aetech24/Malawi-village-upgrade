@@ -30,6 +30,8 @@ const Navbar = () => {
     cartItems?.reduce((total, item) => total + item.quantity, 0) || 0;
   const totalWishlistItems = wishlist.length;
 
+  // scroll effect
+
   useEffect(() => {
     if (location.pathname === '/') {
       const handleScroll = () => {
@@ -48,8 +50,10 @@ const Navbar = () => {
   useEffect(() => {
     const results = products.filter((product) => {
       return (
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.description?.toLowerCase().includes(searchTerm.toLowerCase())
+        (product.name &&
+          product.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (product.description &&
+          product.description.toLowerCase().includes(searchTerm.toLowerCase()))
       );
     });
     setFilteredProducts(results);
@@ -111,35 +115,37 @@ const Navbar = () => {
           </div>
 
           {/* Center Section */}
-          {scrollProgress > 0 && (
-            <div
-              className={`absolute transition-transform duration-[1500ms] ease-in-out ${
-                isHomepage
-                  ? 'left-1/2 transform -translate-x-1/2'
-                  : 'left-1/2 transform -translate-x-1/2 w-full flex justify-center tracking-normal'
-              }`}
-              style={{
-                transform: `translateX(-50%) translateY(${
-                  scrollProgress * 5
-                }px) scale(${1 - scrollProgress * 0.3})`,
-                color: scrollProgress > 0.1 || !isHomepage ? 'black' : 'white',
-              }}
-            >
-              <Link
-                to='/'
-                className='font-serif tracking-0 align-center tracking-normal'
+          <>
+            {scrollProgress > 0 && (
+              <div
+                className={`absolute transition-transform duration-[1500ms] ease-in-out ${
+                  isHomepage
+                    ? 'left-1/2 transform -translate-x-1/2'
+                    : 'left-1/2 transform -translate-x-1/2 w-full flex justify-center tracking-normal'
+                }`}
                 style={{
-                  whiteSpace: 'nowrap',
-                  fontSize:
-                    isHomepage && scrollProgress > 0.8 ? '24px' : '50px',
-                  transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: `translateX(-50%) translateY(${
+                    scrollProgress * 5
+                  }px) scale(${1 - scrollProgress * 0.3})`,
+                  color:
+                    scrollProgress > 0.1 || !isHomepage ? 'black' : 'white',
                 }}
               >
-                MALAWI
-              </Link>
-            </div>
-          )}
-
+                <Link
+                  to='/'
+                  className='font-serif tracking-0 align-center tracking-normal'
+                  style={{
+                    whiteSpace: 'nowrap',
+                    fontSize:
+                      isHomepage && scrollProgress > 0.8 ? '24px' : '50px',
+                    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                  }}
+                >
+                  MALAWI
+                </Link>
+              </div>
+            )}
+          </>
           {/* Right Section */}
           <div className='flex items-center gap-4'>
             {/* Main Menu */}

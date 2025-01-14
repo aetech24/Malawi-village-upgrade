@@ -73,7 +73,21 @@ const SingleProduct = () => {
         <img src={product.image} alt={product.name} className="w-full lg:w-1/2 h-[400px] object-cover rounded-lg" />
         <div className='flex flex-col gap-6 lg:w-1/2'>
           <p className='text-2xl font-semibold'>{product.name}</p>
-          <p>{truncatedDescription}</p>
+          <p dangerouslySetInnerHTML={{ __html: product.description }}></p>
+          {product.description[0].urls && (
+            <div className='mt-4'>
+              <h3 className='text-lg font-semibold'>References:</h3>
+              <ul className='list-disc list-inside'>
+                {product.description[0].urls.map((url, index) => (
+                  <li key={index}>
+                    <a href={url} target='_blank' rel='noopener noreferrer' className='text-blue-500 underline'>
+                      {url}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <p className='font-semibold text-2xl'>{formatPrice(product.price)}</p>
           {typeof product.price === 'object' && (
             <select
@@ -126,7 +140,7 @@ const SingleProduct = () => {
             className={`px-6 md:w-60 py-2 ${
               activeTab === "description" ? "border-b-2 border-black bg-gray-100 p-2" : ""
             }`}
-            onClick={() => setActiveTab("description")}
+            onClick={() => setActiveTab("description", "urls")}
           >
             Description
           </button>
