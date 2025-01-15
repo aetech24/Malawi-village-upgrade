@@ -19,7 +19,7 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
   };
 
   return (
-    <div className="min-h-screen max-md:mt-20 md:p-6">
+    <div className="min-h-screen  md:p-20 md:-mt-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 max-w-7xl mx-auto">
         {/* Billing Details Section */}
         <div className="bg-white p-6">
@@ -101,22 +101,22 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
                   />
                   <span>{item.name} ({item.size})</span>
                 </div>
-                <span className="font-bold">GH¢ {item.price.toFixed(2)}</span>
+                <span className="font-bold">$ {item.price.toFixed(2)}</span>
               </div>
             ))}
             <div className="border-t border-gray-300 my-4"></div>
             <div className="flex justify-between items-center font-semibold">
               <span>Subtotal</span>
-              <span>GH¢ {calculateSubtotal().toFixed(2)}</span>
+              <span>$ {calculateSubtotal().toFixed(2)}</span>
             </div>
             <div className="flex justify-between items-center font-semibold">
               <span>Shipping</span>
-              <span>GH¢ {shippingCost > 0 ? shippingCost.toFixed(2) : "Free"}</span>
+              <span>$ {shippingCost > 0 ? shippingCost.toFixed(2) : "Free"}</span>
             </div>
             <div className="border-t border-gray-300 my-4"></div>
             <div className="flex justify-between items-center text-xl font-bold">
               <span>Total</span>
-              <span>GH¢ {calculateTotal().toFixed(2)}</span>
+              <span>$ {calculateTotal().toFixed(2)}</span>
             </div>
           </div>
 

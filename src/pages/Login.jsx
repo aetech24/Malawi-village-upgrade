@@ -52,7 +52,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex lg:grid lg:grid-cols-2 items-center gap-4">
+    <div className="flex lg:grid lg:grid-cols-2 items-center gap-4 md:mt-6">
       <div className="w-full h-full hidden lg:flex relative">
         <img src={Hero} alt="" className="w-full bg-cover h-full" />
       </div>

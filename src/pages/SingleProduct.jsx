@@ -97,7 +97,7 @@ const SingleProduct = () => {
             >
               {Object.keys(product.price).map((size) => (
                 <option key={size} value={size}>
-                  {size.charAt(0).toUpperCase() + size.slice(1)} - GH¢ {product.price[size]}
+                  {size.charAt(0).toUpperCase() + size.slice(1)} - $ {product.price[size]}
                 </option>
               ))}
             </select>

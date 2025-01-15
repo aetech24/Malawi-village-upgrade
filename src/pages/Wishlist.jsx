@@ -36,7 +36,7 @@ const Wishlist = () => {
   };
 
   return (
-    <div className="lg:p-10 max-lg:mt-20 py-8 px-4">
+    <div className="lg:p-10 max-lg:mt-20 py-8 px-4 md:mt-6">
       <h1 className="text-2xl font-bold mb-6">Favorites ({wishlist.length})</h1>
       {wishlist.length === 0 ? (
         <div className="text-center text-gray-500">
