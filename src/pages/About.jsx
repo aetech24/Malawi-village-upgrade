@@ -33,6 +33,7 @@ const About = () => {
                 market presence or community-driven projects, we aim to inspire and
                 uplift.
               </p>
+              <h3 className="text-2xl font-bold mb-6 text-center md:text-left">Our Mission</h3>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Our mission is to bridge the gap between sustainability and
                 innovation. Join us in creating a better future—one step at a time.
