@@ -50,7 +50,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex lg:grid lg:grid-cols-2 items-center gap-4 max-md:mt-5">
+    <div className="flex lg:grid lg:grid-cols-2 items-center gap-4 max-md:mt-6">
       <div className="w-full h-full hidden lg:flex relative">
         <img src={Hero} alt="" className="w-full bg-cover h-full" />
       </div>

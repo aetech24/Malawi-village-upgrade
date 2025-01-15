@@ -27,7 +27,7 @@ const Cart = () => {
   ) || 0;
 
   return (
-    <div className="lg:p-10 px-4 max-lg:mt-16">
+    <div className="lg:p-10 px-4 max-lg:mt-16 md:-mt-10">
       <h1 className="text-2xl font-bold mb-6 text-center lg:text-left">
         Your Shopping Cart
       </h1>
@@ -61,7 +61,7 @@ const Cart = () => {
                           <div>{item.name}</div>
                         </td>
                         <td className="p-4">{item.size}</td>
-                        <td className="p-4">GH¢ {Number(item.price)}</td>
+                        <td className="p-4">$ {Number(item.price)}</td>
                         <td className="p-4">
                           <input
                             type="number"
@@ -78,7 +78,7 @@ const Cart = () => {
                           />
                         </td>
                         <td className="p-4">
-                          GH¢ {(Number(item.price) * item.quantity)}
+                          $ {(Number(item.price) * item.quantity)}
                         </td>
                         <td
                           className="p-4 text-red-500 cursor-pointer"
@@ -111,7 +111,7 @@ const Cart = () => {
                       </div>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>GH¢ {Number(item.price)}</span>
+                      <span>$ {Number(item.price)}</span>
                       <input
                         type="number"
                         value={isNaN(item.quantity) ? "1" : item.quantity}
@@ -126,7 +126,7 @@ const Cart = () => {
                         className="w-16 text-center border rounded"
                       />
                       <span>
-                        GH¢ {(Number(item.price) * item.quantity)}
+                        $ {(Number(item.price) * item.quantity)}
                       </span>
                       <button
                         onClick={() => removeFromCart(item.id, item.size)}
@@ -149,20 +149,20 @@ const Cart = () => {
           <h2 className="text-lg font-bold mb-4">Your Order Summary</h2>
           <div className="flex justify-between mb-2">
             <span>Sub Total</span>
-            <span>GH¢ {subtotal.toFixed(2)}</span>
+            <span>$ {subtotal.toFixed(2)}</span>
           </div>
           <div className="flex justify-between mb-2">
             <span>Discount</span>
-            <span>GH¢ {discount.toFixed(2)}</span>
+            <span>$ {discount.toFixed(2)}</span>
           </div>
           <div className="flex justify-between mb-2">
             <span>Delivery</span>
-            <span>GH¢ {delivery.toFixed(2)}</span>
+            <span>$ {delivery.toFixed(2)}</span>
           </div>
           <hr className="my-4" />
           <div className="flex justify-between font-bold">
             <span>Total</span>
-            <span>GH¢ {(subtotal - discount + delivery).toFixed(2)}</span>
+            <span>$ {(subtotal - discount + delivery).toFixed(2)}</span>
           </div>
           <Link to="/billing">
             <button className="mt-4 w-full bg-black hover:bg-opacity-30 duration-200 text-white py-2 rounded">
