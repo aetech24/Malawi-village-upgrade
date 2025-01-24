@@ -214,7 +214,7 @@ const Navbar = () => {
                   value={searchTerm}
                   onChange={handleSearch}
                   placeholder='Search products...'
-                  className='border px-4 py-2 rounded-full focus:outline-none text-black w-64 md:w-80 transition-all'
+                  className='border px-4 py-2 rounded-full focus:outline-none text-black w-[100px] md:w-[200px] lg:w-[300px] h-auto transition-all duration-300'
                   autoFocus
                 />
                 <button
@@ -353,7 +353,7 @@ const Navbar = () => {
           {' '}
           <h2 className='text-white text-4xl font-serif tracking-[0.5em] mb-10 text-center flex items-center'>
             <span className='whitespace-normal'>MALAWI VILLAGE</span>
-            <img src={LogoWhite} alt='logo-white' className='ml-2 w-10 h-10 p-1'/>
+            {/* <img src={LogoWhite} alt='logo-white' className='ml-2 w-10 h-10 p-1'/> */}
           </h2>
         </div>
       )}
