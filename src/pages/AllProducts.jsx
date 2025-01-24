@@ -71,7 +71,7 @@ const AllProducts = () => {
   };
 
   return (
-    <div className='px-4 md:px-10 py-8 max-lg:mt-16 w-full'>
+    <div className='px-4 md:px-10 py-8 max-lg:mt-16 w-full lg:mt-20'>
       <div className='flex flex-col md:flex-row items-start md:items-center gap-4 mb-8 w-full'>
         <div className='flex items-center gap-2 md:w-1/4'>
           <div className='h-10 w-4 rounded-md bg-black'></div>
