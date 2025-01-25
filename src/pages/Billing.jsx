@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import PropTypes from 'prop-types';
 import { CartContext } from "../context/CartContext";
+import ScrollToTop from '../components/ScrollToTop';
 
 const Billing = ({ shippingCost, onPlaceOrder }) => {
   const { cartItems, clearCart } = useContext(CartContext);
@@ -156,6 +157,7 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

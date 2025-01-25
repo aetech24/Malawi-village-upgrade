@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
@@ -14,6 +13,7 @@ import Cart from './pages/Cart';
 import Wishlist from './pages/Wishlist';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const shippingCost = 5.0;
@@ -41,7 +41,9 @@ const App = () => {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/products" element={<AllProducts />} />
           </Routes>
+
           <Footer />
+          <ScrollToTop />
         </div>
       </WishlistProvider>
     </CartProvider>

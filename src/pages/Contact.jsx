@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Contact = () => {
   const initialFormState = {
@@ -153,6 +154,7 @@ const Contact = () => {
           </div>
         </form>
       </div>
+      <ScrollToTop />
     </main>
   );
 };

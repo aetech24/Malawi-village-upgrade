@@ -1,9 +1,15 @@
-import React from 'react'
 import Test from '../assets/test1.jpg'
 import Test1 from '../assets/test2.jpg'
 import Test2 from '../assets/test3.jpg'
 import Test3 from '../assets/test4.jpg'
+import PropTypes from 'prop-types';
 
+TestimonialCard.propTypes = {
+    text: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+  };
 const TestimonialCard = ({ text, name, role, imageUrl }) => {
     return (
 
@@ -21,7 +27,7 @@ const TestimonialCard = ({ text, name, role, imageUrl }) => {
             className="rounded-full w-10 h-10 mr-4"
           />
           <div>
-            <h4 className="font-bold text-sm font-semibold text-white">{name}</h4>
+            <h4 className="font-bold text-sm text-white">{name}</h4>
             <p className="text-sm text-gray-300">{role}</p>
           </div>
         </div>

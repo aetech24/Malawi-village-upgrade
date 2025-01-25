@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { WishlistContext } from "../context/WishlistContext";
 import { CartContext } from "../context/CartContext";
+import ScrollToTop from '../components/ScrollToTop';
 
 const Wishlist = () => {
   const { wishlist, removeFromWishlist, clearWishlist } = useContext(WishlistContext);
@@ -84,6 +85,7 @@ const Wishlist = () => {
           </button>
         </>
       )}
+      <ScrollToTop />
     </div>
   );
 };

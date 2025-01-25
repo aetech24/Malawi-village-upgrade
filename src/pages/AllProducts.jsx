@@ -1,14 +1,14 @@
-import React, { useEffect, useContext, useState } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { products } from '../constants/products';
 import ProductCard from '../components/ProductCard';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { CartContext } from '../context/CartContext';
+import ScrollToTop from '../components/ScrollToTop';
 
 const AllProducts = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [showScroll, setShowScroll] = useState(false);
   const productsPerPage = 12;
   const { addToCart, addToWishlist } = useContext(CartContext);
 
@@ -57,18 +57,6 @@ const AllProducts = () => {
 
   // Generate page numbers
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScroll(window.scrollY > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <div className='px-4 md:px-10 py-8 max-lg:mt-16 w-full lg:mt-20'>
@@ -162,15 +150,7 @@ const AllProducts = () => {
           </button>
         </div>
       )}
-
-      {showScroll && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full"
-        >
-          ↑
-        </button>
-      )}
+      <ScrollToTop />
     </div>
   );
 };
