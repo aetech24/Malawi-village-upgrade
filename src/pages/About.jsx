@@ -1,22 +1,9 @@
-import React, { useState, useEffect } from "react";
 import Gallery from '../components/Gallery';
 import Testimonials from '../components/Testimonials';
 import Test from '../assets/tes-img1.jpg';
-
+import ScrollToTop from '../components/ScrollToTop';
 const About = () => {
-  const [showScroll, setShowScroll] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScroll(window.scrollY > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <>
@@ -29,7 +16,7 @@ const About = () => {
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 Welcome to Malawi Village! We are committed to making a positive
                 impact in our community by providing access to high-quality products
-                and supporting local initiatives. Whether it's through our local
+                and supporting local initiatives. Whether it&apos;s through our local
                 market presence or community-driven projects, we aim to inspire and
                 uplift.
               </p>
@@ -59,14 +46,7 @@ const About = () => {
       <div>
         <Gallery />
       </div>
-      {showScroll && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full"
-        >
-          ↑
-        </button>
-      )}
+      <ScrollToTop />
     </>
   );
 };

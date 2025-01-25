@@ -1,25 +1,14 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import ScrollToTop from '../components/ScrollToTop';
 
 const Cart = () => {
   const { cartItems, updateQuantity, removeFromCart } = useContext(CartContext);
 
   const discount = 0;
   const delivery = 0;
-  const [showScroll, setShowScroll] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScroll(window.scrollY > 300);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   const subtotal = cartItems?.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -171,14 +160,7 @@ const Cart = () => {
           </Link>
         </div>
       </div>
-      {showScroll && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full shadow-lg"
-        >
-          ↑
-        </button>
-      )}
+      <ScrollToTop />
     </div>
   );
 };

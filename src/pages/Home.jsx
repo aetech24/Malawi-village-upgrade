@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useRef } from 'react';
 import Hero from '../assets/hero.jpg';
 // import Banner from '../components/Banner';
 // import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
@@ -14,14 +13,9 @@ import Banner from '../assets/banner.jpg';
 import Feature1 from '../assets/feature1.jpg';
 import Feature2 from '../assets/feature2.jpg';
 import Feature3 from '../assets/feature3.jpg';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Home = () => {
-  // const [searchTerm, setSearchTerm] = useState('');
-  // const [selectedCategory] = useState('');
-  // const [filteredProducts, setFilteredProducts] = useState([]);
-  // const scrollContainerRef = useRef(null);
-  const [showScroll, setShowScroll] = useState(false);
-
   const Categories = [
     {
       name: 'Refreshments',
@@ -37,44 +31,6 @@ const Home = () => {
     },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScroll(window.scrollY > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // useEffect(() => {
-  //   const results = products.filter(product => {
-  //     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  //                          product.description?.toLowerCase().includes(searchTerm.toLowerCase());
-  //     const matchesCategory = selectedCategory === '' || selectedCategory === 'All Categories' ||
-  //                            product.category === selectedCategory;
-  //     return matchesSearch && matchesCategory;
-  //   });
-  //   setFilteredProducts(results);
-  // }, [searchTerm, selectedCategory]);
-
-  // const handleSearch = (e) => {
-  //   setSearchTerm(e.target.value);
-  // };
-
-  // const scrollLeft = () => {
-  //   if (scrollContainerRef.current) {
-  //     scrollContainerRef.current.scrollLeft -= 300;
-  //   }
-  // };
-
-  // const scrollRight = () => {
-  //   if (scrollContainerRef.current) {
-  //     scrollContainerRef.current.scrollLeft += 300;
-  //   }
-  // };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <div>
@@ -247,6 +203,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };
