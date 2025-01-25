@@ -218,14 +218,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-      {showScroll && (
-        <button
-          onClick={scrollToTop}
-          className='fixed bottom-4 right-4 bg-yellow text-black p-2 rounded-full'
-        >
-          ↑
-        </button>
-      )}
       <div className='w-full flex flex-col justify-center items-center px-6 py-10'>
         <div className=''><h2 className='text-4xl font-[500] py-8'>Featured</h2></div>
         <div className='w-full flex lg:flex-row flex-col justify-center items-center gap-8'>
