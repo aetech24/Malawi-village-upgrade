@@ -78,41 +78,41 @@ const Home = () => {
             </div> */}
           </div>
           <div className='flex gap-6 md:justify-center justify-start mb-8 overflow-x-auto scroll-smooth scrollbar-auto'>
-            <Link to='/products?category=Refreshments'>
-              <div className='min-w-[200px] rounded-md cursor-pointer relative'>
+            <Link to='/products?category=Refreshment'>
+              <div className='min-w-[200px] max-w-[400px] rounded-md cursor-pointer relative  group hover:drop-shadow-sm'>
                 <img
                   src={Categories[0].image}
                   alt='Refreshments'
-                  className='w-full object-cover '
+                  className='w-full object-cover group-hover:scale-105 duration-200'
                 />
-                <div className='w-full cursor-pointer bg-white hover:bg-opacity-30 duration-200 text-[#232323] p-2 text-center'>
+                <div className='w-full cursor-pointer bg-white group-hover:text-yellow duration-200 text-[#232323] p-2 text-center'>
                   Refreshments
                 </div>
               </div>
             </Link>
 
-            <Link to='/products?category=Detox and Immune Booster'>
-              <div className='min-w-[200px] rounded-md cursor-pointer relative'>
+            <Link to='/products?category=Detox & Immune Booster'>
+              <div className='min-w-[200px] max-w-[400px] rounded-md cursor-pointer relative group hover:drop-shadow-sm'>
                 <img
                   src={Categories[1].image}
                   alt='DetoxAndImmuneBoosters'
-                  className='w-full object-cover'
+                  className='w-full object-cover group-hover:scale-105 duration-200'
                 />
-                <div className='w-full cursor-pointer bg-white hover:bg-opacity-30 duration-200 text-[#232323] p-2 text-center'>
-                  Detox and Immune Booster
+                <div className='w-full cursor-pointer bg-white group-hover:text-yellow duration-200 text-[#232323] p-2 text-center'>
+                  Detox & Immune Booster
                 </div>
               </div>
             </Link>
 
-            <Link to='/products?category=Sweet and Unsweet Tea'>
-              <div className='min-w-[200px] rounded-md cursor-pointer relative'>
+            <Link to='/products?category=Sweet & Unsweet Tea'>
+              <div className='min-w-[200px] max-w-[400px] rounded-md cursor-pointer relative group hover:drop-shadow-sm'>
                 <img
                   src={Categories[2].image}
                   alt='SweetAndUnsweetTea'
-                  className='w-full object-cover'
+                  className='w-full object-cover group-hover:scale-105 duration-200'
                 />
-                <div className='w-full cursor-pointer bg-white hover:bg-opacity-30 duration-200 text-[#232323] p-2 text-center'>
-                  Sweet and Unsweet Tea
+                <div className='w-full cursor-pointer bg-white group-hover:text-yellow duration-200 text-[#232323] p-2 text-center'>
+                  Sweet & Unsweet Tea
                 </div>
               </div>
             </Link>
