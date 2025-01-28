@@ -58,34 +58,30 @@ const SingleProduct = () => {
     addToWishlist(product);
   };
 
-  // Swiper images: Ensure valid array
-  const images = Array.isArray(product.images) && product.images.length > 0 ? product.images : [product.image];
-
-  // Truncate description to first 200 characters
-  const truncatedDescription = product.description.length > 200 
-    ? product.description.substring(0, 200) + '...'
-    : product.description;
-
   return (
-    <div className='px-4 md:px-10 py-5 max-md:mt-16'>
-      <h1 className='text-4xl py-5'>Single Product</h1>
-      <div className='flex flex-col lg:flex-row items-center justify-between md:gap-16 gap-6 py-6'>
-        <img src={product.image} alt={product.name} className="w-full lg:w-1/2 h-[400px] object-cover rounded-lg" />
-        <div className='flex flex-col gap-6 lg:w-1/2'>
-          <p className='text-2xl font-semibold'>{product.name}</p>
-          <p dangerouslySetInnerHTML={{ __html: product.description }}></p>
-          {product.description[0].urls && (
-            <div className='mt-4'>
-              <h3 className='text-lg font-semibold'>References:</h3>
-              <ul className='list-disc list-inside'>
-                {product.description[0].urls.map((url, index) => (
-                  <li key={index}>
-                    <a href={url} target='_blank' rel='noopener noreferrer' className='text-blue-500 underline'>
-                      {url}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+    <div className="px-4 md:px-10 py-5 max-md:mt-20">
+      <div className="flex flex-col lg:flex-row items-center justify-between md:gap-16 gap-6 py-6">
+        {/* Product Image Section */}
+        <div className="w-full lg:w-1/2">
+          <img
+            src={currentImage}
+            alt={product.name}
+            className="w-full h-[400px] object-cover rounded-lg"
+          />
+          {/* Thumbnail Gallery */}
+          {images.length > 1 && (
+            <div className="flex mt-4 gap-2">
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`View ${index + 1}`}
+                  className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 ${
+                    currentImage === image ? "border-black" : "border-transparent"
+                  }`}
+                  onClick={() => setCurrentImage(image)}
+                />
+              ))}
             </div>
           )}
           <p className='font-semibold text-2xl'>{formatPrice(product.price)}</p>
