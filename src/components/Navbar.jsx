@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { CgMenu } from 'react-icons/cg';
 import {
   AiOutlineHeart,
@@ -12,12 +12,12 @@ import { CartContext } from '../context/CartContext';
 import { WishlistContext } from '../context/WishlistContext';
 import { products } from '../constants/products';
 import Logo from '../assets/logo.png';
-import LogoWhite from '../assets/MalawiWhite.png';
+// import LogoWhite from '../assets/MalawiWhite.png';
 
 const Navbar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory] = useState('');
+  // const [selectedCategory] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for main menu
@@ -70,38 +70,38 @@ const Navbar = () => {
     setIsSearchVisible(false); // close search dropdown when a product is selected
   };
 
-  const handleSignUp = (userDetails) => {
-    // Simulate user sign-up logic
-    localStorage.setItem('userDetails', JSON.stringify(userDetails));
-    navigate('/login'); // Redirect to login after sign-up
-  };
+  // const handleSignUp = (userDetails) => {
+  //   // Simulate user sign-up logic
+  //   localStorage.setItem('userDetails', JSON.stringify(userDetails));
+  //   navigate('/login'); // Redirect to login after sign-up
+  // };
 
-  const handleLogin = (loginDetails) => {
-    const storedUser = JSON.parse(localStorage.getItem('userDetails'));
+  // const handleLogin = (loginDetails) => {
+  //   const storedUser = JSON.parse(localStorage.getItem('userDetails'));
 
-    if (
-      storedUser &&
-      storedUser.email === loginDetails.email &&
-      storedUser.password === loginDetails.password
-    ) {
-      alert('Login successful!');
-      navigate('/'); // Redirect to homepage or dashboard
-    } else {
-      alert('Invalid login details. Please try again.');
-    }
-  };
+  //   if (
+  //     storedUser &&
+  //     storedUser.email === loginDetails.email &&
+  //     storedUser.password === loginDetails.password
+  //   ) {
+  //     alert('Login successful!');
+  //     navigate('/'); // Redirect to homepage or dashboard
+  //   } else {
+  //     alert('Invalid login details. Please try again.');
+  //   }
+  // };
 
   const isHomepage = location.pathname === '/';
 
   return (
-    <>
+<>
       {/* Navbar */}
       <nav
         className={`fixed top-0 z-50 w-[100%] transition-all duration-300 ${
           isHomepage
             ? scrollProgress > 0.1
               ? 'bg-yellow text-black shadow-md'
-              : 'bg-transparent text-white'
+              : 'bg-transparent text-[#232323]'
             : 'bg-yellow text-black shadow-md'
         }`}
       >
@@ -344,16 +344,21 @@ const Navbar = () => {
       </nav>
 
       {/* Hero Section */}
-      {isHomepage && scrollProgress === 0 && (
+      {isHomepage && (
         <div
-          className={`absolute bottom-2/3 left-1/2 transform -translate-x-1/2 z-40 flex justify-center items-center flex-wrap ${
+          className={`absolute z-40 flex justify-center items-center flex-wrap ${
             isMobile ? 'text-sm' : 'text-lg'
           }`}
+          style={{
+            bottom: `${60 + scrollProgress * 50}vh`, // Controls upward movement
+            left: '50%',
+            transform: `translateX(-50%) scale(${1 - scrollProgress * 0.3})`, // Scale text gradually
+            opacity: `${1 - scrollProgress * 0.5}`, // Fade out the text
+            transition: 'transform 0.1s linear, opacity 0.1s linear',
+          }}
         >
-          {' '}
-          <h2 className='text-white text-4xl font-serif tracking-[0.5em] mb-10 text-center flex items-center'>
+          <h2 className='text-white lg:text-[100px] lg:leading-[100px] md:text-[70px] md:leading-[70px] text-[50px] leading-[50px] font-serif tracking-[0.5em] mb-10 text-center'>
             <span className='whitespace-normal'>MALAWI VILLAGE</span>
-            {/* <img src={LogoWhite} alt='logo-white' className='ml-2 w-10 h-10 p-1'/> */}
           </h2>
         </div>
       )}
@@ -362,6 +367,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-<div className='flex item-center space-x-1'>
-  <h4 className='text-[11px]'>MALAWI VILLAGE</h4>
-</div>;
