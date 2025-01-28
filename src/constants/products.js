@@ -43,6 +43,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Water,
+    images: [Water, Water, Water],
     description:
       "Watermelon is one of the most alkaline forming fruits on planet earth. " +
       "Powerful fruit that is packed with Potassium and Magnesium. " +
@@ -65,6 +66,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Orange,
+    images: [Orange, Orange, Orange],
     description:
       "Freshly squeezed orange juice made with 100% organic oranges, and nothing else. Rich in Vitamin C & folate, and potassium. " +
       "Helps the body to metabolize carbohydrates, vitamin C supports your immune system and may be effective in fighting against the common cold." +
@@ -80,6 +82,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Zobo,
+    images: [Zobo, Zobo, Zobo],
     description:
       "Hibiscus flower may lower blood pressure, Improves Digestive Health, Fights inflammation, lowers cholesterol, and Supports Liver Health. Contain strong antioxidants such as Vitamin C, quercetin and gallic acid that fight against cancer.",
     category: "Refreshments",
@@ -100,6 +103,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Ginger,
+    images: [Ginger, Ginger, Ginger],
     description:
       "Ginger root is a great way to aid your digestion, detoxify your system, and increase your body’s production of white blood cells, which help protect your internal system from disease and infection. Ginger root is more potent (and delicious) than any dried tea bag, coffee, milk or soda bought at the supermarket. it is known to benefit both the brain and body by fighting germs, keeping your mouth healthy, calming nausea and soothing sore muscles.",
     category: "Refreshments",
@@ -117,6 +121,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Pina,
+    images: [Pina, Pina, Pina],
     description:
       "Mangos contain nutrients and antioxidants. Rich in fiber Packed with nutrients, rich in vitamin C, which is important for forming blood vessels and healthy collagen, as well as helping you heal. Low in calories, may help prevent diabetes, high in healthy plant compounds, contains immune-boosting nutrients,supports heart health, may improve digestive health and support eye health",
     category: "Refreshments",
@@ -135,6 +140,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: VitaminC,
+    images: [VitaminC, VitaminC, VitaminC],
     description:
       "Immunity powerhouse benefits with a focus on overall vitality, Good for digestion. gut health. Helps manage weight gain, expel mucus, promote healthy skin. Use daily shot in the morning before eating and at night after the last meal for best results.",
     category: "Detox and Immune booster",
@@ -152,6 +158,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Strong,
+    images: [Strong, Strong, Strong],
     description:
       "Helps lowering the risk of type 2 diabetes, protecting against heart disease, and helping prevent constipation. Great for detoxification, reduce bloating, eliminate mucus, contain lots of vitamins, minerals, antioxidants, a boost in healthy glowing skin. A overall Gut health cleanse.",
     category: "Detox and Immune booster",
@@ -171,6 +178,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Rouge,
+    images: [Rouge, Rouge, Rouge],
     description:
       "Low in calories yet high in nutrition, Beets are packed with essential vitamins and minerals including Folate, Manganese, Vitamin C, Vitamin A, Potassium. These nutrients help to reduce the risk of heart disease and stroke, improve digestive health, fight inflammation and support brain health. improve exercise performance and support energy levels Drinking beetroot juice could actually help you exercise for up to 16% longer. Kale: Very low in calories and extremely high in nutrients, Kale is easily one of the healthiest and most nutrient-dense foods around. Kale is loaded with antioxidants and is one of the best sources of Vitamin C and K. It has so many nutrients we could go on and on…Apples: One of the most versatile fruits, Apples also have many nutritional benefits. Rich in fiber, Vitamin C and potassium, to name a few, their benefits are linked to lowering the risk of chronic conditions such as diabetes, heart disease and cancer and promoting weight loss and brain health.",
     category: "Detox and Immune booster",
@@ -189,6 +197,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: MangoJuice,
+    images: [MangoJuice, MangoJuice, MangoJuice],
     description:
       "A refreshing tropical twist, presents an exotic escape, transporting the mango tea lover to distant realms with its aromatic fusion of coconut. Coconut is a great energy-revitalizing drink. Coconut provides a large portion of sodium, potassium, phosphorus, calcium, and magnesium, which help revive and enhance your energy. Mango often considered a superfood rich in fiber, good source of vitamins, minerals, and antioxidants. Boost the Immune System and Ease Constipation.",
     category: "Sweet and unsweet tea",
@@ -205,6 +214,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: OrangeAndRosemaryTea,
+    images: [OrangeAndRosemaryTea, OrangeAndRosemaryTea, OrangeAndRosemaryTea],
     description:
       "Fuel your senses with the pleasant aroma and taste of orange and rosemary. From the first sip, the blend is bright and delicate, mimicking the sweet summer flavor of freshly sliced oranges, followed by a pleasant surprise of rosemary.",
     category: "Sweet and unsweet tea",
@@ -223,6 +233,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: RaspberryStrawberryPomegranateTea,
+    images: [RaspberryStrawberryPomegranateTea, RaspberryStrawberryPomegranateTea, RaspberryStrawberryPomegranateTea],
     description:
       "There is something seriously magical when introducing three favorites and finding out they pair harmoniously, right? That’s how we felt when we took our iconic, thirst-quenching berries featuring a hit of pomegranate. lovely fruit fragrance, adding a refreshing allure to your lazy summer afternoon. And it’s just as pleasant during other seasonal months. You asked for it, and here it is one of our favorite herbal brews.",
     category: "Sweet and unsweet tea",

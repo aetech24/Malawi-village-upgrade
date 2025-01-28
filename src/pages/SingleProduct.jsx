@@ -1,24 +1,27 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { products } from "../constants/products";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ProductCard from "../components/ProductCard";
-import { CartContext } from "../context/CartContext"; // Assuming you have a CartContext
-import { WishlistContext } from "../context/WishlistContext"; // Assuming you have a WishlistContext
+import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
 
 const SingleProduct = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext); // Access addToCart from context
   const { addToWishlist } = useContext(WishlistContext); // Access addToWishlist from context
-  const [activeTab, setActiveTab] = useState("description");
+  // const [activeTab, setActiveTab] = useState("description");
   const [selectedSize, setSelectedSize] = useState(Object.keys(products[0].price)[0]); // Default to the first size
 
   // Find the product by ID
   const product = products.find((p) => p.id === parseInt(id));
+
+  // Set the current displayed image
+  const [currentImage, setCurrentImage] = useState(product?.image);
 
   // Related products: same category, excluding the current product
   const relatedProducts = products
@@ -58,36 +61,31 @@ const SingleProduct = () => {
     addToWishlist(product);
   };
 
+  // Swiper images: Ensure valid array
+  const images = Array.isArray(product.images) && product.images.length > 0 ? product.images : [product.image];
+
   return (
     <div className="px-4 md:px-10 py-5 max-md:mt-20">
       <div className="flex flex-col lg:flex-row items-center justify-between md:gap-16 gap-6 py-6">
-        {/* Product Image Section */}
-        <div className="w-full lg:w-1/2">
+        {/* Main Image */}
+        <div className="relative">
           <img
             src={currentImage}
             alt={product.name}
-            className="w-full h-[400px] object-cover rounded-lg"
+            className="w-full lg:w-1/2 h-[400px] object-cover rounded-lg"
           />
-          {/* Thumbnail Gallery */}
-          {images.length > 1 && (
-            <div className="flex mt-4 gap-2">
-              {images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`View ${index + 1}`}
-                  className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 ${
-                    currentImage === image ? "border-black" : "border-transparent"
-                  }`}
-                  onClick={() => setCurrentImage(image)}
-                />
-              ))}
-            </div>
-          )}
-          <p className='font-semibold text-2xl'>{formatPrice(product.price)}</p>
-          {typeof product.price === 'object' && (
+        </div>
+
+        {/* Product Details */}
+        <div className="flex flex-col gap-6 lg:w-1/2">
+          <p className="text-2xl font-semibold">{product.name}</p>
+          <p dangerouslySetInnerHTML={{ __html: product.description }}></p>
+          <p className="font-semibold text-2xl">{formatPrice(product.price)}</p>
+
+          {/* Select Size */}
+          {typeof product.price === "object" && (
             <select
-              className='border px-4 py-3 border-black outline-none'
+              className="border px-4 py-3 border-black outline-none"
               value={selectedSize}
               onChange={(e) => setSelectedSize(e.target.value)}
             >
@@ -98,90 +96,32 @@ const SingleProduct = () => {
               ))}
             </select>
           )}
-          <div className='flex flex-col gap-3'>
-            <button className='bg-yellow hover:bg-opacity-30 px-6 py-2 text-center' onClick={handleAddToCart}>Add to cart</button>
-            <button className='bg-black hover:bg-opacity-30 text-white px-6 py-2 text-center' onClick={handleAddToWishlist}>Add to wishlist</button>
+
+          {/* Add to Cart & Wishlist Buttons */}
+          <div className="flex flex-col gap-3">
+            <button className="bg-yellow hover:bg-opacity-30 px-6 py-2 text-center" onClick={handleAddToCart}>
+              Add to cart
+            </button>
+            <button className="bg-black hover:bg-opacity-30 text-white px-6 py-2 text-center" onClick={handleAddToWishlist}>
+              Add to wishlist
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Swiper Section */}
-      {images.length > 1 && (
-        <div className="my-10 w-full lg:w-[48%]">
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={15}
-            slidesPerView={3}
-            navigation
-            pagination={{ clickable: true }}
-            className="mySwiper"
-          >
-            {images.map((image, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={image}
-                  alt={`Product Slide ${index + 1}`}
-                  className="w-full h-[170px] object-cover rounded"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      )}
-
-      {/* Tabs Section */}
-      <div className="my-10 flex flex-col md:flex-row w-full items-start md:gap-16 gap-6">
-        <div className="flex md:flex-col flex-row gap-4 border-gray-200">
-          <button
-            className={`px-6 md:w-60 py-2 ${
-              activeTab === "description" ? "border-b-2 border-black bg-gray-100 p-2" : ""
+      {/* Other Views Section */}
+      <div className="flex gap-4 mt-6">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Product View ${index + 1}`}
+            className={`w-24 h-24 object-cover rounded-lg cursor-pointer border ${
+              currentImage === image ? "border-black" : "border-transparent"
             }`}
-            onClick={() => setActiveTab("description", "urls")}
-          >
-            Description
-          </button>
-          <button
-            className={`px-6 md:w-60 py-2 ${
-              activeTab === "ingredients" ? "border-b-2 border-black bg-gray-100 p-2" : ""
-            }`}
-            onClick={() => setActiveTab("ingredients")}
-          >
-            Ingredients
-          </button>
-        </div>
-
-        <div className="md:py-6">
-          {activeTab === "description" ? (
-            <div className="flex flex-col gap-4">
-              <h3 className="text-xl font-semibold mb-4">Product Description</h3>
-              <p>{product.description}</p>
-              {/* <img src={product.image} alt=""></img> */}
-            </div>
-          ) : (
-            <div className='flex flex-col gap-4 w-full'>
-              <h3 className='text-xl font-medium mb-4 flex justify-center w-full'>DID YOU KNOW?</h3>
-              <div className=' pl-6 flex flex-col gap-8'>
-                {product.ingredient ? (
-                  product.ingredient.map((item, index) => (
-                    <div key={index} className="flex items-center gap-4">
-                        <img src={item.image} alt={item.text} className="w-24 h-24 bg-cover" />
-                        <div className='flex flex-col gap-2'>
-                            <p className="font-semibold text-xl">{item.text}</p>
-                            <p>{item.description}</p>
-                            {/* <button className="text-white bg-black hover:bg-opacity-30 py-2 px-4 rounded-full w-fit">Read More</button> */}
-                            <hr />
-                        </div>
-                    </div>
-                  ))
-                ) : (
-                  <>
-                    <p>No Ingredient</p>
-                  </>
-                )}
-              </div>
-            </div>
-          )}
-        </div>
+            onClick={() => setCurrentImage(image)}
+          />
+        ))}
       </div>
 
       {/* Related Products Section */}

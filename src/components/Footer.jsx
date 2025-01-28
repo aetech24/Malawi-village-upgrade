@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
-import Download from '../assets/download.png';
+// import Download from '../assets/download.png';
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
@@ -22,7 +22,6 @@ const Footer = () => {
         <div className="flex flex-col gap-6">
           <h1 className="md:text-xl font-semibold">Exclusive</h1>
           <div className="flex flex-col gap-2">
-            <p className="mb-2">Subscribe</p>
             <p className="mb-2">Get 10% off your first order</p>
             <div className="flex flex-col max-[329.8px]:flex-col">
               <input
@@ -44,8 +43,13 @@ const Footer = () => {
         </div>
         <div className="flex gap-10 md:gap-20 max-sm:flex-wrap max-sm:pt-8">
           <div className="flex flex-col gap-2 md:gap-6">
-            <h1 className="md:text-xl font-semibold">Support</h1>
+            <h1 className="md:text-xl font-semibold">Company</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2">
+            <Link to='/'><li className="hover:text-yellow duration-200 transition-colors" >Home</li></Link>
+              <Link to='/shop'><li className="hover:text-yellow duration-200 transition-colors" >Shop</li></Link>
+            <Link to='/contact'><li className="hover:text-yellow duration-200 transition-colors" >Contact</li></Link>
+              <Link to='/about'><li className="hover:text-yellow duration-200 transition-colors" >About Us</li></Link>
+
               <li>
                 <address>Texas Dallas</address>
               </li>
@@ -62,23 +66,20 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
-            <h1 className="md:text-xl font-semibold">Account</h1>
-            <ul className="max-sm:text-sm flex flex-col gap-2 cursor-pointer">
-             <Link><li className="hover:text-yellow duration-200 transition-colors" >My Account</li></Link>
-             <Link to='/login'><li className="hover:text-yellow duration-200 transition-colors" >Login / Sign Up</li></Link>
-              <li className="hover:text-yellow duration-200 transition-colors" >Cart</li>
-              <li className="hover:text-yellow duration-200 transition-colors" >Wishlist</li>
-              <Link to='/shop'><li className="hover:text-yellow duration-200 transition-colors" >Shop</li></Link>
-            </ul>
-          </div>
-          <div className="flex flex-col gap-2 md:gap-6">
-            <h1 className="md:text-xl font-semibold">Quick Links</h1>
+            <h1 className="md:text-xl font-semibold">Help</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2 cursor-pointer">
               <li className="hover:text-yellow duration-200 transition-colors">Privacy Policy</li>
               <li className="hover:text-yellow duration-200 transition-colors">Terms of Use</li>
               <li className="hover:text-yellow duration-200 transition-colors">FAQ</li>
-              <Link to='/contact'><li className="hover:text-yellow duration-200 transition-colors" >Contact</li></Link>
-              <Link to='/about'><li className="hover:text-yellow duration-200 transition-colors" >About Us</li></Link>
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-2 md:gap-6">
+            <h1 className="md:text-xl font-semibold">Products</h1>
+            <ul className="max-sm:text-sm flex flex-col gap-2 cursor-pointer">
+             <Link><li className="hover:text-yellow duration-200 transition-colors" >Refreshment</li></Link>
+             <Link to='/login'><li className="hover:text-yellow duration-200 transition-colors" >Detox & Immune Boosters</li></Link>
+              <li className="hover:text-yellow duration-200 transition-colors" >Sweet & Unsweetened</li>
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
