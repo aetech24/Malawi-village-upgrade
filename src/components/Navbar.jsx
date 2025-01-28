@@ -352,7 +352,7 @@ const Navbar = () => {
           style={{
             bottom: `${55 + scrollProgress * 50}vh`, // Controls upward movement
             left: '50%',
-            transform: `translateX(-50%) scale(${1 - scrollProgress * 0.3})`, // Scale text gradually
+            transform: `translateX(-50%) scale(${1 - scrollProgress * 2.2})`, // Scale text gradually
             opacity: `${1 - scrollProgress * 0.5}`, // Fade out the text
             transition: 'transform 0.1s linear, opacity 0.1s linear',
           }}
