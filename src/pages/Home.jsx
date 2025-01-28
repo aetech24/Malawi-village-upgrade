@@ -44,7 +44,7 @@ const Home = () => {
             backgroundRepeat: 'no-repeat',
           }}
         />
-        <div className='absolute max-md:mt-10 w-full flex flex-col justify-between items-center bottom-0 mb-[10%]'>
+        <div className='absolute max-md:mt-10 w-full flex flex-col justify-between items-center bottom-0 mb-[6%]'>
           {/* <h1 className='text-[10px] gap-0 md:text-[80px] text-white text-center w-[35%] tracking-0 '></h1> */}
           <div className='flex flex-col gap-0 items-center justify-center mt-20'>
             {/* <p className='text-yellow text-2xl'>Fresh Daily Juice</p> */}
