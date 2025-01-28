@@ -350,7 +350,7 @@ const Navbar = () => {
             isMobile ? 'text-sm' : 'text-lg'
           }`}
           style={{
-            bottom: `${60 + scrollProgress * 50}vh`, // Controls upward movement
+            bottom: `${55 + scrollProgress * 50}vh`, // Controls upward movement
             left: '50%',
             transform: `translateX(-50%) scale(${1 - scrollProgress * 0.3})`, // Scale text gradually
             opacity: `${1 - scrollProgress * 0.5}`, // Fade out the text
