@@ -15,7 +15,9 @@ const SingleProduct = () => {
   const { addToCart } = useContext(CartContext); // Access addToCart from context
   const { addToWishlist } = useContext(WishlistContext); // Access addToWishlist from context
   // const [activeTab, setActiveTab] = useState("description");
-  const [selectedSize, setSelectedSize] = useState(Object.keys(products[0].price)[0]); // Default to the first size
+  const [selectedSize, setSelectedSize] = useState(
+    Object.keys(products[0].price)[0]
+  ); // Default to the first size
 
   // Find the product by ID
   const product = products.find((p) => p.id === parseInt(id));
@@ -62,18 +64,37 @@ const SingleProduct = () => {
   };
 
   // Swiper images: Ensure valid array
-  const images = Array.isArray(product.images) && product.images.length > 0 ? product.images : [product.image];
+  const images =
+    Array.isArray(product.images) && product.images.length > 0
+      ? product.images
+      : [product.image];
 
   return (
     <div className="px-4 md:px-10 py-5 max-md:mt-20">
       <div className="flex flex-col lg:flex-row items-center justify-between md:gap-16 gap-6 py-6">
-        {/* Main Image */}
-        <div className="relative">
-          <img
-            src={currentImage}
-            alt={product.name}
-            className="w-full lg:w-500px h-[400px] object-cover rounded-lg"
-          />
+        <div className="mt-10">
+          {/* Main Image */}
+          <div className="relative">
+            <img
+              src={currentImage}
+              alt={product.name}
+              className="w-full lg:w-500px h-[400px] object-cover rounded-lg"
+            />
+          </div>
+          {/* Other Views Section */}
+          <div className="flex gap-4 mt-6 mx-auto justify-center">
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Product View ${index + 1}`}
+                className={`w-24 h-24 object-cover rounded-lg cursor-pointer border ${
+                  currentImage === image ? "border-black" : "border-transparent"
+                }`}
+                onClick={() => setCurrentImage(image)}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Product Details */}
@@ -91,7 +112,8 @@ const SingleProduct = () => {
             >
               {Object.keys(product.price).map((size) => (
                 <option key={size} value={size}>
-                  {size.charAt(0).toUpperCase() + size.slice(1)} - $ {product.price[size]}
+                  {size.charAt(0).toUpperCase() + size.slice(1)} - ${" "}
+                  {product.price[size]}
                 </option>
               ))}
             </select>
@@ -99,29 +121,20 @@ const SingleProduct = () => {
 
           {/* Add to Cart & Wishlist Buttons */}
           <div className="flex flex-col gap-3">
-            <button className="bg-yellow hover:bg-opacity-30 px-6 py-2 text-center" onClick={handleAddToCart}>
+            <button
+              className="bg-yellow hover:bg-opacity-30 px-6 py-2 text-center"
+              onClick={handleAddToCart}
+            >
               Add to cart
             </button>
-            <button className="bg-black hover:bg-opacity-30 text-white px-6 py-2 text-center" onClick={handleAddToWishlist}>
+            <button
+              className="bg-black hover:bg-opacity-30 text-white px-6 py-2 text-center"
+              onClick={handleAddToWishlist}
+            >
               Add to wishlist
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Other Views Section */}
-      <div className="flex gap-4 mt-6">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Product View ${index + 1}`}
-            className={`w-24 h-24 object-cover rounded-lg cursor-pointer border ${
-              currentImage === image ? "border-black" : "border-transparent"
-            }`}
-            onClick={() => setCurrentImage(image)}
-          />
-        ))}
       </div>
 
       {/* Related Products Section */}

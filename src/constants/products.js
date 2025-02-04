@@ -1,6 +1,8 @@
 import Orange from '../assets/image-1.jpg'
-import Ginger from "../assets/Traditional Ginger Beer.jpg"
-import Zobo from '../assets/image-3.jpg'
+import Ginger from "../assets/Traditional Ginger beer-main.jpg"
+import ginger from "../assets/Traditional Ginger Beer.jpg"
+import zobo from '../assets/image-3.jpg'
+import Zobo from '../assets/Zobo-main.jpg'
 import Pina from "../assets/Pina_Tropical.jpg"
 import VitaminC from "../assets/Vitamin C.jpg"
 import Strong from "../assets/Strong_Green.jpg"
@@ -82,7 +84,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Zobo,
-    images: [Zobo, Zobo, Zobo],
+    images: [zobo, zobo, zobo],
     description:
       "Hibiscus flower may lower blood pressure, Improves Digestive Health, Fights inflammation, lowers cholesterol, and Supports Liver Health. Contain strong antioxidants such as Vitamin C, quercetin and gallic acid that fight against cancer.",
     category: "Refreshments",
@@ -103,7 +105,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Ginger,
-    images: [Ginger, Ginger, Ginger],
+    images: [ginger, ginger, ginger],
     description:
       "Ginger root is a great way to aid your digestion, detoxify your system, and increase your body’s production of white blood cells, which help protect your internal system from disease and infection. Ginger root is more potent (and delicious) than any dried tea bag, coffee, milk or soda bought at the supermarket. it is known to benefit both the brain and body by fighting germs, keeping your mouth healthy, calming nausea and soothing sore muscles.",
     category: "Refreshments",

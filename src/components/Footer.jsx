@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <div className="bg-black w-full text-white pt-10 md:pt-20 px-4 md:px-20">
-      <div className="gap-4 md:flex md:gap-16 pb-16 md:pb-16 flex-wrap">
+      <div className="gap-4 md:flex md:gap-16 pb-16 md:pb-16 flex-wrap  justify-center items-center">
         <div className="flex flex-col gap-6">
           <h1 className="md:text-xl font-semibold">Exclusive</h1>
           <div className="flex flex-col gap-2">
@@ -50,19 +50,6 @@ const Footer = () => {
             <Link to='/contact'><li className="hover:text-yellow duration-200 transition-colors" >Contact</li></Link>
               <Link to='/about'><li className="hover:text-yellow duration-200 transition-colors" >About Us</li></Link>
 
-              <li>
-                <address>Texas Dallas</address>
-              </li>
-              <li>
-                <a href="mailto:info@malawivillage.com" className="hover:text-yellow duration-200 transition-colors">
-                  info@malawivillage.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+14694322272" className="hover:text-yellow duration-200 transition-colors">
-                  +1(469)432-2272
-                </a>
-              </li>
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
@@ -71,17 +58,18 @@ const Footer = () => {
               <li className="hover:text-yellow duration-200 transition-colors">Privacy Policy</li>
               <li className="hover:text-yellow duration-200 transition-colors">Terms of Use</li>
               <li className="hover:text-yellow duration-200 transition-colors">FAQ</li>
+              <li className="hover:text-yellow duration-200 transition-colors">Order Tracking</li>
             </ul>
           </div>
 
-          <div className="flex flex-col gap-2 md:gap-6">
+          {/* <div className="flex flex-col gap-2 md:gap-6">
             <h1 className="md:text-xl font-semibold">Products</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2 cursor-pointer">
              <Link><li className="hover:text-yellow duration-200 transition-colors" >Refreshment</li></Link>
              <Link to='/login'><li className="hover:text-yellow duration-200 transition-colors" >Detox & Immune Boosters</li></Link>
               <li className="hover:text-yellow duration-200 transition-colors" >Sweet & Unsweetened</li>
             </ul>
-          </div>
+          </div> */}
           <div className="flex flex-col gap-2 md:gap-6">
             <h1 className="md:text-xl font-semibold cursor-pointer">Follow Us On</h1>
             {/* icons */}

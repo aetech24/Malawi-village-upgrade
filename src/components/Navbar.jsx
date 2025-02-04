@@ -66,8 +66,12 @@ const Navbar = () => {
   };
 
   const handleProductSelect = (productId) => {
-    navigate(`/product/${productId}`);
-    setIsSearchVisible(false); // close search dropdown when a product is selected
+    const product = products.find(p => p.id === productId);
+    if (product) {
+      navigate(`/product/${productId}`);
+      setSearchTerm('');
+      setIsSearchVisible(false);
+    }
   };
 
   // const handleSignUp = (userDetails) => {
@@ -94,7 +98,7 @@ const Navbar = () => {
   const isHomepage = location.pathname === '/';
 
   return (
-<>
+    <>
       {/* Navbar */}
       <nav
         className={`fixed top-0 z-50 w-[100%] transition-all duration-300 ${
@@ -214,7 +218,7 @@ const Navbar = () => {
                   value={searchTerm}
                   onChange={handleSearch}
                   placeholder='Search products...'
-                  className='border px-4 py-2 rounded-full focus:outline-none text-black w-[100px] md:w-[200px] lg:w-[300px] h-auto transition-all duration-300'
+                  className='border px-4 py-2 rounded-full focus:outline-none text-black w-[100px] md:w-[200px] lg:w-[300px] h-auto hover:text-white transition-all duration-300'
                   autoFocus
                 />
                 <button
@@ -227,7 +231,7 @@ const Navbar = () => {
 
                 {searchTerm && filteredProducts.length > 0 && (
                   <ul className='absolute z-10 w-full bg-yellow-500 shadow-lg mt-1 rounded-lg max-h-60 overflow-y-auto'>
-                    {filteredProducts.map((product) => (
+                    {filteredProducts.map(product => (
                       <li
                         key={product.id}
                         className='px-4 py-2 bg-white hover:bg-gray-200 cursor-pointer transition-all duration-200'
@@ -248,7 +252,7 @@ const Navbar = () => {
             ) : (
               <button
                 onClick={() => setIsSearchVisible(true)}
-                className='transition duration-200'
+                className='hover:text-white transition duration-200'
               >
                 <AiOutlineSearch />
               </button>
@@ -257,7 +261,7 @@ const Navbar = () => {
             {/* Wishlist */}
             <button
               onClick={() => navigate('/wishlist')}
-              className={`relative transition duration-200 ${
+              className={`relative hover:text-white transition duration-200 ${
                 isMobile ? 'text-sm' : 'text-lg'
               }`}
             >
@@ -272,7 +276,7 @@ const Navbar = () => {
             {/* Cart */}
             <button
               onClick={() => navigate('/cart')}
-              className={`relative transition duration-200 ${
+              className={`relative hover:text-white transition duration-200 ${
                 isMobile ? 'text-sm' : 'text-lg'
               }`}
             >
@@ -286,7 +290,7 @@ const Navbar = () => {
 
             {/* User Profile */}
             <div
-              className={`relative transition duration-200 ${
+              className={`relative hover:text-white transition duration-200 ${
                 isMobile ? 'text-sm' : 'text-lg'
               }`}
             >
