@@ -72,12 +72,12 @@ const SingleProduct = () => {
           <img
             src={currentImage}
             alt={product.name}
-            className="w-full lg:w-1/2 h-[400px] object-cover rounded-lg"
+            className="w-full lg:w-500px h-[400px] object-cover rounded-lg"
           />
         </div>
 
         {/* Product Details */}
-        <div className="flex flex-col gap-6 lg:w-1/2">
+        <div className="flex flex-col gap-6 lg:w-1/2 mt-20">
           <p className="text-2xl font-semibold">{product.name}</p>
           <p dangerouslySetInnerHTML={{ __html: product.description }}></p>
           <p className="font-semibold text-2xl">{formatPrice(product.price)}</p>
