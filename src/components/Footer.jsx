@@ -58,7 +58,7 @@ const Footer = () => {
               <li className="hover:text-yellow duration-200 transition-colors">Privacy Policy</li>
               <li className="hover:text-yellow duration-200 transition-colors">Terms of Use</li>
               <li className="hover:text-yellow duration-200 transition-colors">FAQ</li>
-              <li className="hover:text-yellow duration-200 transition-colors">Order Tracking</li>
+              <Link to='/tracking'><li className="hover:text-yellow duration-200 transition-colors">Order Tracking</li></Link>
             </ul>
           </div>
 
