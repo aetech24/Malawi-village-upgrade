@@ -62,61 +62,47 @@ const Home = () => {
         <div className='flex flex-col gap-5 px-4 md:px-10'>
           <h1 className='text-3xl font-medium mb-4 text-center'>Products</h1>
           <div className='flex items-center justify-between'>
-            {/* <div className='relative'>
-              <button
-                className='absolute -left-10 top-1/2 transform -translate-y-1/2 bg-gray-300 text-white p-2 rounded-full z-10'
-                onClick={scrollRight}
-              >
-                <FaArrowRight />
-              </button>
-              <button
-                className='absolute right-12 top-1/2 transform -translate-y-1/2 bg-gray-300 text-white p-2 rounded-full z-10'
-                onClick={scrollLeft}
-              >
-                <FaArrowLeft />
-              </button>
-            </div> */}
           </div>
           <div className='flex gap-6 md:justify-center justify-start mb-8 overflow-x-auto scroll-smooth scrollbar-auto'>
-            <Link to='/products?category=Refreshment'>
-              <div className='min-w-[200px] max-w-[400px] rounded-md cursor-pointer relative  group hover:drop-shadow-sm'>
-                <img
-                  src={Categories[0].image}
-                  alt='Refreshments'
-                  className='w-full object-cover group-hover:scale-105 duration-200'
-                />
-                <div className='w-full cursor-pointer bg-white group-hover:text-yellow duration-200 text-[#232323] p-2 text-center'>
-                  Refreshments
-                </div>
-              </div>
-            </Link>
+  <Link to='/products?category=Refreshment'>
+    <div className='min-w-[200px] max-w-[400px] rounded-md cursor-pointer relative group hover:drop-shadow-sm'>
+      <img
+        src={Categories[0].image}
+        alt='Refreshments'
+        className='w-full h-[200px] object-cover group-hover:scale-105 duration-200'
+      />
+      <div className='w-full cursor-pointer bg-white group-hover:text-yellow duration-200 text-[#232323] p-2 text-center'>
+        Refreshments
+      </div>
+    </div>
+  </Link>
 
-            <Link to='/products?category=Detox & Immune Booster'>
-              <div className='min-w-[200px] max-w-[400px] rounded-md cursor-pointer relative group hover:drop-shadow-sm'>
-                <img
-                  src={Categories[1].image}
-                  alt='DetoxAndImmuneBoosters'
-                  className='w-full object-cover group-hover:scale-105 duration-200'
-                />
-                <div className='w-full cursor-pointer bg-white group-hover:text-yellow duration-200 text-[#232323] p-2 text-center'>
-                  Detox & Immune Booster
-                </div>
-              </div>
-            </Link>
+  <Link to='/products?category=Detox & Immune Booster'>
+    <div className='min-w-[200px] max-w-[400px] rounded-md cursor-pointer relative group hover:drop-shadow-sm'>
+      <img
+        src={Categories[1].image}
+        alt='DetoxAndImmuneBoosters'
+        className='w-full h-[200px] object-cover group-hover:scale-105 duration-200'
+      />
+      <div className='w-full cursor-pointer bg-white group-hover:text-yellow duration-200 text-[#232323] p-2 text-center'>
+        Detox & Immune Booster
+      </div>
+    </div>
+  </Link>
 
-            <Link to='/products?category=Sweet & Unsweet Tea'>
-              <div className='min-w-[200px] max-w-[400px] rounded-md cursor-pointer relative group hover:drop-shadow-sm'>
-                <img
-                  src={Categories[2].image}
-                  alt='SweetAndUnsweetTea'
-                  className='w-full object-cover group-hover:scale-105 duration-200'
-                />
-                <div className='w-full cursor-pointer bg-white group-hover:text-yellow duration-200 text-[#232323] p-2 text-center'>
-                  Sweet & Unsweet Tea
-                </div>
-              </div>
-            </Link>
-          </div>
+  <Link to='/products?category=Sweet & Unsweet Tea'>
+    <div className='min-w-[200px] max-w-[400px] rounded-md cursor-pointer relative group hover:drop-shadow-sm'>
+      <img
+        src={Categories[2].image}
+        alt='SweetAndUnsweetTea'
+        className='w-full h-[200px] object-cover group-hover:scale-105 duration-200'
+      />
+      <div className='w-full cursor-pointer bg-white group-hover:text-yellow duration-200 text-[#232323] p-2 text-center'>
+        Sweet & Unsweet Tea
+      </div>
+    </div>
+  </Link>
+</div>
           <div className='w-full flex justify-center items-center mx-auto '>
             <Link to='/products'>
               <button className='bg-black text-white hover:bg-opacity-40 px-16 py-3 flex justify-center items-center w-fit'>
