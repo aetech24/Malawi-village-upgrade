@@ -1,13 +1,24 @@
 import Orange from '../assets/image-1.jpg'
 import Ginger from "../assets/Traditional Ginger beer-main.jpg"
 import ginger from "../assets/Traditional Ginger Beer.jpg"
-import zobo from '../assets/image-3.jpg'
+import ginger1 from "../assets/Traditional_Ginger_Beer.jpg"
+import ginger2 from "../assets/Traditionally Ginger Beer.jpg"
+// import zobo from '../assets/image-3.jpg'
 import Zobo from '../assets/Zobo-main.jpg'
+import Zobo1 from '../assets/Zobo.jpg'
+import Zobo2 from '../assets/Zobo-hero-img.jpg'
 import Pina from "../assets/Pina_Tropical.jpg"
+import Pina1 from "../assets/Pina Tropical.jpg"
+import Pina2 from "../assets/Pina_Tropical.jpg"
 import VitaminC from "../assets/Vitamin C.jpg"
 import Strong from "../assets/Strong_Green.jpg"
 import Rouge from "../assets/Rouge.jpg"
+import Rouge2 from "../assets/Rouge (2).jpg"
+import Rouge3 from "../assets/Rouge (3).jpg"
 import Water from "../assets/Intelligent_water.jpg"
+import Water1 from "../assets/Intelligent_water.jpg"
+import Water2 from "../assets/Intelligent_water (2).jpg"
+import Water3 from "../assets/Intelligent_water (3).jpg"
 import Watermelon from "../assets/watermelon.jpg"
 import Hibiscus from '../assets/hibiscus.jpeg'
 import Raspberry from '../assets/raspberry.jpeg'
@@ -15,6 +26,8 @@ import Strawberry from '../assets/strawberry.jpeg'
 import Mango from '../assets/mango.jpeg'
 import Pineapple from '../assets/pineapple.jpeg'
 import Orange1 from '../assets/orange.jpeg'
+import Orange2 from '../assets/orange1.jpg'
+import Orange3 from '../assets/orange2.jpg'
 import Ginger1 from '../assets/ginger.jpeg'
 import Lemon from '../assets/lemon.jpeg'
 import Agave from '../assets/agave.jpeg'
@@ -45,7 +58,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Water,
-    images: [Water, Water, Water],
+    images: [Water1, Water2, Water3],
     description:
       "Watermelon is one of the most alkaline forming fruits on planet earth. " +
       "Powerful fruit that is packed with Potassium and Magnesium. " +
@@ -68,7 +81,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Orange,
-    images: [Orange, Orange, Orange],
+    images: [Orange, Orange2, Orange3],
     description:
       "Freshly squeezed orange juice made with 100% organic oranges, and nothing else. Rich in Vitamin C & folate, and potassium. " +
       "Helps the body to metabolize carbohydrates, vitamin C supports your immune system and may be effective in fighting against the common cold." +
@@ -84,7 +97,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Zobo,
-    images: [zobo, zobo, zobo],
+    images: [Zobo, Zobo1, Zobo2],
     description:
       "Hibiscus flower may lower blood pressure, Improves Digestive Health, Fights inflammation, lowers cholesterol, and Supports Liver Health. Contain strong antioxidants such as Vitamin C, quercetin and gallic acid that fight against cancer.",
     category: "Refreshments",
@@ -105,7 +118,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Ginger,
-    images: [ginger, ginger, ginger],
+    images: [ginger, ginger1, ginger2],
     description:
       "Ginger root is a great way to aid your digestion, detoxify your system, and increase your body’s production of white blood cells, which help protect your internal system from disease and infection. Ginger root is more potent (and delicious) than any dried tea bag, coffee, milk or soda bought at the supermarket. it is known to benefit both the brain and body by fighting germs, keeping your mouth healthy, calming nausea and soothing sore muscles.",
     category: "Refreshments",
@@ -123,7 +136,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Pina,
-    images: [Pina, Pina, Pina],
+    images: [Pina, Pina1, Pina2],
     description:
       "Mangos contain nutrients and antioxidants. Rich in fiber Packed with nutrients, rich in vitamin C, which is important for forming blood vessels and healthy collagen, as well as helping you heal. Low in calories, may help prevent diabetes, high in healthy plant compounds, contains immune-boosting nutrients,supports heart health, may improve digestive health and support eye health",
     category: "Refreshments",
@@ -180,7 +193,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Rouge,
-    images: [Rouge, Rouge, Rouge],
+    images: [Rouge, Rouge2, Rouge3],
     description:
       "Low in calories yet high in nutrition, Beets are packed with essential vitamins and minerals including Folate, Manganese, Vitamin C, Vitamin A, Potassium. These nutrients help to reduce the risk of heart disease and stroke, improve digestive health, fight inflammation and support brain health. improve exercise performance and support energy levels Drinking beetroot juice could actually help you exercise for up to 16% longer. Kale: Very low in calories and extremely high in nutrients, Kale is easily one of the healthiest and most nutrient-dense foods around. Kale is loaded with antioxidants and is one of the best sources of Vitamin C and K. It has so many nutrients we could go on and on…Apples: One of the most versatile fruits, Apples also have many nutritional benefits. Rich in fiber, Vitamin C and potassium, to name a few, their benefits are linked to lowering the risk of chronic conditions such as diabetes, heart disease and cancer and promoting weight loss and brain health.",
     category: "Detox and Immune booster",
