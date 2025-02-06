@@ -70,7 +70,10 @@ const SingleProduct = () => {
       : [product.image];
 
   return (
-    <div className="px-4 md:px-10 py-5 max-md:mt-20">
+    <div className="px-4 md:px-10 py-5 max-md:mt-6">
+      <p className="text-[#232323] flex flex-row gap-2 mt-10">
+        Back to <a href="/products" className="flex items-center gap-2"><span className="text-yellow">Shop</span></a>
+      </p>
       <div className="flex flex-col lg:flex-row items-center justify-between md:gap-16 gap-6 py-6">
         <div className="mt-10">
           {/* Main Image */}
@@ -98,7 +101,7 @@ const SingleProduct = () => {
         </div>
 
         {/* Product Details */}
-        
+
         <div className="flex flex-col gap-6 lg:w-1/2 mt-20">
           <p className="text-2xl font-semibold">{product.name}</p>
           <p dangerouslySetInnerHTML={{ __html: product.description }}></p>
