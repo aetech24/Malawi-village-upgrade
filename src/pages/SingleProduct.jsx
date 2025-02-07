@@ -89,11 +89,13 @@ const SingleProduct = () => {
             <img
               src={currentImage}
               alt={product.name}
-              className="w-full lg:w-500px h-[400px] object-cover rounded-lg"
+              width={400}
+              height={400}
+              className="w-[400px] lg:w-[500px] h-[400px] object-cover rounded-lg"
             />
           </div>
           {/* Other Views Section */}
-          <div className="flex gap-4 mt-6 mx-auto justify-center">
+          <div className="flex gap-4 mt-6 mx-auto  justify-center max-md:gap-1">
             {images.map((image, index) => (
               <img
                 key={index}
@@ -187,7 +189,7 @@ const SingleProduct = () => {
                         <div className='flex flex-col gap-2'>
                             <p className="font-semibold text-xl">{item.text}</p>
                             <p>{item.description}</p>
-                            <button className="text-white bg-black py-2 px-4 rounded-full w-fit">Read More</button>
+                            {/* <button className="text-white bg-black py-2 px-4 rounded-full w-fit">Read More</button> */}
                             <hr />
                         </div>
                     </div>

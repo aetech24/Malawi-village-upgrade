@@ -44,7 +44,7 @@ const core_values = [
     id: 7,
     title: "Cleanliness",
     icon: <FaSoap className="w-12 h-12" />,
-    paragraph: "It is almost as important to be clean as it is to God to be good.",
+    paragraph: "It is just as vital as goodness itself; to clean is to elevate, bringing us closer purity.",
   },
 ];
 

@@ -7,7 +7,7 @@ import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
 import RefreshingJuice from '../assets/Cat1.jpg';
 import DetoxAndImmuneBooster from '../assets/Cat2.jpg';
-import SweetAndUnsweetTea from '../assets/Cat3.jpg';
+import SweetAndUnsweetTea from '../assets/pina1.jpg';
 import Banner from '../assets/banner.jpg';
 // import MalawiServices from '../assets/banner.jpg';
 import Feature1 from '../assets/feature1.jpg';

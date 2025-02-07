@@ -7,18 +7,21 @@ import ginger2 from "../assets/Traditionally Ginger Beer.jpg"
 import Zobo from '../assets/Zobo-main.jpg'
 import Zobo1 from '../assets/Zobo.jpg'
 import Zobo2 from '../assets/Zobo-hero-img.jpg'
-import Pina from "../assets/Pina_Tropical.jpg"
-import Pina1 from "../assets/Pina Tropical.jpg"
-import Pina2 from "../assets/Pina_Tropical.jpg"
+import Zobo_2 from '../assets/Zobo_2.jpg'
+import PinaMain from "../assets/PinaMain.jpg"
+import Pina from "../assets/banner.jpg"
+import Pina1 from "../assets/pina1.jpg"
+import Pina2 from "../assets/pina_2.jpg"
 import VitaminC from "../assets/Vitamin C.jpg"
 import Strong from "../assets/Strong_Green.jpg"
 import Rouge from "../assets/Rouge.jpg"
 import Rouge2 from "../assets/Rouge (2).jpg"
 import Rouge3 from "../assets/Rouge (3).jpg"
-import Water from "../assets/Intelligent_water.jpg"
+import WaterMain from "../assets/intelligent_water_main.jpg"
+// import Water from "../assets/intelligent_water_main.jpg"
 import Water1 from "../assets/Intelligent_water.jpg"
 import Water2 from "../assets/Intelligent_water (2).jpg"
-import Water3 from "../assets/Intelligent_water (3).jpg"
+import Water3 from "../assets/intelligent_water (4).jpg"
 import Watermelon from "../assets/watermelon.jpg"
 import Hibiscus from '../assets/hibiscus.jpeg'
 import Raspberry from '../assets/raspberry.jpeg'
@@ -50,6 +53,8 @@ import Pomegranate from '../assets/pomegranate.jpeg'
 import RaspberryStrawberryPomegranateTea from '../assets/RaspberryStrawberryPomegranateTea.jpg'
 import OrangeAndRosemaryTea from '../assets/OrangeAndRosemaryTea.jpg'
 import MangoJuice from '../assets/MangoJuice.jpg'
+import Orange4 from '../assets/Orange (3).jpg'
+import ginger3 from '../assets/Traditioanlly Ginger Beer.jpg'
 
 export const products = [
   {
@@ -57,8 +62,8 @@ export const products = [
     name: "Intelligent Water",
     price: { big: 16, small: 10 },
     size: ["L", "S"],
-    image: Water,
-    images: [Water1, Water2, Water3],
+    image: WaterMain,
+    images: [ WaterMain, Water1, Water2, Water3],
     description:
       "Watermelon is one of the most alkaline forming fruits on planet earth. " +
       "Powerful fruit that is packed with Potassium and Magnesium. " +
@@ -81,7 +86,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Orange,
-    images: [Orange, Orange2, Orange3],
+    images: [Orange, Orange2, Orange3, Orange4],
     description:
       "Freshly squeezed orange juice made with 100% organic oranges, and nothing else. Rich in Vitamin C & folate, and potassium. " +
       "Helps the body to metabolize carbohydrates, vitamin C supports your immune system and may be effective in fighting against the common cold." +
@@ -96,8 +101,8 @@ export const products = [
     name: "Zobo",
     price: { big: 16, small: 10 },
     size: ["L", "S"],
-    image: Zobo,
-    images: [Zobo, Zobo1, Zobo2],
+    image: Zobo2,
+    images: [Zobo, Zobo1, Zobo_2],
     description:
       "Hibiscus flower may lower blood pressure, Improves Digestive Health, Fights inflammation, lowers cholesterol, and Supports Liver Health. Contain strong antioxidants such as Vitamin C, quercetin and gallic acid that fight against cancer.",
     category: "Refreshments",
@@ -118,7 +123,7 @@ export const products = [
     price: { big: 16, small: 10 },
     size: ["L", "S"],
     image: Ginger,
-    images: [ginger, ginger1, ginger2],
+    images: [ginger, ginger1, ginger2, ginger3],
     description:
       "Ginger root is a great way to aid your digestion, detoxify your system, and increase your body’s production of white blood cells, which help protect your internal system from disease and infection. Ginger root is more potent (and delicious) than any dried tea bag, coffee, milk or soda bought at the supermarket. it is known to benefit both the brain and body by fighting germs, keeping your mouth healthy, calming nausea and soothing sore muscles.",
     category: "Refreshments",
@@ -135,7 +140,7 @@ export const products = [
     name: "Pina tropical",
     price: { big: 16, small: 10 },
     size: ["L", "S"],
-    image: Pina,
+    image: PinaMain,
     images: [Pina, Pina1, Pina2],
     description:
       "Mangos contain nutrients and antioxidants. Rich in fiber Packed with nutrients, rich in vitamin C, which is important for forming blood vessels and healthy collagen, as well as helping you heal. Low in calories, may help prevent diabetes, high in healthy plant compounds, contains immune-boosting nutrients,supports heart health, may improve digestive health and support eye health",
