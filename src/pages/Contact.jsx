@@ -39,10 +39,6 @@ const Contact = () => {
     <main className="p-8 min-h-screen bg-gray-100 md:mt-6">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold text-start mb-4">We Are Here For You</h1>
-        <p className="text-start text-gray-600 mb-8">
-          We would love to hear from you! Please fill out the form below and we will get in touch with you shortly.
-        </p>
-
         <form
           onSubmit={handleSubmit}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
