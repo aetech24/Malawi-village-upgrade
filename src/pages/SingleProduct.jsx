@@ -14,7 +14,7 @@ const SingleProduct = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext); // Access addToCart from context
   const { addToWishlist } = useContext(WishlistContext); // Access addToWishlist from context
-  // const [activeTab, setActiveTab] = useState("description");
+  const [activeTab, setActiveTab] = useState("description");
   const [selectedSize, setSelectedSize] = useState(
     Object.keys(products[0].price)[0]
   ); // Default to the first size
@@ -69,10 +69,18 @@ const SingleProduct = () => {
       ? product.images
       : [product.image];
 
+  // //ingredients
+  // const ingredients = product.ingredients ? product.ingredients.join(", ") : "N/A";
+
+  // //nutritional information
+  // const nutritionalInfo = product.nutritionalInfo ? product.nutritionalInfo.join(", ") : "N/A";
   return (
     <div className="px-4 md:px-10 py-5 max-md:mt-6">
       <p className="text-[#232323] flex flex-row gap-2 mt-10">
-        Back to <a href="/products" className="flex items-center gap-2"><span className="text-yellow">Shop</span></a>
+        Back to{" "}
+        <a href="/products" className="flex items-center gap-2">
+          <span className="text-yellow">Shop</span>
+        </a>
       </p>
       <div className="flex flex-col lg:flex-row items-center justify-between md:gap-16 gap-6 py-6">
         <div className="mt-10">
@@ -138,6 +146,65 @@ const SingleProduct = () => {
               Add to wishlist
             </button>
           </div>
+        </div>
+      </div>
+      {/* Tabs Section */}
+      <div className="my-10 flex flex-col md:flex-row w-full items-start gap-6">
+        {/* Tabs Buttons */}
+        <div className="flex md:flex-col flex-row gap-4 border-gray-200">
+          <button
+            className={`px-6 md:w-60 py-2 ${
+              activeTab === "description"
+                ? "border-b-2 md:border-b-0 md:border-l-2 border-black bg-gray-100"
+                : ""
+            }`}
+            onClick={() => setActiveTab("description")}
+          >
+            Description
+          </button>
+          <button
+            className={`px-6 md:w-60 py-2 ${
+              activeTab === "ingredients"
+                ? "border-b-2 md:border-b-0 md:border-l-2 border-black bg-gray-100"
+                : ""
+            }`}
+            onClick={() => setActiveTab("ingredients")}
+          >
+            Ingredients
+          </button>
+        </div>
+
+        {/* Tab Content */}
+        <div className="w-full">
+          {activeTab === "description" ? (
+            <div className="flex flex-col gap-4">
+              <h3 className="text-xl font-semibold mb-4">
+                Product Description
+              </h3>
+              <p>{product.description}</p>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-4">
+              <h3 className="text-xl font-semibold mb-4">Ingredients</h3>
+              {product.ingredients && (
+                <ul className="list-disc pl-6 space-y-2">
+                  {product.ingredients.map((ingredient, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <img
+                        src={ingredient.image}
+                        alt={ingredient.text}
+                        className="w-8 h-8 rounded-full"
+                      />
+                      <span>
+                        <strong>{ingredient.text}</strong>{" "}
+                        {ingredient.description}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
