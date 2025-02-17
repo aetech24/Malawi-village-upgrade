@@ -1,8 +1,8 @@
-import ImageKristin from '../assets/test1.jpg';
-import ImageRonald from '../assets/test2.jpg';
-import ImageJane from '../assets/test3.jpg';
-import ImageCody from '../assets/test4.jpg';
-import PropTypes from 'prop-types';
+import ImageKristin from "../assets/test1.jpg";
+import ImageRonald from "../assets/test2.jpg";
+import ImageJane from "../assets/test3.jpg";
+import ImageCody from "../assets/test4.jpg";
+import PropTypes from "prop-types";
 
 const TestimonialCard = ({ text, name, role, imageUrl }) => {
   return (
@@ -75,8 +75,12 @@ const Testimonials = () => {
 
   return (
     <section className="mt-16 bg-gray-100 py-10">
-      <h2 className="text-3xl font-bold text-center md:mb-4 mb-2">Testimonials</h2>
-      <p className="text-center text-gray-600 mb-8">Hear what our customers say</p>
+      <h2 className="text-3xl font-bold text-center md:mb-4 mb-2">
+        Testimonials
+      </h2>
+      <p className="text-center text-gray-600 mb-8">
+        Hear what our customers say
+      </p>
       <div className="max-w-7xl mx-5 md:mx-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {testimonials.map((testimonial, index) => (
           <TestimonialCard

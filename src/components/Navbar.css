@@ -1,21 +1,21 @@
 @media (max-width: 720px) {
-    .bg-yellow py-2 fixed lg:sticky top-0 z-50 w-full
-    {
-       display: none;
-    }
+  .bg-yellow py-2 fixed lg:sticky top-0 z-50 w-full {
+    display: none;
+  }
 }
 
 @keyframes slide-in-down {
-    from {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
   }
-  
-  .animate-slide-in-down {
-    animation: slide-in-down 1s ease-in-out;
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
+}
+
+.animate-slide-in-down {
+  animation: slide-in-down 1s ease-in-out;
+}
