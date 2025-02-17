@@ -1,20 +1,21 @@
-
 const Tracking = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-full h-screen  shadow-lg">
-      <h1 className="font-bold text-center mb-14 text-4xl my-10">Order Tracking</h1>
-      <div className="flex flex-col justify-center  p-10 w-full max-w-lg gap-12 ">
-        <p className="text-gray-700 text-base text-center mb-8 w-full">
+    <div className="flex flex-col justify-center items-center w-full h-screen shadow-lg mt-10">
+      <h1 className="font-bold text-center mb-4 text-4xl my-2">
+        Order Tracking
+      </h1>
+      <div className="flex flex-col justify-center  p-10 w-full max-w-lg gap-4 ">
+        <p className="text-gray-700 text-xl text-center mb-2 w-full">
           To check the status of your order, please enter your Order ID in the
           field below and click the &quot;Track&quot; button. You can find your
           Order ID on your receipt or in the confirmation email sent to you.
         </p>
-        <form className="flex flex-col justify-center  p-10 w-full max-w-lg gap-6">
+        <form className="flex flex-col justify-center p-10 w-full max-w-lg gap-2">
           <div className="mb-6">
             <input
               type="text"
               id="orderID"
-              className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-none"
               placeholder="Order ID"
             />
           </div>
@@ -22,13 +23,13 @@ const Tracking = () => {
             <input
               type="email"
               id="billingEmail"
-              className="w-full px-4 py-3 border border-gray-300  focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-none"
               placeholder="Billing email"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-black text-white py-3  hover:bg-gray-800 transition"
+            className="w-full bg-black text-white py-3 group hover:bg-yellow transition duration-200 hover:text-black"
           >
             Track
           </button>

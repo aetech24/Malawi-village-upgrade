@@ -1,4 +1,10 @@
-import { FaHeart, FaBalanceScale, FaHandHoldingHeart, FaSoap } from "react-icons/fa";
+import {
+  FaHeart,
+  FaBalanceScale,
+  FaHandHoldingHeart,
+  FaSoap,
+  FaHandshake,
+} from "react-icons/fa";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { GiTorch } from "react-icons/gi";
 import { MdVerified } from "react-icons/md";
@@ -32,19 +38,28 @@ const core_values = [
     id: 5,
     title: "Customer Service",
     icon: <FaHandHoldingHeart className="w-12 h-12" />,
-    paragraph: "We understand you are not only a blessing but a gift directly from God.",
+    paragraph:
+      "We understand you are not only a blessing but a gift directly from God.",
   },
   {
     id: 6,
     title: "Accountability",
     icon: <AiOutlineCheckCircle className="w-12 h-12" />,
-    paragraph: "Delivering our very best in all we do, holding ourselves accountable for results.",
+    paragraph:
+      "Delivering our very best in all we do, holding ourselves accountable for results.",
   },
   {
     id: 7,
     title: "Cleanliness",
     icon: <FaSoap className="w-12 h-12" />,
-    paragraph: "It is just as vital as goodness itself; to clean is to elevate, bringing us closer purity.",
+    paragraph:
+      "It is just as vital as goodness itself; to clean is to elevate, bringing us closer purity.",
+  },
+  {
+    id: 8,
+    title: "Our Promise",
+    icon: <FaHandshake className="w-12 h-12" />,
+    paragraph: "Sourced with Integrity, freshly handcrafted.",
   },
 ];
 

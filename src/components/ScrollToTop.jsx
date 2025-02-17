@@ -1,5 +1,5 @@
-import { FaArrowUp } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
+import { FaArrowUp } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
 const ScrollToTop = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -14,10 +14,10 @@ const ScrollToTop = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -25,7 +25,7 @@ const ScrollToTop = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 

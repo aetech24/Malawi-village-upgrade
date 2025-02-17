@@ -1,22 +1,22 @@
-import { useState, useEffect, useContext } from 'react';
-import { CgMenu } from 'react-icons/cg';
+import { useState, useEffect, useContext } from "react";
+import { CgMenu } from "react-icons/cg";
 import {
   AiOutlineHeart,
   AiOutlineShoppingCart,
   AiOutlineUser,
   AiOutlineSearch,
-} from 'react-icons/ai';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../components/AuthContext';
-import { CartContext } from '../context/CartContext';
-import { WishlistContext } from '../context/WishlistContext';
-import { products } from '../constants/products';
-import Logo from '../assets/logo.png';
+} from "react-icons/ai";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../components/AuthContext";
+import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
+import { products } from "../constants/products";
+import Logo from "../assets/logo.png";
 // import LogoWhite from '../assets/MalawiWhite.png';
 
 const Navbar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   // const [selectedCategory] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -35,15 +35,15 @@ const Navbar = () => {
   // scroll effect
 
   useEffect(() => {
-    if (location.pathname === '/') {
+    if (location.pathname === "/") {
       const handleScroll = () => {
         const scrollY = window.scrollY;
         const progress = Math.min(scrollY / 200, 1); // Cap progress at 1
         setScrollProgress(progress);
       };
 
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
     } else {
       setScrollProgress(1); // Default to fully scrolled for non-homepages
     }
@@ -66,10 +66,10 @@ const Navbar = () => {
   };
 
   const handleProductSelect = (productId) => {
-    const product = products.find(p => p.id === productId);
+    const product = products.find((p) => p.id === productId);
     if (product) {
       navigate(`/product/${productId}`);
-      setSearchTerm('');
+      setSearchTerm("");
       setIsSearchVisible(false);
     }
   };
@@ -95,7 +95,7 @@ const Navbar = () => {
   //   }
   // };
 
-  const isHomepage = location.pathname === '/';
+  const isHomepage = location.pathname === "/";
 
   return (
     <>
@@ -104,17 +104,17 @@ const Navbar = () => {
         className={`fixed top-0 z-50 w-[100%] transition-all duration-300 ${
           isHomepage
             ? scrollProgress > 0.1
-              ? 'bg-yellow text-black shadow-md'
-              : 'bg-transparent text-[#232323]'
-            : 'bg-yellow text-black shadow-md'
+              ? "bg-yellow text-black shadow-md"
+              : "bg-transparent text-[#232323]"
+            : "bg-yellow text-black shadow-md"
         }`}
       >
-        <div className='flex justify-between items-center px-4 py-2'>
+        <div className="flex justify-between items-center px-4 py-2">
           {/* Left Section */}
           <div>
             <Link
-              to='/contact'
-              className='hover:text-white transition duration-200 text-[12px]'
+              to="/contact"
+              className="hover:text-white transition duration-200 text-[12px]"
             >
               + Contact Us
             </Link>
@@ -125,55 +125,61 @@ const Navbar = () => {
             {scrollProgress > 0 && (
               <div
                 className={`absolute ${
-                  isMobile ? 'text-[10px]' : 'text-[20px]'
+                  isMobile ? "text-[10px]" : "text-[20px]"
                 } ${
                   isHomepage
-                    ? 'left-1/2 transform -translate-x-1/2'
-                    : 'left-1/2 transform -translate-x-1/2 w-full flex justify-center tracking-normal'
+                    ? "left-1/2 transform -translate-x-1/2"
+                    : "left-1/2 transform -translate-x-1/2 w-full flex justify-center tracking-normal"
                 }`}
                 style={{
                   transform: `translateX(-50%) translateY(${
                     scrollProgress * 1
                   }px) scale(${1 - scrollProgress * 0.25})`,
                   color:
-                    scrollProgress > 0.1 || !isHomepage ? 'black' : 'white',
+                    scrollProgress > 0.1 || !isHomepage ? "black" : "white",
                 }}
               >
                 <Link
-                  to='/'
-                  className='font-serif tracking-0 align-center tracking-normal'
+                  to="/"
+                  className="font-serif tracking-0 align-center tracking-normal"
                   style={{
-                    whiteSpace: 'nowrap',
+                    whiteSpace: "nowrap",
                     fontSize:
-                      isHomepage && scrollProgress > 0.8 ? '18px' : '20px',
-                    transitionTimingFunction: 'cubic-bezier(0.2, 0, 0.1, 0)',
+                      isHomepage && scrollProgress > 0.8 ? "18px" : "20px",
+                    transitionTimingFunction: "cubic-bezier(0.2, 0, 0.1, 0)",
                   }}
                 >
-                  <div className='flex item-center space-x-0.5'>
-                    <h4 className='sm:text-[11px] text-[13.5px]'>MALAWI VILLAGE</h4>
-                    <img src={Logo} alt='logo' className='size-2.5 w-6 h-6'></img>
+                  <div className="flex item-center space-x-0.5">
+                    <h4 className="sm:text-[11px] text-[13.5px]">
+                      MALAWI VILLAGE
+                    </h4>
+                    <img
+                      src={Logo}
+                      alt="logo"
+                      className="size-2.5 w-6 h-6"
+                    ></img>
                   </div>
                 </Link>
               </div>
             )}
           </>
           {/* Right Section */}
-          <div className='flex items-center gap-2'>
+          <div className="flex items-center gap-2">
             {/* Main Menu */}
-            <div className={`relative ${isMobile ? 'text-sm' : 'text-lg'}`}>
+            <div className={`relative ${isMobile ? "text-sm" : "text-lg"}`}>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className='transition duration-200'
+                className="transition duration-200"
               >
                 <CgMenu />
               </button>
               {isMenuOpen && (
-                <div className='absolute top-full right-0 mt-2 bg-white shadow-md rounded-lg w-48'>
-                  <ul className='text-black'>
+                <div className="absolute top-full right-0 mt-2 bg-white shadow-md rounded-lg w-48">
+                  <ul className="text-black">
                     <li>
                       <Link
-                        to='products'
-                        className='block px-4 py-2 hover:bg-gray-200 ml-100'
+                        to="products"
+                        className="block px-4 py-2 hover:bg-gray-200 ml-100"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         All Categories
@@ -181,8 +187,8 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        to='products'
-                        className='block px-4 py-2 hover:bg-gray-200'
+                        to="products"
+                        className="block px-4 py-2 hover:bg-gray-200"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Refreshment
@@ -190,8 +196,8 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        to='products'
-                        className='block px-4 py-2 hover:bg-gray-200'
+                        to="products"
+                        className="block px-4 py-2 hover:bg-gray-200"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Detox & Immune Booster
@@ -199,8 +205,8 @@ const Navbar = () => {
                     </li>
                     <li>
                       <Link
-                        to='products'
-                        className='block px-4 py-2 hover:bg-gray-200'
+                        to="products"
+                        className="block px-4 py-2 hover:bg-gray-200"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Sweet & Unsweet
@@ -212,29 +218,29 @@ const Navbar = () => {
             </div>
             {/*Search */}
             {isSearchVisible ? (
-              <div className={`relative ${isMobile ? 'text-sm' : 'text-lg'}`}>
+              <div className={`relative ${isMobile ? "text-sm" : "text-lg"}`}>
                 <input
-                  type='text'
+                  type="text"
                   value={searchTerm}
                   onChange={handleSearch}
-                  placeholder='Search products...'
-                  className='border px-4 py-2 rounded-full focus:outline-none text-black w-[100px] md:w-[200px] lg:w-[300px] h-auto hover:text-white transition-all duration-300'
+                  placeholder="Search products..."
+                  className="border px-4 py-2 rounded-full focus:outline-none text-black w-[100px] md:w-[200px] lg:w-[300px] h-auto hover:text-white transition-all duration-300"
                   autoFocus
                 />
                 <button
-                  type='button'
+                  type="button"
                   onClick={() => setIsSearchVisible(false)}
-                  className='absolute right-2 top-2 text-gray-500 hover:text-black'
+                  className="absolute right-2 top-2 text-gray-500 hover:text-black"
                 >
                   ✖
                 </button>
 
                 {searchTerm && filteredProducts.length > 0 && (
-                  <ul className='absolute z-10 w-full bg-yellow-500 shadow-lg mt-1 rounded-lg max-h-60 overflow-y-auto'>
-                    {filteredProducts.map(product => (
+                  <ul className="absolute z-10 w-full bg-yellow-500 shadow-lg mt-1 rounded-lg max-h-60 overflow-y-auto">
+                    {filteredProducts.map((product) => (
                       <li
                         key={product.id}
-                        className='px-4 py-2 bg-white hover:bg-gray-200 cursor-pointer transition-all duration-200'
+                        className="px-4 py-2 bg-white hover:bg-gray-200 cursor-pointer transition-all duration-200"
                         onClick={() => handleProductSelect(product.id)}
                       >
                         {product.name}
@@ -244,15 +250,15 @@ const Navbar = () => {
                 )}
 
                 {searchTerm && filteredProducts.length === 0 && (
-                  <div className='absolute z-10 w-full bg-white shadow-lg mt-1 rounded-lg'>
-                    <p className='px-4 py-2 text-gray-500'>No products found</p>
+                  <div className="absolute z-10 w-full bg-white shadow-lg mt-1 rounded-lg">
+                    <p className="px-4 py-2 text-gray-500">No products found</p>
                   </div>
                 )}
               </div>
             ) : (
               <button
                 onClick={() => setIsSearchVisible(true)}
-                className='hover:text-white transition duration-200'
+                className="hover:text-white transition duration-200"
               >
                 <AiOutlineSearch />
               </button>
@@ -260,14 +266,14 @@ const Navbar = () => {
 
             {/* Wishlist */}
             <button
-              onClick={() => navigate('/wishlist')}
+              onClick={() => navigate("/wishlist")}
               className={`relative hover:text-white transition duration-200 ${
-                isMobile ? 'text-sm' : 'text-lg'
+                isMobile ? "text-sm" : "text-lg"
               }`}
             >
               <AiOutlineHeart />
               {totalWishlistItems > 0 && (
-                <span className='absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center'>
+                <span className="absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
                   {totalWishlistItems}
                 </span>
               )}
@@ -275,14 +281,14 @@ const Navbar = () => {
 
             {/* Cart */}
             <button
-              onClick={() => navigate('/cart')}
+              onClick={() => navigate("/cart")}
               className={`relative hover:text-white transition duration-200 ${
-                isMobile ? 'text-sm' : 'text-lg'
+                isMobile ? "text-sm" : "text-lg"
               }`}
             >
               <AiOutlineShoppingCart />
               {totalCartItems > 0 && (
-                <span className='absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center'>
+                <span className="absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
                   {totalCartItems}
                 </span>
               )}
@@ -291,28 +297,28 @@ const Navbar = () => {
             {/* User Profile */}
             <div
               className={`relative hover:text-white transition duration-200 ${
-                isMobile ? 'text-sm' : 'text-lg'
+                isMobile ? "text-sm" : "text-lg"
               }`}
             >
               <button
                 onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
-                className='relative '
+                className="relative "
               >
                 <AiOutlineUser />
               </button>
               {isProfileMenuOpen && (
-                <div className='absolute top-full right-0 mt-2 bg-white shadow-md rounded-lg w-48 z-50'>
-                  <ul className='text-black'>
+                <div className="absolute top-full right-0 mt-2 bg-white shadow-md rounded-lg w-48 z-50">
+                  <ul className="text-black">
                     {isAuthenticated ? (
                       <li>
                         <button
                           onClick={() => {
                             logout();
                             alert("You've been logged out");
-                            navigate('/');
+                            navigate("/");
                             setIsProfileMenuOpen(false);
                           }}
-                          className='block px-4 py-2 hover:bg-gray-200 w-full text-left'
+                          className="block px-4 py-2 hover:bg-gray-200 w-full text-left"
                         >
                           Logout
                         </button>
@@ -321,8 +327,8 @@ const Navbar = () => {
                       <>
                         <li>
                           <Link
-                            to='/login'
-                            className='block px-4 py-2 hover:bg-gray-200'
+                            to="/login"
+                            className="block px-4 py-2 hover:bg-gray-200"
                             onClick={() => setIsProfileMenuOpen(false)}
                           >
                             Log In
@@ -330,8 +336,8 @@ const Navbar = () => {
                         </li>
                         <li>
                           <Link
-                            to='/register'
-                            className='block px-4 py-2 hover:bg-gray-200'
+                            to="/register"
+                            className="block px-4 py-2 hover:bg-gray-200"
                             onClick={() => setIsProfileMenuOpen(false)}
                           >
                             Sign Up
@@ -351,18 +357,18 @@ const Navbar = () => {
       {isHomepage && (
         <div
           className={`absolute z-40 flex justify-center items-center flex-wrap ${
-            isMobile ? 'text-sm' : 'text-lg'
+            isMobile ? "text-sm" : "text-lg"
           }`}
           style={{
             bottom: `${55 + scrollProgress * 50}vh`, // Controls upward movement
-            left: '50%',
+            left: "50%",
             transform: `translateX(-50%) scale(${1 - scrollProgress * 2.2})`, // Scale text gradually
             opacity: `${1 - scrollProgress * 0.5}`, // Fade out the text
-            transition: 'transform 0.1s linear, opacity 0.1s linear',
+            transition: "transform 0.1s linear, opacity 0.1s linear",
           }}
         >
-          <h2 className='text-white lg:text-[100px] lg:leading-[100px] md:text-[70px] md:leading-[70px] text-[50px] leading-[50px] font-serif tracking-[0.5em] mb-10 text-center'>
-            <span className='whitespace-normal'>MALAWI VILLAGE</span>
+          <h2 className="text-white lg:text-[100px] lg:leading-[100px] md:text-[70px] md:leading-[70px] text-[50px] leading-[50px] font-serif tracking-[0.5em] mb-10 text-center">
+            <span className="whitespace-normal">MALAWI VILLAGE</span>
           </h2>
         </div>
       )}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 // import Download from '../assets/download.png';
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 
@@ -45,20 +45,45 @@ const Footer = () => {
           <div className="flex flex-col gap-2 md:gap-6">
             <h1 className="md:text-xl font-semibold">Company</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2">
-            <Link to='/'><li className="hover:text-yellow duration-200 transition-colors" >Home</li></Link>
-              <Link to='/shop'><li className="hover:text-yellow duration-200 transition-colors" >Shop</li></Link>
-            <Link to='/contact'><li className="hover:text-yellow duration-200 transition-colors" >Contact</li></Link>
-              <Link to='/about'><li className="hover:text-yellow duration-200 transition-colors" >About Us</li></Link>
-
+              <Link to="/">
+                <li className="hover:text-yellow duration-200 transition-colors">
+                  Home
+                </li>
+              </Link>
+              <Link to="/shop">
+                <li className="hover:text-yellow duration-200 transition-colors">
+                  Shop
+                </li>
+              </Link>
+              <Link to="/contact">
+                <li className="hover:text-yellow duration-200 transition-colors">
+                  Contact
+                </li>
+              </Link>
+              <Link to="/about">
+                <li className="hover:text-yellow duration-200 transition-colors">
+                  About Us
+                </li>
+              </Link>
             </ul>
           </div>
           <div className="flex flex-col gap-2 md:gap-6">
             <h1 className="md:text-xl font-semibold">Help</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2 cursor-pointer">
-              <li className="hover:text-yellow duration-200 transition-colors">Privacy Policy</li>
-              <li className="hover:text-yellow duration-200 transition-colors">Terms of Use</li>
-              <li className="hover:text-yellow duration-200 transition-colors">FAQ</li>
-              <Link to='/tracking'><li className="hover:text-yellow duration-200 transition-colors">Order Tracking</li></Link>
+              <li className="hover:text-yellow duration-200 transition-colors">
+                Privacy & Policy
+              </li>
+              <li className="hover:text-yellow duration-200 transition-colors">
+                Terms & Conditions
+              </li>
+              <li className="hover:text-yellow duration-200 transition-colors">
+                FAQ
+              </li>
+              <Link to="/tracking">
+                <li className="hover:text-yellow duration-200 transition-colors">
+                  Order Tracking
+                </li>
+              </Link>
             </ul>
           </div>
 
@@ -71,28 +96,30 @@ const Footer = () => {
             </ul>
           </div> */}
           <div className="flex flex-col gap-2 md:gap-6">
-            <h1 className="md:text-xl font-semibold cursor-pointer">Follow Us On</h1>
+            <h1 className="md:text-xl font-semibold cursor-pointer">
+              Follow Us On
+            </h1>
             {/* icons */}
             <div className="flex gap-4">
-              <a 
-                href="https://facebook.com/malawifreshdrinks" 
-                target="_blank" 
+              <a
+                href="https://facebook.com/malawifreshdrinks"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow duration-200 transition-colors"
               >
                 <FaFacebook className="w-8 h-8" />
               </a>
-              <a 
-                href="https://www.instagram.com/malawi_village?igsh=YzljYTk1ODg3Zg==" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/malawi_village?igsh=YzljYTk1ODg3Zg=="
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow duration-200 transition-colors"
               >
                 <FaInstagram className="w-8 h-8" />
               </a>
-              <a 
-                href="https://www.tiktok.com/@malawi_village?_t=ZT-8srz3UMpCFK&_r=1" 
-                target="_blank" 
+              <a
+                href="https://www.tiktok.com/@malawi_village?_t=ZT-8srz3UMpCFK&_r=1"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-yellow duration-200 transition-colors"
               >

@@ -1,16 +1,16 @@
 import React from "react";
-import Gallery2 from '../assets/tes-img2.jpg'
-import Gallery3 from '../assets/tes-img3.jpg'
-import Gallery4 from '../assets/tes-img4.jpg'
-import Gallery5 from '../assets/tes-img5.jpg'
-import Gallery6 from '../assets/tes-img6.jpg'
-import Gallery7 from '../assets/tes-img7.jpg'
-import Gallery8 from '../assets/tes-img8.jpg'
-import Gallery9 from '../assets/tes-img9.jpg'
-import Gallery10 from '../assets/test1.jpg'
-import Gallery11 from '../assets/test2.jpg'
-import Gallery12 from '../assets/test3.jpg'
-import Gallery13 from '../assets/test4.jpg'
+import Gallery2 from "../assets/tes-img2.jpg";
+import Gallery3 from "../assets/tes-img3.jpg";
+import Gallery4 from "../assets/tes-img4.jpg";
+import Gallery5 from "../assets/tes-img5.jpg";
+import Gallery6 from "../assets/tes-img6.jpg";
+import Gallery7 from "../assets/tes-img7.jpg";
+import Gallery8 from "../assets/tes-img8.jpg";
+import Gallery9 from "../assets/tes-img9.jpg";
+import Gallery10 from "../assets/test1.jpg";
+import Gallery11 from "../assets/test2.jpg";
+import Gallery12 from "../assets/test3.jpg";
+import Gallery13 from "../assets/test4.jpg";
 
 const GalleryItem = ({ imageUrl, altText }) => {
   return (
@@ -34,11 +34,11 @@ const Gallery = () => {
     { imageUrl: Gallery10, altText: "Gallery Image 10" },
     { imageUrl: Gallery11, altText: "Gallery Image 11" },
     { imageUrl: Gallery12, altText: "Gallery Image 12" },
-    { imageUrl: Gallery13, altText: "Gallery Image 13" }
+    { imageUrl: Gallery13, altText: "Gallery Image 13" },
   ];
 
   return (
-    <main className="bg-white py-12 px-4 md:px-10 " >
+    <main className="bg-white py-12 px-4 md:px-10 ">
       <div className="max-w-7xl mx-auto">
         {/* Title Section */}
         <div className="text-center mb-12">

@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 // import { CartContext } from '../context/CartContext';
-import { WishlistContext } from '../context/WishlistContext';
+import { WishlistContext } from "../context/WishlistContext";
 
 const ProductCard = ({ product, className = "" }) => {
   const navigate = useNavigate();
@@ -27,20 +27,20 @@ const ProductCard = ({ product, className = "" }) => {
 
   // Format price based on whether it's a string or an object
   const formatPrice = (price) => {
-    if (typeof price === 'string') {
+    if (typeof price === "string") {
       return `$ ${price}`;
-    } else if (typeof price === 'object' && price !== null) {
+    } else if (typeof price === "object" && price !== null) {
       return `$ ${price.small} - ${price.big}`;
     }
-    return 'Price not available';
+    return "Price not available";
   };
 
   return (
-    <div 
+    <div
       className={`rounded-md ${className} cursor-pointer relative`}
       onClick={handleClick}
     >
-      <div 
+      <div
         className="absolute top-2 right-2 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer hover:scale-110 transition-transform"
         onClick={handleFavoriteClick}
       >
@@ -51,11 +51,11 @@ const ProductCard = ({ product, className = "" }) => {
         )}
       </div>
       <img
-        src={product.image} 
+        src={product.image}
         alt={product.name}
         className="w-full h-[200px] object-cover"
       />
-      <div 
+      <div
         className="w-full cursor-pointer bg-black hover:bg-opacity-30 duration-200 text-white p-2 text-center"
         onClick={handleViewProduct}
       >
