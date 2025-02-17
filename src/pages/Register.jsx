@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import Hero from '../assets/login-hero.png';
-import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../assets/logo.png';
-import ScrollToTop from '../components/ScrollToTop';
+import { useState } from "react";
+import Hero from "../assets/login-hero.png";
+import { Link, useNavigate } from "react-router-dom";
+import Logo from "../assets/logo.png";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -11,7 +11,6 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
-
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -34,7 +33,8 @@ const Register = () => {
   };
 
   const isStrongPassword = (password) => {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const regex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return regex.test(password);
   };
 
@@ -48,7 +48,11 @@ const Register = () => {
           onSubmit={handleSignUp}
           className="flex flex-col md:gap-10 gap-4 px-4 w-full md:px-20"
         >
-          <img src={Logo} alt="" className="w-[120px] flex justify-center mx-auto md:hidden" />
+          <img
+            src={Logo}
+            alt=""
+            className="w-[120px] flex justify-center mx-auto md:hidden"
+          />
           <div className="flex flex-col gap-3">
             <label className="flex flex-col gap-3">
               Name*
@@ -114,8 +118,12 @@ const Register = () => {
             </button>
           </div>
         </form>
-        <Link to="/login" className="text-black text-sm font-medium text-center">
-          Already have an account? <span className="cursor-pointer hover:underline">Log In</span>
+        <Link
+          to="/login"
+          className="text-black text-sm font-medium text-center"
+        >
+          Already have an account?{" "}
+          <span className="cursor-pointer hover:underline">Log In</span>
         </Link>
       </div>
       <ScrollToTop />

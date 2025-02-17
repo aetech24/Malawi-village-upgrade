@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { WishlistContext } from "../context/WishlistContext";
 import { CartContext } from "../context/CartContext";
-import ScrollToTop from '../components/ScrollToTop';
+import ScrollToTop from "../components/ScrollToTop";
 
 const Wishlist = () => {
-  const { wishlist, removeFromWishlist, clearWishlist } = useContext(WishlistContext);
+  const { wishlist, removeFromWishlist, clearWishlist } =
+    useContext(WishlistContext);
   const { addToCart } = useContext(CartContext);
 
   // Add an item to the cart
@@ -28,12 +29,12 @@ const Wishlist = () => {
 
   // Format price based on whether it's a string or an object
   const formatPrice = (price) => {
-    if (typeof price === 'string') {
+    if (typeof price === "string") {
       return `GH₵${parseFloat(price).toFixed(2)}`;
-    } else if (typeof price === 'object' && price !== null) {
+    } else if (typeof price === "object" && price !== null) {
       return `GH₵${price.small} - GH₵${price.big}`;
     }
-    return 'Price not available';
+    return "Price not available";
   };
 
   return (

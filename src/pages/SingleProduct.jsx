@@ -155,7 +155,9 @@ const SingleProduct = () => {
         <div className="flex md:flex-col flex-row gap-4 border-gray-200">
           <button
             className={`px-6 md:w-60 py-2 ${
-              activeTab === "description" ? "border-b-2 border-black bg-gray-100 p-2" : ""
+              activeTab === "description"
+                ? "border-b-2 border-black bg-gray-100 p-2"
+                : ""
             }`}
             onClick={() => setActiveTab("description")}
           >
@@ -163,7 +165,9 @@ const SingleProduct = () => {
           </button>
           <button
             className={`px-6 md:w-60 py-2 ${
-              activeTab === "ingredients" ? "border-b-2 border-black bg-gray-100 p-2" : ""
+              activeTab === "ingredients"
+                ? "border-b-2 border-black bg-gray-100 p-2"
+                : ""
             }`}
             onClick={() => setActiveTab("ingredients")}
           >
@@ -174,24 +178,32 @@ const SingleProduct = () => {
         <div className="md:py-6">
           {activeTab === "description" ? (
             <div className="flex flex-col gap-4">
-              <h3 className="text-xl font-semibold mb-4">Product Description</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                Product Description
+              </h3>
               <p>{product.description}</p>
               {/* <img src={product.image} alt=""></img> */}
             </div>
           ) : (
-            <div className='flex flex-col gap-4 w-full'>
-              <h3 className='text-xl font-medium mb-4 flex justify-center w-full'>DID YOU KNOW?</h3>
-              <div className=' pl-6 flex flex-col gap-8'>
+            <div className="flex flex-col gap-4 w-full">
+              <h3 className="text-xl font-medium mb-4 flex justify-center w-full">
+                DID YOU KNOW?
+              </h3>
+              <div className=" pl-6 flex flex-col gap-8">
                 {product.ingredient ? (
                   product.ingredient.map((item, index) => (
                     <div key={index} className="flex items-center gap-4">
-                        <img src={item.image} alt={item.text} className="w-24 h-24 bg-cover" />
-                        <div className='flex flex-col gap-2'>
-                            <p className="font-semibold text-xl">{item.text}</p>
-                            <p>{item.description}</p>
-                            {/* <button className="text-white bg-black py-2 px-4 rounded-full w-fit">Read More</button> */}
-                            <hr />
-                        </div>
+                      <img
+                        src={item.image}
+                        alt={item.text}
+                        className="w-24 h-24 bg-cover"
+                      />
+                      <div className="flex flex-col gap-2">
+                        <p className="font-semibold text-xl">{item.text}</p>
+                        <p>{item.description}</p>
+                        {/* <button className="text-white bg-black py-2 px-4 rounded-full w-fit">Read More</button> */}
+                        <hr />
+                      </div>
                     </div>
                   ))
                 ) : (

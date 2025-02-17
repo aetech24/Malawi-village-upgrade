@@ -1,13 +1,16 @@
 import { useContext } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { CartContext } from "../context/CartContext";
-import ScrollToTop from '../components/ScrollToTop';
+import ScrollToTop from "../components/ScrollToTop";
 
 const Billing = ({ shippingCost, onPlaceOrder }) => {
   const { cartItems, clearCart } = useContext(CartContext);
 
   const calculateSubtotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
   };
 
   const calculateTotal = () => {
@@ -93,14 +96,19 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
           <h2 className="text-xl font-semibold mb-4">Your Order</h2>
           <div className="space-y-4">
             {cartItems.map((item) => (
-              <div key={item.id + item.size} className="flex items-center justify-between">
+              <div
+                key={item.id + item.size}
+                className="flex items-center justify-between"
+              >
                 <div className="flex items-center gap-4 font-bold ">
                   <img
                     src={item.image}
                     alt={item.name}
                     className="w-16 h-16 rounded-md object-cover"
                   />
-                  <span>{item.name} ({item.size})</span>
+                  <span>
+                    {item.name} ({item.size})
+                  </span>
                 </div>
                 <span className="font-bold">$ {item.price.toFixed(2)}</span>
               </div>
@@ -112,7 +120,9 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
             </div>
             <div className="flex justify-between items-center font-semibold">
               <span>Shipping</span>
-              <span>$ {shippingCost > 0 ? shippingCost.toFixed(2) : "Free"}</span>
+              <span>
+                $ {shippingCost > 0 ? shippingCost.toFixed(2) : "Free"}
+              </span>
             </div>
             <div className="border-t border-gray-300 my-4"></div>
             <div className="flex justify-between items-center text-xl font-bold">
