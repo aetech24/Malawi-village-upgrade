@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import ScrollToTop from '../components/ScrollToTop';
+import ScrollToTop from "../components/ScrollToTop";
 
 const Cart = () => {
   const { cartItems, updateQuantity, removeFromCart } = useContext(CartContext);
@@ -9,11 +9,8 @@ const Cart = () => {
   const discount = 0;
   const delivery = 0;
 
-
-  const subtotal = cartItems?.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  ) || 0;
+  const subtotal =
+    cartItems?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
 
   return (
     <div className="lg:p-10 px-4 max-lg:mt-16 md:-mt-10">
@@ -67,7 +64,7 @@ const Cart = () => {
                           />
                         </td>
                         <td className="p-4">
-                          $ {(Number(item.price) * item.quantity)}
+                          $ {Number(item.price) * item.quantity}
                         </td>
                         <td
                           className="p-4 text-red-500 cursor-pointer"
@@ -96,7 +93,9 @@ const Cart = () => {
                       />
                       <div>
                         <h3 className="font-bold">{item.name}</h3>
-                        <p className="text-sm text-gray-500">Size: {item.size}</p>
+                        <p className="text-sm text-gray-500">
+                          Size: {item.size}
+                        </p>
                       </div>
                     </div>
                     <div className="flex justify-between items-center">
@@ -114,9 +113,7 @@ const Cart = () => {
                         }
                         className="w-16 text-center border rounded"
                       />
-                      <span>
-                        $ {(Number(item.price) * item.quantity)}
-                      </span>
+                      <span>$ {Number(item.price) * item.quantity}</span>
                       <button
                         onClick={() => removeFromCart(item.id, item.size)}
                         className="text-red-500"
