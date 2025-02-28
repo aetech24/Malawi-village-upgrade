@@ -181,7 +181,7 @@ const SingleProduct = () => {
               <h3 className="text-xl font-semibold mb-4">
                 Product Description
               </h3>
-              <p>{product.description}</p>
+              <p  dangerouslySetInnerHTML={{ __html: product.description }}></p>
               {/* <img src={product.image} alt=""></img> */}
             </div>
           ) : (
