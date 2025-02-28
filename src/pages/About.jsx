@@ -14,19 +14,25 @@ const About = () => {
           <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-16">
             {/* Text Section */}
             <div className="text-center md:text-left md:w-1/2 ">
-              <h1 className="text-4xl font-bold mb-6 text-center mx-auto md:text-left">
+              {/*<h1 className="text-4xl font-bold mb-6 text-center mx-auto md:text-left">
                 Vision
               </h1>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 The most trusted place for you and your family to break bread.
               </p>
-              <h3 className="text-2xl font-bold mb-6 text-center md:text-left">
+              <h1 className="text-2xl font-bold mb-6 text-center md:text-left">
                 Mission
-              </h3>
+              </h1>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Our mission is to bridge the gap between sustainability and
                 innovation. Join us in creating a better future—one step at a
                 time.
+              </p> */}
+              <h1 className="text-4xl font-bold mb-6 text-center mx-auto md:text-left mt-6">
+                Our Promise
+              </h1>
+              <p className="text-gray-600 text-lg leading-relaxed ">
+                Sourced with Integrity, freshly handcrafted.
               </p>
             </div>
 

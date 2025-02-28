@@ -53,13 +53,18 @@ const core_values = [
     title: "Cleanliness",
     icon: <FaSoap className="w-12 h-12" />,
     paragraph:
-      "It is just as vital as goodness itself; to clean is to elevate, bringing us closer purity.",
+      `We are committed to the highest standards of cleanliness
+      and hygiene at every stage of our process. From sourcing the freshest
+      ingredients to bottling our juice, we ensure a spotless, safe and pure
+      environment. Every ship you take is a reflection of our dedication to
+      quality, freshness and your well-being.
+      `,
   },
   {
     id: 8,
     title: "Our Promise",
     icon: <FaHandshake className="w-12 h-12" />,
-    paragraph: "Sourced with Integrity, freshly handcrafted.",
+    paragraph: "Sourced with Integrity, freshly handcrafted. <br> ",
   },
 ];
 
