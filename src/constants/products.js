@@ -62,7 +62,7 @@ export const products = [
     name: "Intelligent Water",
     price: { big: 16, small: 10 },
     size: ["L", "S"],
-    image: WaterMain,
+    image: Water2,
     images: [WaterMain, Water1, Water2, Water3],
     description:
       `Watermelon is one of the most alkaline-forming fruits
