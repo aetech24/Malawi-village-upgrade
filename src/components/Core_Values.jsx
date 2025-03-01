@@ -64,7 +64,7 @@ const core_values = [
     id: 8,
     title: "Our Promise",
     icon: <FaHandshake className="w-12 h-12" />,
-    paragraph: "Sourced with Integrity, freshly handcrafted. <br> ",
+    paragraph: "Sourced with Integrity, freshly handcrafted.",
   },
 ];
 
