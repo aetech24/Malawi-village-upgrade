@@ -7,12 +7,12 @@ import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
 import RefreshingJuice from "../assets/Cat1.jpg";
 import DetoxAndImmuneBooster from "../assets/Cat2.jpg";
-import SweetAndUnsweetTea from "../assets/pina1.jpg";
+import SweetAndUnsweetTea from "../assets/Intelligent_water.jpg";
 import Banner from "../assets/banner.jpg";
 // import MalawiServices from '../assets/banner.jpg';
-import Feature1 from "../assets/feature1.jpg";
-import Feature2 from "../assets/feature2.jpg";
-import Feature3 from "../assets/feature3.jpg";
+import Feature1 from "../assets/feature2.jpg";
+import Feature2 from "../assets/sunset1.jpg";
+import Feature3 from "../assets/traditional-ginger.jpg";
 import ScrollToTop from "../components/ScrollToTop";
 
 const Home = () => {
