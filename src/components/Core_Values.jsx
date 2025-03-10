@@ -10,6 +10,12 @@ import { GiTorch } from "react-icons/gi";
 import { MdVerified } from "react-icons/md";
 
 const core_values = [
+   {
+    id: 8,
+    title: "Our Promise",
+    icon: <FaHandshake className="w-12 h-12" />,
+    paragraph: "Sourced with Integrity, freshly handcrafted.",
+  },
   {
     id: 1,
     title: "Passion",
@@ -60,12 +66,7 @@ const core_values = [
       quality, freshness and your well-being.
       `,
   },
-  {
-    id: 8,
-    title: "Our Promise",
-    icon: <FaHandshake className="w-12 h-12" />,
-    paragraph: "Sourced with Integrity, freshly handcrafted.",
-  },
+ 
 ];
 
 const Core_Values = () => {
