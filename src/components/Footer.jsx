@@ -70,15 +70,21 @@ const Footer = () => {
           <div className="flex flex-col gap-2 md:gap-6">
             <h1 className="md:text-xl font-semibold">Help</h1>
             <ul className="max-sm:text-sm flex flex-col gap-2 cursor-pointer">
+              <Link to='/help'>
               <li className="hover:text-yellow duration-200 transition-colors">
                 Privacy & Policy
-              </li>
+                </li>
+              </Link>
+              <Link to='/privacy'>
               <li className="hover:text-yellow duration-200 transition-colors">
                 Terms & Conditions
-              </li>
+                </li>
+              </Link>
+              <Link to='/FAQ'>
               <li className="hover:text-yellow duration-200 transition-colors">
                 FAQ
-              </li>
+                </li>
+                </Link>
               <Link to="/tracking">
                 <li className="hover:text-yellow duration-200 transition-colors">
                   Order Tracking

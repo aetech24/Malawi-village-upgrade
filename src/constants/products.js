@@ -45,9 +45,10 @@ import Kale from "../assets/kale.jpeg";
 import TurnipGreen from "../assets/turnip-green.jpeg";
 import Watercress from "../assets/watercress.jpeg";
 import Arugula from "../assets/arugula.jpeg";
-import Apple from "../assets/apple.jpeg";
+import Apple from "../assets/green-apple.jpg";
 import BeetRoots from "../assets/beetroot.jpeg";
 import Chamomile from "../assets/chamomile.jpeg";
+import Cucumber from "../assets/cucumber.jpeg"
 import Nettle from "../assets/nettle.jpeg";
 import Pomegranate from "../assets/pomegranate.jpeg";
 import RaspberryStrawberryPomegranateTea from "../assets/RaspberryStrawberryPomegranateTea.jpg";
@@ -82,7 +83,7 @@ export const products = [
           "Hydrates and provides electrolytes, supports cardiovascular health, and is rich in vitamins A and C.",
       },
       {
-        text: "Lime",
+        text: "Lime and Lemon",
         image: Lime,
         description:
           `
@@ -90,7 +91,7 @@ export const products = [
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
-          and maintaining healthy skin.
+          and maintaining healthy skin. Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.
           `,
       },
       {
@@ -104,12 +105,6 @@ export const products = [
           folate, riboflavin, and niacin. Natural Anti-Inflammatory which
           Helps soothe muscles and reduce inflammation.
           `,
-      },
-      {
-        text: "Lemon",
-        image: Lemon,
-        description:
-          "Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.",
       },
       {
         text: "Agave",
@@ -162,8 +157,8 @@ export const products = [
     images: [Zobo, Zobo1, Zobo_2],
     description:
       `
-    Our hibiscus flower juice is more than just a delicious, tart, and
-    refreshing drink—it’s packed with powerful health benefits, thanks to the
+    Our hibiscus flower juice is more than just a
+    delicious tart and refreshing drink. It’s packed with powerful health benefits, thanks to the
     natural nutrients and antioxidants found in hibiscus.<br>
 
     <b>Supports Heart Health:</b> Hibiscus is known for its heart-friendly properties, and
@@ -173,8 +168,8 @@ export const products = [
     heart.<br>
 
     <b>Fights Inflammation:</b> Hibiscus is rich in antioxidants like polyphenols that help
-    reduce oxidative stress and inflammation in the body.
-    Aids Digestion: Hibiscus has mild diuretic and digestive-supporting properties,
+    reduce oxidative stress and inflammation in the body.<br>
+    <b>Aids Digestion:</b> Hibiscus has mild diuretic and digestive-supporting properties,
     which may help promote healthy guts and smooth digestion.<br>
 
     <b>Boosts Immunity:</b> Hibiscus contains Vitamin C, quercetin, and gallic acid, which
@@ -230,10 +225,15 @@ export const products = [
           `,
       },
       {
-        text: "Lemon",
+        text: "Lime and Lemon",
         image: Lemon,
         description:
-          "Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.",
+          `Limes are rich in vitamin C, which plays a crucial role in supporting
+          the immune system. Consuming vitamin C can help reduce the
+          duration and severity of common cold symptoms. Additionally,
+          vitamin C is essential for collagen formation, aiding wound healing
+          and maintaining healthy skin. Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.
+          `,
       },
       {
         text: "Agave",
@@ -279,14 +279,15 @@ export const products = [
           "Aids digestion, reduces inflammation, and has powerful antioxidant and anti-inflammatory properties.",
       },
       {
-        text: "Lime",
+        text: "Lime and Lemon",
         image: Lime,
         description:
-          `Limes are rich in vitamin C, which plays a crucial role in supporting
-           the immune system. Consuming vitamin C can help reduce the
-           duration and severity of common cold symptoms. Additionally,
-           vitamin C is essential for collagen formation, aiding wound healing
-           and maintaining healthy skin.`,
+           `Limes are rich in vitamin C, which plays a crucial role in supporting
+          the immune system. Consuming vitamin C can help reduce the
+          duration and severity of common cold symptoms. Additionally,
+          vitamin C is essential for collagen formation, aiding wound healing
+          and maintaining healthy skin. Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.
+          `,
       },
       {
         text: "Pineapple",
@@ -362,22 +363,15 @@ export const products = [
           `,
       },
       {
-        text: "Lime",
+        text: "Lime and Lemon",
         image: Lime,
         description:
-          `
-          Limes are rich in vitamin C, which plays a crucial role in supporting
+           `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
-          and maintaining healthy skin.
+          and maintaining healthy skin. Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.
           `,
-      },
-      {
-        text: "Lemon",
-        image: Lemon,
-        description:
-          "Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.",
       },
       {
         text: "Agave",
@@ -405,25 +399,24 @@ export const products = [
     category: "Detox and Immune booster",
     ingredient: [
       {
-        text: "Grapefruit",
+        text: "Grapes",
         image: Grapefruit,
         description:
           `
-          Grapefruit is rich in vitamins A and C, antioxidants, and fiber,
+          Grapes are rich in vitamin A and C, antioxidants, and fiber,
           supporting immune function, heart health, and weight
           management.
           `,
       },
       {
-        text: "Lime",
+        text: "Lime and Lemon",
         image: Lime,
         description:
-          `
-          Limes are rich in vitamin C, which plays a crucial role in supporting
+           `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
-          and maintaining healthy skin.
+          and maintaining healthy skin. Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.
           `,
       },
       {
@@ -474,19 +467,19 @@ export const products = [
       Introducing our comprehensive Gut Health Cleanse,
       meticulously crafted to enhance your overall health and well-being. This
       potent blend offers a multitude of benefits:<br>
-    <b> Natural Detoxification:</b> aids in eliminating toxins from the body, promoting
+    <b> Natural Detoxification:</b> aids in eliminating toxins from the body, promoting
       overall health and well-being. Its natural properties support the body&#39;s
       detox processes. promotes regular bowel movements and helps
       prevent constipation. The soluble fiber content aids in reducing
       bloating and discomfort.<br>
 
-    <b> Detoxification and Skin Health:</b> Packed with antioxidants, vitamins, and
+    <b> Detoxification and Skin Health:</b> Packed with antioxidants, vitamins, and
       minerals, it assists in detoxifying the body, leading to healthier, glowing
       skin. These nutrients combat free radicals, supporting skin vitality.<br>
-    <b> Supports Heart Health:</b> Contains nutrients that help lower cholesterol
+    <b> Supports Heart Health:</b> Contains nutrients that help lower cholesterol
       levels and support cardiovascular health. Regular consumption can
-      contribute to a healthier heart.
-     Blood Sugar Regulation: Help stabilize blood sugar levels, potentially
+      contribute to a healthier heart.<br>
+    <b> Blood Sugar Regulation:</b> Help stabilize blood sugar levels, potentially
       reducing the risk of type 2 diabetes. Consuming it regularly can be part
       of a healthy lifestyle.
       `,
@@ -537,27 +530,25 @@ export const products = [
           `,
       },
       {
-        text: "Apple",
+        text: "Green Apple",
         image: Apple,
         description:
           `
-           Apples highly versatile fruits that offer numerous nutritional benefits. Rich
-           in fiber, vitamin C, K, A, E, potassium, magnesium, cooper, and
-           pectin. They help reduce the risk of diabetes, asthma, and cancer. They
-           are beneficiary for bone health as well as promoting weight loss
-           and brain health.
+          Are high in fiber content which helps in increasing the body’s
+          metabolism. They also have low-fat content and help in maintaining good blood
+          flow in the body, also rich in vitamin A and C, good for bone and fight against
+          ageing.
           `,
       },
       {
-        text: "Lime",
+        text: "Lime and Lemon",
         image: Lime,
         description:
-          `
-          Limes are rich in vitamin C, which plays a crucial role in supporting
+         `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
-          and maintaining healthy skin.
+          and maintaining healthy skin. Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.
           `,
       },
       {
@@ -572,6 +563,16 @@ export const products = [
           Helps soothe muscles and reduce inflammation.
           `,
       },
+      {
+        text: "Cucumber",
+        image: Cucumber,
+        description:
+        `
+        contain electrolytes, calcium, vitamin K, fiber, and
+         Cucurbitaceae. All these nutrients help with cancer prevention, cardiovascular
+          health, diabetes, inflammation and the health of your skin.
+        `
+      }
     ],
   },
   {
@@ -654,10 +655,16 @@ export const products = [
           `,
       },
       {
-        text: "Lemon",
+        text: "Lime and Lemon",
         image: Lemon,
         description:
-          "Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.",
+          
+         `Limes are rich in vitamin C, which plays a crucial role in supporting
+          the immune system. Consuming vitamin C can help reduce the
+          duration and severity of common cold symptoms. Additionally,
+          vitamin C is essential for collagen formation, aiding wound healing
+          and maintaining healthy skin. Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.
+          `,
       },
     ],
   },
@@ -748,13 +755,21 @@ export const products = [
         text: "Rosemary",
         image: Rosemary,
         description:
-          "Improves digestion, enhances memory, and has anti-inflammatory properties.",
+          `
+          is rich in antioxidants and anti-inflammatory compounds, which
+          support brain health, improve memory, aid digestion, and promote hair growth.
+        `,
       },
       {
-        text: "Lemon",
+        text: "Lime and Lemon",
         image: Lemon,
         description:
-          "Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.",
+           `Limes are rich in vitamin C, which plays a crucial role in supporting
+          the immune system. Consuming vitamin C can help reduce the
+          duration and severity of common cold symptoms. Additionally,
+          vitamin C is essential for collagen formation, aiding wound healing
+          and maintaining healthy skin. Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.
+          `,
       },
       {
         text: "Raspberry leaf",
@@ -764,7 +779,7 @@ export const products = [
           Raspberry leaf is rich in vitamins A, C, and K, calcium, and
           antioxidants, supporting bone health, reducing inflammation, and
           potentially lowering the risk of chronic diseases. Aids digestion
-          boosts the immune system, and supports women&#39;s health, including during
+          boosts the immune system, and supports women's health, including during
           pregnancy.
           `,
       },
@@ -784,11 +799,10 @@ export const products = [
         image: Nettle,
         description:
           `
-          Nettle is rich in vitamins A, C, and K, calcium, and antioxidants,
-          supporting bone health, reducing inflammation, and potentially
-          lowering the risk of chronic diseases. Aid digestion boosts the
-          immune system, and supports women&#39;s health, including during
-          pregnancy.
+          is rich in vitamins A, C, and K, calcium, and antioxidants, supporting bone
+          health, reducing inflammation, and potentially lowering the risk of chronic
+          diseases. Aid digestion boosts the immune system, and supports women's health,
+          including during pregnancy..
           `,
       },
     ],
@@ -831,10 +845,15 @@ export const products = [
           `,
       },
       {
-        text: "Lemon",
+        text: "Lime and Lemon",
         image: Lemon,
         description:
-          "Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.",
+           `Limes are rich in vitamin C, which plays a crucial role in supporting
+          the immune system. Consuming vitamin C can help reduce the
+          duration and severity of common cold symptoms. Additionally,
+          vitamin C is essential for collagen formation, aiding wound healing
+          and maintaining healthy skin. Boosts immune system, aids digestion, and is rich in Vitamin C and antioxidants.
+          `,
       },
       {
         text: "Raspberry leaf",
@@ -859,11 +878,10 @@ export const products = [
         image: Nettle,
         description:
           `
-          Nettle is rich in vitamins A, C, and K, calcium, and antioxidants,
-          supporting bone health, reducing inflammation, and potentially
-          lowering the risk of chronic diseases. Aid digestion boosts the
-          immune system, and supports women&#39;s health, including during
-          pregnancy.
+          is rich in vitamins A, C, and K, calcium, and antioxidants, supporting bone
+          health, reducing inflammation, and potentially lowering the risk of chronic
+          diseases. Aid digestion boosts the immune system, and supports women's health,
+          including during pregnancy.
           `,
       },
       {
