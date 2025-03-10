@@ -15,6 +15,7 @@ import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Tracking from "./pages/Tracking";
+import FAQ from "./pages/FAQ";
 
 const App = () => {
   const shippingCost = 5.0;
@@ -47,6 +48,7 @@ const App = () => {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/products" element={<AllProducts />} />
             <Route path="/tracking" element={<Tracking />} />
+            <Route path="/FAQ" element={<FAQ/>} />
           </Routes>
 
           <Footer />
