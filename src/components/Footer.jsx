@@ -50,7 +50,7 @@ const Footer = () => {
                   Home
                 </li>
               </Link>
-              <Link to="/shop">
+              <Link to="/products">
                 <li className="hover:text-yellow duration-200 transition-colors">
                   Shop
                 </li>
