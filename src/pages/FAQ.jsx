@@ -48,7 +48,7 @@ const faqs = [
       },
       {
         question: "Can I find your juices in stores?",
-        answer: `- At this time we are only selling online through our website and Amazon.`
+        answer: `- At this time we are only selling online through our website.`
       },
       {
         question: "Why are some products showing unavailable?",
@@ -60,10 +60,19 @@ const faqs = [
         question: "Why does it show that a product is stocked out?",
         answer: `- Due to our commitment to crafting fresh menu items with seasonal produce, some items
                    may occasionally be unavailable. We apologize for any inconvenience caused by
-                   temporary supply shortages affecting some of the products you&#39;ve ordered. Not to worry,
+                   temporary supply shortages affecting some of the products you've ordered. Not to worry,
                    the item is not discontinued, it will be back online once the item is back in stock at our
                    warehouse! In the meantime, you can place a backorder to receive the product as soon as
                    it becomes available.`
+      },
+      {
+        question: "Prices for product?",
+        answer: `
+               <b>Tea</b>- $9<br>
+               <b>Juice 8oz</b>- $8<br>
+               <b>Juice 16oz</b>- $12
+
+        `
       }
     ]
   },
@@ -104,10 +113,22 @@ const faqs = [
         answer: `- Each package is shipped in an insulated box and will withstand sitting until you return
                    home. Due to the perishable nature of our products, we ask that you open the package
                    immediately upon arrival and to place the contents in your freezer or refrigerator. If you
-                   are ordering as a gift, do not worry - all of our packages are marked "keep frozen" and
+                   are ordering as a gift, do not worry<br>
+                   - all of our packages are marked "keep frozen" and
                    "perishable". In addition, each package contains a brochure with instructions for proper
                    handling.`
-      }
+      },
+      {
+        question: "How much bottle can I ship?",
+        answer: `
+                  - Here are the minimum we can ship per order per bottle size they should not be able to add
+                   anything less than this.<br>
+                   <b>Tea</b> – 13 minimum.<br>
+                   <b>Big bottle juice</b> – 6 minimum<br>
+                   <b>Small bottle</b> - 8 minimum
+
+                 `
+      },
     ]
   }
 ];
@@ -146,7 +167,7 @@ const FAQ = () => {
                   <span className="text-xl">{openIndex === `${index}-${idx}` ? "−" : "+"}</span>
                 </button>
                 {openIndex === `${index}-${idx}` && (
-                  <p className="text-gray-600 pb-4">{faq.answer}</p>
+                  <p className="text-gray-600 pb-4" dangerouslySetInnerHTML={{ __html: faq.answer}}></p>
                 )}
               </div>
             ))}

@@ -114,7 +114,7 @@ const SingleProduct = () => {
 
         <div className="flex flex-col gap-6 lg:w-1/2 mt-20">
           <p className="text-2xl font-semibold">{product.name}</p>
-          <p dangerouslySetInnerHTML={{ __html: product.description }}></p>
+          {/*<p dangerouslySetInnerHTML={{ __html: product.description }}></p>*/}
           <p className="font-semibold text-2xl">{formatPrice(product.price)}</p>
 
           {/* Select Size */}
