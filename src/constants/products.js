@@ -48,7 +48,7 @@ import Arugula from "../assets/arugula.jpeg";
 import Apple from "../assets/green-apple.jpg";
 import BeetRoots from "../assets/beetroot.jpeg";
 import Chamomile from "../assets/chamomile.jpeg";
-import Cucumber from "../assets/cucumber.jpeg"
+import Cucumber from "../assets/cucumber.jpeg";
 import Nettle from "../assets/nettle.jpeg";
 import Pomegranate from "../assets/pomegranate.jpeg";
 import RaspberryStrawberryPomegranateTea from "../assets/RaspberryStrawberryPomegranateTea.jpg";
@@ -65,8 +65,7 @@ export const products = [
     size: ["L", "S"],
     image: Water2,
     images: [WaterMain, Water1, Water2, Water3],
-    description:
-      `Watermelon is one of the most alkaline-forming fruits
+    description: `Watermelon is one of the most alkaline-forming fruits
        on the planet. It is a powerful fruit packed with potassium and
        magnesium. Watermelon contains 92% H₂O, which forms hydrogen
        bonds inside it. It is known for helping the cardiovascular system,
@@ -85,8 +84,7 @@ export const products = [
       {
         text: "Lime and Lemon",
         image: Lime,
-        description:
-          `
+        description: `
           Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
@@ -97,8 +95,7 @@ export const products = [
       {
         text: "Ginger",
         image: Ginger1,
-        description:
-          `
+        description: `
           Ginger is packed with essential vitamins and minerals, offering a
           natural way to support your overall well-being. Ginger contains
           Vitamin C, B3, B6, iron, potassium, magnesium, phosphorus, zinc,
@@ -121,8 +118,7 @@ export const products = [
     size: ["L", "S"],
     image: Orange,
     images: [Orange, Orange2, Orange3, Orange4],
-    description:
-      `
+    description: `
       Enjoy the pure, refreshing taste of 100% organic freshly squeezed
       orange juice, made from sun-ripened oranges, nothing else. Naturally
       rich in Vitamin C, it helps strengthen your immune system and may
@@ -136,8 +132,7 @@ export const products = [
       {
         text: "Organic orange juice",
         image: Orange1,
-        description:
-          `
+        description: `
           Naturally rich in Vitamin C, it helps strengthen your
           immune system and may support recovery from the common
           cold. Packed with essential nutrients like potassium, fiber, calcium,
@@ -155,8 +150,7 @@ export const products = [
     size: ["L", "S"],
     image: Zobo2,
     images: [Zobo, Zobo1, Zobo_2],
-    description:
-      `
+    description: `
     Our hibiscus flower juice is more than just a
     delicious tart and refreshing drink. It’s packed with powerful health benefits, thanks to the
     natural nutrients and antioxidants found in hibiscus.<br>
@@ -181,26 +175,32 @@ export const products = [
       {
         text: "Hibiscus",
         image: Hibiscus,
-        description:
-          "Lowers blood pressure, supports liver health, and is rich in antioxidants.",
+        description: `It is rich in antioxidants and vitamin C, supporting immune health,
+           reducing blood pressure, aiding digestion, and promoting heart health`,
       },
       {
         text: "Raspberry",
         image: Raspberry,
-        description:
-         "Rich in fiber and antioxidants, supports heart health, and has anti-inflammatory properties.",
+        description: `are rich in antioxidants, which help combat inflammation. They are
+          high in dietary fiber, promoting healthy digestion. Their vitamin C content
+          supports a strong immune system. Raspberries may aid in blood sugar control due
+          to their low glycemic index. Regular consumption can contribute to heart health.`,
       },
       {
         text: "Strawberry",
         image: Strawberry,
-        description:
-          "Boosts immune system, improves heart health, and is rich in vitamins and antioxidants.",
+        description: `are rich in vitamin C, supporting immune health. They contain
+           antioxidants that may reduce inflammation. High in fiber, they aid digestion.
+           Potassium in strawberries helps regulate blood pressure. Their low glycemic index
+           supports blood sugar control. Regular consumption may improve heart health.
+           They provide folate, essential for cell function. Antioxidants in strawberries may
+           protect against certain cancers. Their anti-inflammatory properties can alleviate
+           joint pain. Strawberries promote gut health by supporting beneficial bacteria.`,
       },
       {
         text: "Mango",
         image: Mango,
-        description:
-          `
+        description: `
           are rich in vitamins A, C, and E, antioxidants, and dietary
           fiber, supporting immune function, heart health, digestive health,
           and skin vitality.
@@ -209,14 +209,14 @@ export const products = [
       {
         text: "Pineapple",
         image: Pineapple,
-        description:
-          "Aids digestion, reduces inflammation, and is rich in vitamins and antioxidants.",
+        description: `is rich in vitamin C, manganese, and bromelain, supporting immunity,
+           digestion, and reducing inflammation. Additionally, its antioxidants may help
+           combat chronic diseases.`,
       },
       {
         text: "Ginger",
         image: Ginger1,
-        description:
-          `
+        description: `
           Ginger is packed with essential vitamins and minerals, offering a
           natural way to support your overall well-being. Ginger contains
           Vitamin C, B3, B6, iron, potassium, magnesium, phosphorus, zinc,
@@ -227,8 +227,7 @@ export const products = [
       {
         text: "Lime and Lemon",
         image: Lemon,
-        description:
-          `Limes are rich in vitamin C, which plays a crucial role in supporting
+        description: `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
@@ -250,8 +249,7 @@ export const products = [
     size: ["L", "S"],
     image: Ginger,
     images: [ginger, ginger1, ginger2, ginger3],
-    description:
-      `
+    description: `
       Our fresh ginger juice is packed with essential
       vitamins and minerals, offering a natural way to support your overall
       well-being. Ginger contains Vitamin C, B3, B6, iron, potassium,
@@ -281,8 +279,7 @@ export const products = [
       {
         text: "Lime and Lemon",
         image: Lime,
-        description:
-           `Limes are rich in vitamin C, which plays a crucial role in supporting
+        description: `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
@@ -292,14 +289,15 @@ export const products = [
       {
         text: "Pineapple",
         image: Pineapple,
-        description:
-          "Aids digestion, reduces inflammation, and is rich in vitamins and antioxidants.",
+        description: `is rich in vitamin C, manganese, and bromelain, supporting immunity,
+           digestion, and reducing inflammation. Additionally, its antioxidants may help
+           combat chronic diseases.`,
       },
       {
         text: "Clove",
         image: Clove,
-        description:
-          "Rich in antioxidants, improves liver health, and has anti-inflammatory properties.",
+        description: `are rich in antioxidants and eugenol, supporting oral health,
+           regulating blood sugar, and providing antimicrobial benefits.`,
       },
       {
         text: "Agave",
@@ -316,8 +314,7 @@ export const products = [
     size: ["L", "S"],
     image: PinaMain,
     images: [Pina, Pina1, Pina2],
-    description:
-      `
+    description: `
       Mangoes are packed with essential nutrients and
       antioxidants, making them a delicious and healthy addition to your daily
       routine.<br>
@@ -337,8 +334,7 @@ export const products = [
       {
         text: "Mango",
         image: Mango,
-        description:
-          `
+        description: `
           Mangoes are rich in vitamins A, C, and E, antioxidants, and dietary
           fiber, supporting immune function, heart health, digestive health,
           and skin vitality.
@@ -347,14 +343,14 @@ export const products = [
       {
         text: "Pineapple",
         image: Pineapple,
-        description:
-          "Aids digestion, reduces inflammation, and is rich in vitamins and antioxidants.",
+        description: `is rich in vitamin C, manganese, and bromelain, supporting immunity,
+            digestion, and reducing inflammation. Additionally, its antioxidants may help
+           combat chronic diseases.`,
       },
       {
         text: "Ginger",
         image: Ginger1,
-        description:
-          `
+        description: `
           Ginger is packed with essential vitamins and minerals, offering a
           natural way to support your overall well-being. Ginger contains
           Vitamin C, B3, B6, iron, potassium, magnesium, phosphorus, zinc,
@@ -365,8 +361,7 @@ export const products = [
       {
         text: "Lime and Lemon",
         image: Lime,
-        description:
-           `Limes are rich in vitamin C, which plays a crucial role in supporting
+        description: `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
@@ -388,8 +383,7 @@ export const products = [
     size: ["L", "S"],
     image: VitaminC,
     images: [VitaminC, VitaminC, VitaminC],
-    description:
-      `
+    description: `
       Immunity powerhouse, our daily wellness shot, is a potent
       blend designed to enhance your overall vitality. It supports digestive
       health, aids in weight management, promotes healthy skin, and helps
@@ -401,8 +395,7 @@ export const products = [
       {
         text: "Grapes",
         image: Grapefruit,
-        description:
-          `
+        description: `
           Grapes are rich in vitamin A and C, antioxidants, and fiber,
           supporting immune function, heart health, and weight
           management.
@@ -411,8 +404,7 @@ export const products = [
       {
         text: "Lime and Lemon",
         image: Lime,
-        description:
-           `Limes are rich in vitamin C, which plays a crucial role in supporting
+        description: `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
@@ -422,8 +414,7 @@ export const products = [
       {
         text: "Orange",
         image: Orange1,
-        description:
-          `
+        description: `
           Orange is Naturally rich in Vitamin C, it helps strengthen your
           immune system and may support recovery from the common
           cold. Packed with essential nutrients like potassium, fiber, calcium,
@@ -435,8 +426,7 @@ export const products = [
       {
         text: "Ginger",
         image: Ginger1,
-        description:
-          `
+        description: `
           Ginger is packed with essential vitamins and minerals, offering a
           natural way to support your overall well-being. Ginger contains
           Vitamin C, B3, B6, iron, potassium, magnesium, phosphorus, zinc,
@@ -447,8 +437,7 @@ export const products = [
       {
         text: "Cayenne pepper",
         image: Cayenne,
-        description:
-          `
+        description: `
           Cayenne pepper contains capsaicin, which aids digestion,
           reduces inflammation, and supports weight management.
           `,
@@ -462,8 +451,7 @@ export const products = [
     size: ["L", "S"],
     image: Strong,
     images: [Strong, Strong, Strong],
-    description:
-      `
+    description: `
       Introducing our comprehensive Gut Health Cleanse,
       meticulously crafted to enhance your overall health and well-being. This
       potent blend offers a multitude of benefits:<br>
@@ -488,8 +476,7 @@ export const products = [
       {
         text: "Kale",
         image: Kale,
-        description:
-          `
+        description: `
           Kale is very low in calories and extremely high in nutrients,
           making it one of the healthiest and most nutrient-dense foods
           available. Rich in antioxidants and a top source of vitamins C and K. It
@@ -500,8 +487,7 @@ export const products = [
       {
         text: "Turnip-green",
         image: TurnipGreen,
-        description:
-          `
+        description: `
           Turnip-green are rich in vitamins A, C, and K, calcium, and antioxidants,
           supporting bone health, reducing inflammation, and potentially lowering the
           risk of chronic diseases. Aid digestion, boost immunity, and promote weight
@@ -511,8 +497,7 @@ export const products = [
       {
         text: "Watercress",
         image: Watercress,
-        description:
-          `
+        description: `
           Watercress is rich in vitamins A, C, and K, calcium, and antioxidants,
           supporting bone health, reducing inflammation, and potentially
           lowering the risk of chronic diseases. Enhance athletic
@@ -522,8 +507,7 @@ export const products = [
       {
         text: "Arugula",
         image: Arugula,
-        description:
-          `
+        description: `
           Arugula is rich in vitamins A, C, and K, calcium, and antioxidants,
           supporting bone health, reducing inflammation, and potentially
           lowering the risk of chronic diseases.
@@ -532,8 +516,7 @@ export const products = [
       {
         text: "Green Apple",
         image: Apple,
-        description:
-          `
+        description: `
           Are high in fiber content which helps in increasing the body’s
           metabolism. They also have low-fat content and help in maintaining good blood
           flow in the body, also rich in vitamin A and C, good for bone and fight against
@@ -543,8 +526,7 @@ export const products = [
       {
         text: "Lime and Lemon",
         image: Lime,
-        description:
-         `Limes are rich in vitamin C, which plays a crucial role in supporting
+        description: `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
@@ -554,8 +536,7 @@ export const products = [
       {
         text: "Ginger",
         image: Ginger1,
-        description:
-          `
+        description: `
           Ginger is packed with essential vitamins and minerals, offering a
           natural way to support your overall well-being. Ginger contains
           Vitamin C, B3, B6, iron, potassium, magnesium, phosphorus, zinc,
@@ -566,13 +547,12 @@ export const products = [
       {
         text: "Cucumber",
         image: Cucumber,
-        description:
-        `
+        description: `
         contain electrolytes, calcium, vitamin K, fiber, and
          Cucurbitaceae. All these nutrients help with cancer prevention, cardiovascular
           health, diabetes, inflammation and the health of your skin.
-        `
-      }
+        `,
+      },
     ],
   },
   {
@@ -582,8 +562,7 @@ export const products = [
     size: ["L", "S"],
     image: Rouge,
     images: [Rouge, Rouge2, Rouge3],
-    description:
-      `
+    description: `
       Beets are a vibrant root vegetable known for their rich nutritional
       profile and numerous health benefits. They are low in calories yet high in
       essential nutrients, including folate, manganese, vitamin C, vitamin A,
@@ -597,8 +576,7 @@ export const products = [
       {
         text: "Beet Roots",
         image: BeetRoots,
-        description:
-          `
+        description: `
           Beets are rich in essential nutrients, including fiber, vitamin C,
           vitamin A, vitamin B6, folate, manganese, potassium, and iron.
           They are particularly high in nitrates, which have been shown to
@@ -608,8 +586,7 @@ export const products = [
       {
         text: "Apple",
         image: Apple,
-        description:
-          `
+        description: `
           Apples highly versatile fruits that offer numerous nutritional benefits. Rich
           in fiber, vitamin C, K, A, E, potassium, magnesium, cooper, and
           pectin. They help reduce the risk of diabetes, asthma, and cancer. They
@@ -620,8 +597,7 @@ export const products = [
       {
         text: "Orange",
         image: Orange1,
-        description:
-          `
+        description: `
           Orange Naturally rich in Vitamin C, it helps strengthen your
           immune system and may support recovery from the common
           cold. Packed with essential nutrients like potassium, fiber, calcium,
@@ -633,8 +609,7 @@ export const products = [
       {
         text: "Kale",
         image: Kale,
-        description:
-          `
+        description: `
           Kale is very low in calories and extremely high in nutrients,
           making it one of the healthiest and most nutrient-dense foods
           available. Rich in antioxidants and a top source of vitamins C and K. It
@@ -645,8 +620,7 @@ export const products = [
       {
         text: "Ginger",
         image: Ginger1,
-        description:
-          `
+        description: `
           Ginger is packed with essential vitamins and minerals, offering a
           natural way to support your overall well-being. Ginger contains
           Vitamin C, B3, B6, iron, potassium, magnesium, phosphorus, zinc,
@@ -657,9 +631,7 @@ export const products = [
       {
         text: "Lime and Lemon",
         image: Lemon,
-        description:
-          
-         `Limes are rich in vitamin C, which plays a crucial role in supporting
+        description: `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
@@ -675,8 +647,7 @@ export const products = [
     size: ["L", "S"],
     image: MangoJuice,
     images: [MangoJuice, MangoJuice, MangoJuice],
-    description:
-      `
+    description: `
       Fuel your senses with the pleasant aroma and taste of
       orange and rosemary. From the first sip, the blend is bright and delicate, mimicking
       the sweet summer flavor of freshly sliced oranges, followed by a pleasant surprise
@@ -693,8 +664,7 @@ export const products = [
       {
         text: "Nettle",
         image: Nettle,
-        description:
-          `
+        description: `
           Nettle is rich in vitamins A, C, and K, calcium, and antioxidants,
           supporting bone health, reducing inflammation, and potentially
           lowering the risk of chronic diseases. Aid digestion boosts the
@@ -705,8 +675,7 @@ export const products = [
       {
         text: "Raspberry leaf",
         image: RaspberryLeaf,
-        description:
-          `
+        description: `
           Raspberry leaf is rich in vitamins A, C, and K, calcium, and
           antioxidants, supporting bone health, reducing inflammation, and
           potentially lowering the risk of chronic diseases. Aids digestion
@@ -717,8 +686,7 @@ export const products = [
       {
         text: "Elderberry",
         image: Elderberry,
-        description:
-          `
+        description: `
           Elderberry are rich in antioxidants and vitamins, which support
           immune function, reduce inflammation, and aid in managing cold
           and flu symptoms. Elderberries promote heart health, assist in
@@ -741,8 +709,7 @@ export const products = [
       {
         text: "Orange",
         image: Orange1,
-        description:
-          `
+        description: `
           Oranges are  Naturally rich in Vitamin C, it helps strengthen your
           immune system and may support recovery from the common
           cold. Packed with essential nutrients like potassium, fiber, calcium,
@@ -754,8 +721,7 @@ export const products = [
       {
         text: "Rosemary",
         image: Rosemary,
-        description:
-          `
+        description: `
           is rich in antioxidants and anti-inflammatory compounds, which
           support brain health, improve memory, aid digestion, and promote hair growth.
         `,
@@ -763,8 +729,7 @@ export const products = [
       {
         text: "Lime and Lemon",
         image: Lemon,
-        description:
-           `Limes are rich in vitamin C, which plays a crucial role in supporting
+        description: `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
@@ -774,8 +739,7 @@ export const products = [
       {
         text: "Raspberry leaf",
         image: RaspberryLeaf,
-        description:
-          `
+        description: `
           Raspberry leaf is rich in vitamins A, C, and K, calcium, and
           antioxidants, supporting bone health, reducing inflammation, and
           potentially lowering the risk of chronic diseases. Aids digestion
@@ -786,8 +750,7 @@ export const products = [
       {
         text: "Elderberry",
         image: Elderberry,
-        description:
-          `
+        description: `
           Elderberry are rich in antioxidants and vitamins, which support
           immune function, reduce inflammation, and aid in managing cold
           and flu symptoms. Elderberries promote heart health, assist in
@@ -797,8 +760,7 @@ export const products = [
       {
         text: "Nettle",
         image: Nettle,
-        description:
-          `
+        description: `
           is rich in vitamins A, C, and K, calcium, and antioxidants, supporting bone
           health, reducing inflammation, and potentially lowering the risk of chronic
           diseases. Aid digestion boosts the immune system, and supports women's health,
@@ -818,8 +780,7 @@ export const products = [
       RaspberryStrawberryPomegranateTea,
       RaspberryStrawberryPomegranateTea,
     ],
-    description:
-      `
+    description: `
       There is something seriously
       magical when introducing three favorites and finding out they pair harmoniously,
       right? That’s how we felt when we took our iconic, thirst-quenching berries
@@ -832,14 +793,15 @@ export const products = [
       {
         text: "Raspberry",
         image: Raspberry,
-        description:
-          "Rich in fiber and antioxidants, supports heart health, and has anti-inflammatory properties.",
+        description: `are rich in antioxidants, which help combat inflammation. They are
+           high in dietary fiber, promoting healthy digestion. Their vitamin C content
+          supports a strong immune system. Raspberries may aid in blood sugar control due
+          to their low glycemic index. Regular consumption can contribute to heart health.`,
       },
       {
         text: "Pomegranate",
         image: Pomegranate,
-        description:
-          `
+        description: `
           Pomegranates are rich in antioxidants, vitamins C and K, and fiber,
           supporting heart health, reducing inflammation, and aiding digestion.
           `,
@@ -847,8 +809,7 @@ export const products = [
       {
         text: "Lime and Lemon",
         image: Lemon,
-        description:
-           `Limes are rich in vitamin C, which plays a crucial role in supporting
+        description: `Limes are rich in vitamin C, which plays a crucial role in supporting
           the immune system. Consuming vitamin C can help reduce the
           duration and severity of common cold symptoms. Additionally,
           vitamin C is essential for collagen formation, aiding wound healing
@@ -858,8 +819,7 @@ export const products = [
       {
         text: "Raspberry leaf",
         image: RaspberryLeaf,
-        description:
-          `
+        description: `
           Raspberry leaf is rich in vitamins A, C, and K, calcium, and
           antioxidants, supporting bone health, reducing inflammation, and
           potentially lowering the risk of chronic diseases. Aids digestion
@@ -870,14 +830,19 @@ export const products = [
       {
         text: "Strawberry",
         image: Strawberry,
-        description:
-          "Boosts immune system, improves heart health, and is rich in vitamins and antioxidants.",
+        description: `
+        are rich in vitamin C, supporting immune health. They contain
+          antioxidants that may reduce inflammation. High in fiber, they aid digestion.
+          Potassium in strawberries helps regulate blood pressure. Their low glycemic index
+         supports blood sugar control. Regular consumption may improve heart health.
+         They provide folate, essential for cell function. Antioxidants in strawberries may
+         protect against certain cancers. Their anti-inflammatory properties can alleviate
+         joint pain. Strawberries promote gut health by supporting beneficial bacteria.`,
       },
       {
         text: "Nettle",
         image: Nettle,
-        description:
-          `
+        description: `
           is rich in vitamins A, C, and K, calcium, and antioxidants, supporting bone
           health, reducing inflammation, and potentially lowering the risk of chronic
           diseases. Aid digestion boosts the immune system, and supports women's health,
@@ -887,8 +852,7 @@ export const products = [
       {
         text: "Elderberry",
         image: Elderberry,
-        description:
-          `
+        description: `
           Elderberry are rich in antioxidants and vitamins, which support
           immune function, reduce inflammation, and aid in managing cold
           and flu symptoms. Elderberries promote heart health, assist in
