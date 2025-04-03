@@ -65,15 +65,7 @@ const faqs = [
                    warehouse! In the meantime, you can place a backorder to receive the product as soon as
                    it becomes available.`
       },
-      {
-        question: "Prices for product?",
-        answer: `
-               <b>Tea</b>- $9<br>
-               <b>Juice 8oz</b>- $8<br>
-               <b>Juice 16oz</b>- $12
-
-        `
-      }
+  
     ]
   },
   {
@@ -129,6 +121,24 @@ const faqs = [
 
                  `
       },
+    ]
+  },
+  {
+    category: "Prices for product",
+    questions: [
+      {
+        question: "Tea",
+        answer: "$9"
+      },
+      {
+        question: "Juice 8oz",
+        answer: "$8"
+      },
+      {
+        question: "Juice 16oz",
+        answer: "$12"
+      }
+      
     ]
   }
 ];
