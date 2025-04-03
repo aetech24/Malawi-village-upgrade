@@ -393,7 +393,7 @@ export const products = [
     category: "Detox and Immune booster",
     ingredient: [
       {
-        text: "Grapes",
+        text: "Grapefruit",
         image: Grapefruit,
         description: `
           Grapes are rich in vitamin A and C, antioxidants, and fiber,
