@@ -61,7 +61,7 @@ export const products = [
   {
     id: 1,
     name: "Intelligent Water",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: Water2,
     images: [WaterMain, Water1, Water2, Water3],
@@ -114,7 +114,7 @@ export const products = [
   {
     id: 2,
     name: "Orange Juice",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: Orange,
     images: [Orange, Orange2, Orange3, Orange4],
@@ -146,7 +146,7 @@ export const products = [
   {
     id: 3,
     name: "Zobo",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: Zobo2,
     images: [Zobo, Zobo1, Zobo_2],
@@ -245,7 +245,7 @@ export const products = [
   {
     id: 4,
     name: "Traditional Ginger beer",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: Ginger,
     images: [ginger, ginger1, ginger2, ginger3],
@@ -310,7 +310,7 @@ export const products = [
   {
     id: 5,
     name: "Pina tropical",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: PinaMain,
     images: [Pina, Pina1, Pina2],
@@ -379,7 +379,7 @@ export const products = [
   {
     id: 6,
     name: "Vitamin C",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: VitaminC,
     images: [VitaminC, VitaminC, VitaminC],
@@ -447,7 +447,7 @@ export const products = [
   {
     id: 7,
     name: "Strong Green",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: Strong,
     images: [Strong, Strong, Strong],
@@ -558,7 +558,7 @@ export const products = [
   {
     id: 8,
     name: "Rouge",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: Rouge,
     images: [Rouge, Rouge2, Rouge3],
@@ -643,7 +643,7 @@ export const products = [
   {
     id: 9,
     name: "Mango & Coconut tea",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: MangoJuice,
     images: [MangoJuice, MangoJuice, MangoJuice],
@@ -698,7 +698,7 @@ export const products = [
   {
     id: 10,
     name: "Orange and Rosemary Tea",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: OrangeAndRosemaryTea,
     images: [OrangeAndRosemaryTea, OrangeAndRosemaryTea, OrangeAndRosemaryTea],
@@ -772,7 +772,7 @@ export const products = [
   {
     id: 11,
     name: "Raspberry, strawberry & pomegranate tea",
-    price: { big: 16, small: 10 },
+    price: { "16oz": 12, "8oz": 8 },
     size: ["L", "S"],
     image: RaspberryStrawberryPomegranateTea,
     images: [
