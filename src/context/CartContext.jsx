@@ -10,18 +10,27 @@ export const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  // Add item to cart
-  const addToCart = (product) => {
+  // Add item to cart - now properly handles quantities
+  const addToCart = (product, showNotification = true) => {
     setCartItems((prevCart) => {
-      const existingProduct = prevCart.find((item) => item.id === product.id && item.size === product.size);
+      const existingProduct = prevCart.find(
+        (item) => item.id === product.id && item.size === product.size
+      );
+      
       if (existingProduct) {
         return prevCart.map((item) =>
-          item.id === product.id && item.size === product.size ? { ...item, quantity: item.quantity + 1 } : item
+          item.id === product.id && item.size === product.size 
+            ? { ...item, quantity: item.quantity + (product.quantity || 1) } 
+            : item
         );
       }
-      return [...prevCart, { ...product, quantity: 1 }];
+      return [...prevCart, { ...product, quantity: product.quantity || 1 }];
     });
-    alert('Product added to cart!');
+
+    if (showNotification) {
+      return `${product.name} added to cart!`;
+    }
+    return null;
   };
 
   // Remove item from cart
@@ -29,27 +38,40 @@ export const CartProvider = ({ children }) => {
     setCartItems((prevCart) =>
       prevCart.filter((item) => !(item.id === productId && item.size === size))
     );
+    return 'Product removed from cart';
   };
 
   // Update quantity of a product
   const updateQuantity = (productId, size, quantity) => {
+    if (quantity < 1) {
+      return 'Quantity cannot be less than 1';
+    }
+    
     setCartItems((prevCart) =>
       prevCart.map((item) =>
         item.id === productId && item.size === size ? { ...item, quantity } : item
       )
     );
+    return 'Quantity updated';
   };
 
   // Clear the cart
   const clearCart = () => {
     setCartItems([]);
+    return 'Cart cleared';
   };
 
   // Calculate total cart value
-  const totalValue = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalValue = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity, 
+    0
+  );
 
   // Calculate total number of items
-  const totalItems = cartItems.reduce((count, item) => count + item.quantity, 0);
+  const totalItems = cartItems.reduce(
+    (count, item) => count + item.quantity, 
+    0
+  );
 
   // Save cart items to local storage whenever it changes
   useEffect(() => {

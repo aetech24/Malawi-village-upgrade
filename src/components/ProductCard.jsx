@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-// import { CartContext } from '../context/CartContext';
 import { WishlistContext } from "../context/WishlistContext";
 
 const ProductCard = ({ product, className = "" }) => {
@@ -15,29 +14,43 @@ const ProductCard = ({ product, className = "" }) => {
   };
 
   const handleFavoriteClick = (e) => {
-    e.stopPropagation(); // Prevent navigation when clicking the favorite icon
+    e.stopPropagation();
     setIsFavorite(!isFavorite);
     addToWishlist(product);
   };
 
   const handleViewProduct = (e) => {
-    e.stopPropagation(); // Prevent navigation when clicking the view product button
+    e.stopPropagation();
     navigate(`/product/${product.id}`);
   };
 
-  // Format price based on whether it's a string or an object
+  // Improved price formatting function
   const formatPrice = (price) => {
+    if (!price) return "Price not available";
+    
     if (typeof price === "string") {
-      return `$ ${price}`;
-    } else if (typeof price === "object" && price !== null) {
-      return `$ ${price.small} - ${price.big}`;
+      return `$${parseFloat(price).toFixed(2)}`;
+    } 
+    
+    if (typeof price === "object" && price !== null) {
+      // Handle both {small: x, big: y} and {size1: x, size2: y} formats
+      const prices = Object.values(price);
+      if (prices.length === 0) return "Price not available";
+      
+      const minPrice = Math.min(...prices);
+      const maxPrice = Math.max(...prices);
+      
+      return minPrice === maxPrice 
+        ? `$${minPrice.toFixed(2)}` 
+        : `$${minPrice.toFixed(2)} - $${maxPrice.toFixed(2)}`;
     }
+    
     return "Price not available";
   };
 
   return (
     <div
-      className={`rounded-md ${className} cursor-pointer relative`}
+      className={`rounded-md overflow-hidden shadow-md hover:shadow-lg transition-shadow ${className} cursor-pointer relative`}
       onClick={handleClick}
     >
       <div
@@ -55,15 +68,17 @@ const ProductCard = ({ product, className = "" }) => {
         alt={product.name}
         className="w-full h-[200px] object-cover"
       />
+      <div className="p-4">
+        <h3 className="font-medium text-lg mb-1">{product.name}</h3>
+        <p className="text-gray-600 font-semibold">
+          {formatPrice(product.price)}
+        </p>
+      </div>
       <div
-        className="w-full cursor-pointer bg-black hover:bg-opacity-30 duration-200 text-white p-2 text-center"
+        className="w-full cursor-pointer bg-black hover:bg-opacity-80 duration-200 text-white p-2 text-center"
         onClick={handleViewProduct}
       >
         View Product
-      </div>
-      <div className="py-4">
-        <p>{product.name}</p>
-        <p>{formatPrice(product.price)}</p>
       </div>
     </div>
   );
@@ -76,10 +91,12 @@ ProductCard.propTypes = {
     name: PropTypes.string.isRequired,
     price: PropTypes.oneOfType([
       PropTypes.string,
+      PropTypes.number,
       PropTypes.shape({
         small: PropTypes.number,
         big: PropTypes.number,
       }),
+      PropTypes.object
     ]).isRequired,
   }).isRequired,
   className: PropTypes.string,

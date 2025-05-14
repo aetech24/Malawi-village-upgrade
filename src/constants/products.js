@@ -396,7 +396,7 @@ export const products = [
         text: "Grapefruit",
         image: Grapefruit,
         description: `
-          Grapes are rich in vitamin A and C, antioxidants, and fiber,
+          Grapefruit are rich in vitamin A and C, antioxidants, and fiber,
           supporting immune function, heart health, and weight
           management.
           `,
