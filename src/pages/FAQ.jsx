@@ -123,24 +123,6 @@ const faqs = [
       },
     ]
   },
-  {
-    category: "Prices for product",
-    questions: [
-      {
-        question: "Tea",
-        answer: "$9"
-      },
-      {
-        question: "Juice 8oz",
-        answer: "$8"
-      },
-      {
-        question: "Juice 16oz",
-        answer: "$12"
-      }
-      
-    ]
-  }
 ];
 
 const FAQ = () => {

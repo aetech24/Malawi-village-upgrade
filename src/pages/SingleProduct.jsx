@@ -1,31 +1,42 @@
-import { useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { products } from "../constants/products";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ProductCard from "../components/ProductCard";
 import { CartContext } from "../context/CartContext";
 import { WishlistContext } from "../context/WishlistContext";
+import { toast } from 'react-toastify';
 
 const SingleProduct = () => {
   const { id } = useParams();
-  const { addToCart } = useContext(CartContext); // Access addToCart from context
-  const { addToWishlist } = useContext(WishlistContext); // Access addToWishlist from context
+  const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
+  const { addToWishlist } = useContext(WishlistContext);
   const [activeTab, setActiveTab] = useState("description");
   const [selectedSize, setSelectedSize] = useState(
     Object.keys(products[0].price)[0]
-  ); // Default to the first size
+  );
+  const [quantity, setQuantity] = useState(1); // Added quantity state
 
   // Find the product by ID
   const product = products.find((p) => p.id === parseInt(id));
 
-  // Set the current displayed image
+  // Set the current displayed image - now properly resets when product changes
   const [currentImage, setCurrentImage] = useState(product?.image);
 
-  // Related products: same category, excluding the current product
+  // Reset images when product changes
+  useEffect(() => {
+    if (product) {
+      setCurrentImage(product.image);
+      setSelectedSize(Object.keys(product.price)[0]); // Reset size selection
+      setQuantity(1); // Reset quantity when product changes
+    }
+    window.scrollTo(0, 0);
+  }, [id, product]); // Added product to dependency array
+
+  // Related products handler
   const relatedProducts = products
     .filter((p) => p.category === product?.category && p.id !== product?.id)
     .slice(0, 4);
@@ -39,41 +50,57 @@ const SingleProduct = () => {
     );
   }
 
-  // Format price based on type
-  const formatPrice = (price) => {
-    if (typeof price === "string") {
-      return `$${price}`;
-    } else if (typeof price === "object" && price !== null) {
-      return `$${Object.values(price).join(" - $")}`;
+  // Calculate current price based on selected size
+  const getCurrentPrice = () => {
+    if (typeof product.price === "string") {
+      return product.price;
+    } else if (typeof product.price === "object") {
+      return product.price[selectedSize];
     }
     return "Price not available";
   };
 
+    // Format price for display
+    const formatPrice = (price) => {
+      if (typeof price === "string") {
+        return `$${price}`;
+      }
+      return `$${price}`;
+  };
+  
   const handleAddToCart = () => {
     const productToAdd = {
       ...product,
       size: selectedSize,
       price: product.price[selectedSize],
-      quantity: 1, // Default quantity when adding to cart
+      quantity: quantity, // Now using the quantity state
     };
     addToCart(productToAdd);
+    toast.success(`${product.name} added to cart!`);
   };
 
   const handleAddToWishlist = () => {
     addToWishlist(product);
+    toast.success(`${product.name} added to wishlist!`); 
   };
 
-  // Swiper images: Ensure valid array
+  // Quantity handlers
+  const incrementQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  };
+
+  const decrementQuantity = () => {
+    if (quantity > 1) {
+      setQuantity((prev) => prev - 1);
+    }
+  };
+
+  // Swiper images handler
   const images =
     Array.isArray(product.images) && product.images.length > 0
       ? product.images
       : [product.image];
 
-  // //ingredients
-  // const ingredients = product.ingredients ? product.ingredients.join(", ") : "N/A";
-
-  // //nutritional information
-  // const nutritionalInfo = product.nutritionalInfo ? product.nutritionalInfo.join(", ") : "N/A";
   return (
     <div className="px-4 md:px-10 py-5 max-md:mt-6">
       <p className="text-[#232323] flex flex-row gap-2 mt-10">
@@ -95,7 +122,7 @@ const SingleProduct = () => {
             />
           </div>
           {/* Other Views Section */}
-          <div className="flex gap-4 mt-6 mx-auto  justify-center max-md:gap-1">
+          <div className="flex gap-4 mt-6 mx-auto justify-center max-md:gap-1">
             {images.map((image, index) => (
               <img
                 key={index}
@@ -111,11 +138,34 @@ const SingleProduct = () => {
         </div>
 
         {/* Product Details */}
-
         <div className="flex flex-col gap-6 lg:w-1/2 mt-20">
-          <p className="text-2xl font-semibold">{product.name}</p>
-          {/*<p dangerouslySetInnerHTML={{ __html: product.description }}></p>*/}
-          <p className="font-semibold text-2xl">{formatPrice(product.price)}</p>
+        <p className="text-2xl font-semibold">{product.name}</p>
+        <p className="font-semibold text-2xl">
+          {formatPrice(getCurrentPrice())}
+        </p>
+
+          {/* Quantity Selector  */}
+          <div className="flex items-center gap-4">
+            <span className="font-medium">Quantity:</span>
+            <div className="flex items-center border border-gray-300 rounded-md">
+              <button
+                className="px-3 py-1 text-lg font-medium"
+                onClick={decrementQuantity}
+                disabled={quantity <= 1}
+              >
+                -
+              </button>
+              <span className="px-4 py-1 border-x border-gray-300">
+                {quantity}
+              </span>
+              <button
+                className="px-3 py-1 text-lg font-medium"
+                onClick={incrementQuantity}
+              >
+                +
+              </button>
+            </div>
+          </div>
 
           {/* Select Size */}
           {typeof product.price === "object" && (
@@ -181,7 +231,7 @@ const SingleProduct = () => {
               <h3 className="text-xl font-semibold mb-4">
                 Product Description
               </h3>
-              <p  dangerouslySetInnerHTML={{ __html: product.description }}></p>
+              <p dangerouslySetInnerHTML={{ __html: product.description }}></p>
               {/* <img src={product.image} alt=""></img> */}
             </div>
           ) : (
