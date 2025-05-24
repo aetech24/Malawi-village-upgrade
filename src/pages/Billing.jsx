@@ -374,10 +374,10 @@ const Billing = ({ shippingCost, onPlaceOrder }) => {
                   By clicking "Place Order", you will be redirected to Stripe to
                   complete your payment securely.
                 </p>
-                <p className="mt-1 font-semibold">
+                              {/*<p className="mt-1 font-semibold">
                   Test Card: 4242 4242 4242 4242
                 </p>
-                <p className="text-xs">Use any future date and CVC</p>
+                <p className="text-xs">Use any future date and CVC</p>*/}
               </div>
             )}
           </div>
