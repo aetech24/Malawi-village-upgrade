@@ -34,7 +34,7 @@ const SingleProduct = () => {
       setQuantity(1); // Reset quantity when product changes
     }
     window.scrollTo(0, 0);
-  }, [id, product]); // Added product to dependency array
+  }, [id, product]);
 
   // Related products handler
   const relatedProducts = products
@@ -84,7 +84,7 @@ const SingleProduct = () => {
     toast.success(`${product.name} added to wishlist!`); 
   };
 
-  // Quantity handlers
+  // Quantity handler
   const incrementQuantity = () => {
     setQuantity((prev) => prev + 1);
   };

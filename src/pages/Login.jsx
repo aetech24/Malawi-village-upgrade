@@ -10,6 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  window.scrollTo(0, 0);
 
   const handleLogin = (event) => {
     event.preventDefault();

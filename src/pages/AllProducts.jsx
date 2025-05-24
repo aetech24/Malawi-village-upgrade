@@ -18,6 +18,8 @@ const AllProducts = () => {
     ...new Set(products.map((product) => product.category)),
   ];
 
+  window.scrollTo(0, 0);
+
   // Filter products based on search and category
   const filteredProducts = products.filter((product) => {
     const matchesSearch =

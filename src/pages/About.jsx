@@ -4,6 +4,8 @@ import Test from "../assets/tes-img1.jpg";
 import ScrollToTop from "../components/ScrollToTop";
 import Core_Values from "../components/Core_Values";
 const About = () => {
+
+  window.scrollTo(0, 0);
   return (
     <>
       <main className="bg-white-100 px-4 max-md:mt-16 py-8 md:py-16 md:px-10">

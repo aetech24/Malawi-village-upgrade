@@ -21,6 +21,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const shippingCost = 5.0;
+
+  window.scrollTo(0, 0);
   
   const handlePlaceOrder = () => {
     toast.success('Order placed successfully!')

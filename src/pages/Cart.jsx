@@ -17,7 +17,7 @@ const Cart = () => {
   const totalProducts = cartItems?.reduce((acc, item) => acc + item.quantity, 0) || 0;
 
   // Minimum order requirement is now based on total products (6 or more)
-  const MINIMUM_ORDER_QUANTITY = 9;
+  const MINIMUM_ORDER_QUANTITY = 6;
 
   // Validate cart whenever items change
   useEffect(() => {
