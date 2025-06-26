@@ -106,7 +106,7 @@ const faqs = [
                    home. Due to the perishable nature of our products, we ask that you open the package
                    immediately upon arrival and to place the contents in your freezer or refrigerator. If you
                    are ordering as a gift, do not worry<br>
-                   - all of our packages are marked "keep frozen" and
+                   - All of our packages are marked "keep frozen" and
                    "perishable". In addition, each package contains a brochure with instructions for proper
                    handling.`
       },
@@ -114,10 +114,7 @@ const faqs = [
         question: "How much bottle can I ship?",
         answer: `
                   - Here are the minimum we can ship per order per bottle size they should not be able to add
-                   anything less than this.<br>
-                   <b>Tea</b> – 13 minimum.<br>
-                   <b>Big bottle juice</b> – 6 minimum<br>
-                   <b>Small bottle</b> - 8 minimum
+                   anything less than this.
 
                  `
       },

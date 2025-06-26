@@ -24,35 +24,34 @@ const ProductCard = ({ product, className = "" }) => {
     navigate(`/product/${product.id}`);
   };
 
-  // Improved price formatting function
   const formatPrice = (price) => {
     if (!price) return "Price not available";
-    
+
     if (typeof price === "string") {
       return `$${parseFloat(price).toFixed(2)}`;
-    } 
-    
+    }
+
     if (typeof price === "object" && price !== null) {
-      // Handle both {small: x, big: y} and {size1: x, size2: y} formats
       const prices = Object.values(price);
       if (prices.length === 0) return "Price not available";
-      
+
       const minPrice = Math.min(...prices);
       const maxPrice = Math.max(...prices);
-      
-      return minPrice === maxPrice 
-        ? `$${minPrice.toFixed(2)}` 
+
+      return minPrice === maxPrice
+        ? `$${minPrice.toFixed(2)}`
         : `$${minPrice.toFixed(2)} - $${maxPrice.toFixed(2)}`;
     }
-    
+
     return "Price not available";
   };
 
   return (
     <div
-      className={`rounded-md overflow-hidden shadow-md hover:shadow-lg transition-shadow ${className} cursor-pointer relative`}
+      className={`rounded-md overflow-hidden shadow-md hover:shadow-lg transition-shadow ${className} cursor-pointer relative flex flex-col justify-between min-h-[300px]`}
       onClick={handleClick}
     >
+      {/* Favorite Icon */}
       <div
         className="absolute top-2 right-2 z-10 p-2 bg-white rounded-full shadow-md cursor-pointer hover:scale-110 transition-transform"
         onClick={handleFavoriteClick}
@@ -63,19 +62,25 @@ const ProductCard = ({ product, className = "" }) => {
           <AiOutlineHeart className="text-gray-600 text-xl" />
         )}
       </div>
+
+      {/* Image */}
       <img
         src={product.image}
         alt={product.name}
         className="w-full h-[200px] object-cover"
       />
-      <div className="p-4">
-        <h3 className="font-medium text-lg mb-1">{product.name}</h3>
-        <p className="text-gray-600 font-semibold">
-          {formatPrice(product.price)}
-        </p>
+
+      {/* Product Info */}
+      <div className="p-4 flex flex-col justify-between ">
+        <h3 className="font-medium text-lg mb-1 line-clamp-2 min-h-[30px]">
+          {product.name}
+        </h3>
+        <p className="text-gray-600 font-semibold">{formatPrice(product.price)}</p>
       </div>
+
+      {/* View Product Button */}
       <div
-        className="w-full cursor-pointer bg-black hover:bg-opacity-80 duration-200 text-white p-2 text-center"
+        className="w-full mt-auto bg-black hover:bg-opacity-80 duration-200 text-white p-2 text-center"
         onClick={handleViewProduct}
       >
         View Product

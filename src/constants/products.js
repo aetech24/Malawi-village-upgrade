@@ -39,7 +39,7 @@ import RaspberryLeaf from "../assets/raspberryleaf.jpeg";
 import Rosemary from "../assets/rosemarry.jpeg";
 import Elderberry from "../assets/elderberry.jpeg";
 import Clove from "../assets/clove.jpeg";
-import Grapefruit from "../assets/grape.jpeg";
+import Grapefruit from "../assets/grapefruit.jpg";
 import Cayenne from "../assets/cayenne.jpeg";
 import Kale from "../assets/kale.jpeg";
 import TurnipGreen from "../assets/turnip-green.jpeg";
@@ -396,7 +396,7 @@ export const products = [
         text: "Grapefruit",
         image: Grapefruit,
         description: `
-          Grapefruit are rich in vitamin A and C, antioxidants, and fiber,
+          Grapefruits are rich in vitamin A and C, antioxidants, and fiber,
           supporting immune function, heart health, and weight
           management.
           `,
@@ -698,7 +698,7 @@ export const products = [
   {
     id: 10,
     name: "Orange and Rosemary Tea",
-    price: { "16oz": 12, "8oz": 8 },
+    price: { "16oz": 9, "5L bag": 65.95 },
     size: ["L", "S"],
     image: OrangeAndRosemaryTea,
     images: [OrangeAndRosemaryTea, OrangeAndRosemaryTea, OrangeAndRosemaryTea],
@@ -772,7 +772,7 @@ export const products = [
   {
     id: 11,
     name: "Raspberry, strawberry & pomegranate tea",
-    price: { "16oz": 12, "8oz": 8 },
+    price: { "16oz": 9, "5L bag": 65.95 },
     size: ["L", "S"],
     image: RaspberryStrawberryPomegranateTea,
     images: [
