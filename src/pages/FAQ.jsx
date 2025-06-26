@@ -113,8 +113,7 @@ const faqs = [
       {
         question: "How much bottle can I ship?",
         answer: `
-                  - Here are the minimum we can ship per order per bottle size they should not be able to add
-                   anything less than this.
+                  - There’s no limit — you can ship as many bottles as you like!
 
                  `
       },
